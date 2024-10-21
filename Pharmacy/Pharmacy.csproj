@@ -46,14 +46,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmAddCustomer.Designer.cs">
+      <DependentUpon>frmAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEmployee.Designer.cs">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddMedicine.Designer.cs">
+      <DependentUpon>frmAddMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSupplier.Designer.cs">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMedicine.Designer.cs">
+      <DependentUpon>frmMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddCustomer.resx">
+      <DependentUpon>frmAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddMedicine.resx">
+      <DependentUpon>frmAddMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSupplier.resx">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedicine.resx">
+      <DependentUpon>frmMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +137,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +151,123 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address-book-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-plus-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart-simple-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-contract-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-medical-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flask-vial-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-disk-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-holding-heart-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\handshake-regular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospital-user-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 2 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kit-medical-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass-solid %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notes-medical-solid %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notes-medical-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-to-square-regular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-to-square-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pills-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prescription-bottle-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receipt-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stethoscope-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-plus-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vial-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vial-virus-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bars-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-regular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-from-bracket-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notes-medical-solid %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass-solid %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-to-square-solid1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-solid1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-disk-solid1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
