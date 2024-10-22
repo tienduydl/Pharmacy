@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace Pharmacy
 {
-    public partial class frmCustomer : Form
+    public partial class AddHDN : Form
     {
-        public frmCustomer()
+        public AddHDN()
         {
             InitializeComponent();
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
 
         }

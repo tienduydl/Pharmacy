@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Pharmacy
 {
-    public partial class frmCustomer : Form
+    public partial class AddPhieuXuat : Form
     {
-        public frmCustomer()
+        public AddPhieuXuat()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

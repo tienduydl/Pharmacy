@@ -1,6 +1,6 @@
 ﻿namespace Pharmacy
 {
-    partial class Form1
+    partial class frmMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.menuManager = new System.Windows.Forms.MenuStrip();
             this.danhMụcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,43 +96,43 @@
             // 
             this.nhânViênToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.pills_solid;
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
             this.nhânViênToolStripMenuItem.Text = "Thuốc";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(198, 6);
             // 
             // thuốcToolStripMenuItem
             // 
             this.thuốcToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.users_solid;
             this.thuốcToolStripMenuItem.Name = "thuốcToolStripMenuItem";
-            this.thuốcToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.thuốcToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
             this.thuốcToolStripMenuItem.Text = "Nhân viên";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(198, 6);
             // 
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.address_book_solid;
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(198, 6);
             // 
             // nhàCungCấpToolStripMenuItem
             // 
             this.nhàCungCấpToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.handshake_regular;
             this.nhàCungCấpToolStripMenuItem.Name = "nhàCungCấpToolStripMenuItem";
-            this.nhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.nhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
             this.nhàCungCấpToolStripMenuItem.Text = "Nhà cung cấp";
             // 
             // nhậpThuốcToolStripMenuItem
@@ -237,7 +237,7 @@
             this.panel2.Size = new System.Drawing.Size(734, 544);
             this.panel2.TabIndex = 4;
             // 
-            // Form1
+            // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -247,7 +247,7 @@
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuManager;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "frmMenu";
             this.Text = "Pharmacy";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuManager.ResumeLayout(false);
