@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Pharmacy
 {
-    public partial class frmMenu : Form
+    public partial class EmployeeMenu : Form
     {
         private Form currentFormChild;
-        public frmMenu()
+        public EmployeeMenu()
         {
             InitializeComponent();
         }
@@ -32,39 +32,34 @@ namespace Pharmacy
             childForm.BringToFront();
             childForm.Show();
         }
-        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nhậpThuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmEmployee());
+
         }
 
-        private void thuốcToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuManager_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            OpenChildForm(new frmMedicine());
+
         }
 
-        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bánThuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmCustomer());
-        }
-
-        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frmSupplier());
-        }
-
-        private void nhậpMớiToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new AddHDN());
+           
         }
 
         private void nhậpMớiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new frmAddMedicine());
+        }
+
+        private void nhậpMớiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             OpenChildForm(new AddHDB());
         }
 
-        private void xuấtThuốcToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AddPhieuXuat());
+            OpenChildForm(new frmMedicine());
         }
 
         private void thôngTinUserToolStripMenuItem_Click(object sender, EventArgs e)

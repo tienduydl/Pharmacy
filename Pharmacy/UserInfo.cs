@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace Pharmacy
 {
-    public partial class frmCustomer : Form
+    public partial class UserInfo : Form
     {
-        public frmCustomer()
+        public UserInfo()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

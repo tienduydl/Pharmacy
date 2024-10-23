@@ -16,5 +16,14 @@ namespace Pharmacy
         {
             InitializeComponent();
         }
+
+        private void frmEmployee_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pharmacyDataSet.Nhanvien' table. You can move, or remove it, as needed.
+            this.nhanvienTableAdapter.Fill(this.pharmacyDataSet.Nhanvien);
+            // TODO: This line of code loads data into the 'pharmacyDataSet.KhachHang' table. You can move, or remove it, as needed.
+            this.khachHangTableAdapter.Fill(this.pharmacyDataSet.KhachHang);
+
+        }
     }
 }

@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace Pharmacy
 {
-    public partial class frmCustomer : Form
+    public partial class AddHDB : Form
     {
-        public frmCustomer()
+        public AddHDB()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Giabanlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
