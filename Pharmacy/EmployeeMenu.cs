@@ -56,5 +56,15 @@ namespace Pharmacy
         {
             OpenChildForm(new AddHDB());
         }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmMedicine());
+        }
+
+        private void thôngTinUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserInfo());
+        }
     }
 }
