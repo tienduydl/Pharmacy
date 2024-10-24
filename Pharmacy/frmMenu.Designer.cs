@@ -100,6 +100,7 @@
             this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(186, 52);
             this.danhMụcToolStripMenuItem.Text = "Danh mục";
             this.danhMụcToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.danhMụcToolStripMenuItem.Click += new System.EventHandler(this.danhMụcToolStripMenuItem_Click);
             // 
             // nhânViênToolStripMenuItem
             // 
@@ -169,14 +170,14 @@
             this.hóaĐơnNhậpToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hóaĐơnNhậpToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.print_solid;
             this.hóaĐơnNhậpToolStripMenuItem.Name = "hóaĐơnNhậpToolStripMenuItem";
-            this.hóaĐơnNhậpToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
+            this.hóaĐơnNhậpToolStripMenuItem.Size = new System.Drawing.Size(252, 38);
             this.hóaĐơnNhậpToolStripMenuItem.Text = "Hóa đơn nhập";
             // 
             // nhậpMớiToolStripMenuItem1
             // 
             this.nhậpMớiToolStripMenuItem1.Image = global::Pharmacy.Properties.Resources.cart_plus_solid;
             this.nhậpMớiToolStripMenuItem1.Name = "nhậpMớiToolStripMenuItem1";
-            this.nhậpMớiToolStripMenuItem1.Size = new System.Drawing.Size(270, 38);
+            this.nhậpMớiToolStripMenuItem1.Size = new System.Drawing.Size(252, 38);
             this.nhậpMớiToolStripMenuItem1.Text = "Nhập mới";
             this.nhậpMớiToolStripMenuItem1.Click += new System.EventHandler(this.nhậpMớiToolStripMenuItem1_Click);
             // 
@@ -200,7 +201,7 @@
             this.hóaĐơnBánToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hóaĐơnBánToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.document_png;
             this.hóaĐơnBánToolStripMenuItem.Name = "hóaĐơnBánToolStripMenuItem";
-            this.hóaĐơnBánToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
+            this.hóaĐơnBánToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
             this.hóaĐơnBánToolStripMenuItem.Text = "Hóa đơn bán";
             // 
             // nhậpMớiToolStripMenuItem
@@ -208,7 +209,7 @@
             this.nhậpMớiToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhậpMớiToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.add;
             this.nhậpMớiToolStripMenuItem.Name = "nhậpMớiToolStripMenuItem";
-            this.nhậpMớiToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
+            this.nhậpMớiToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
             this.nhậpMớiToolStripMenuItem.Text = "Nhập mới";
             this.nhậpMớiToolStripMenuItem.Click += new System.EventHandler(this.nhậpMớiToolStripMenuItem_Click);
             // 

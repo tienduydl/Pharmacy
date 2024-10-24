@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pharmacy
 {
-    public partial class HDNhap : Form
+    public partial class frmHDNhap : Form
     {
-        public HDNhap()
+        public frmHDNhap()
         {
             InitializeComponent();
         }
@@ -58,6 +58,11 @@ namespace Pharmacy
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmHDNhap_Load(object sender, EventArgs e)
         {
 
         }

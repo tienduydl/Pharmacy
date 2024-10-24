@@ -76,5 +76,10 @@ namespace Pharmacy
         {
 
         }
+
+        private void danhMụcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
