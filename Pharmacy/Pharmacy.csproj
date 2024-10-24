@@ -226,6 +226,9 @@
     <EmbeddedResource Include="frmHDNhap.resx">
       <DependentUpon>frmHDNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmxuatthuoc.resx">
+      <DependentUpon>frmxuatthuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
