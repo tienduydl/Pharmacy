@@ -25,5 +25,10 @@ namespace Pharmacy
             this.khachHangTableAdapter.Fill(this.pharmacyDataSet.KhachHang);
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

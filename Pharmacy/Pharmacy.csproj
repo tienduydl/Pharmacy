@@ -396,5 +396,29 @@
   <ItemGroup>
     <None Include="Resources\back-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angles-left-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angles-right-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-left-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-right-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-left-solid1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-right-solid1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angles-left-solid1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angles-right-solid1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

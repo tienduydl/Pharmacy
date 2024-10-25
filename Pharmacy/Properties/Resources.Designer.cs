@@ -83,6 +83,46 @@ namespace Pharmacy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap angles_left_solid {
+            get {
+                object obj = ResourceManager.GetObject("angles-left-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap angles_left_solid1 {
+            get {
+                object obj = ResourceManager.GetObject("angles-left-solid1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap angles_right_solid {
+            get {
+                object obj = ResourceManager.GetObject("angles-right-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap angles_right_solid1 {
+            get {
+                object obj = ResourceManager.GetObject("angles-right-solid1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_arrow {
             get {
                 object obj = ResourceManager.GetObject("back-arrow", resourceCulture);
@@ -126,6 +166,46 @@ namespace Pharmacy.Properties {
         internal static System.Drawing.Bitmap chart_simple_solid {
             get {
                 object obj = ResourceManager.GetObject("chart-simple-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_left_solid {
+            get {
+                object obj = ResourceManager.GetObject("chevron-left-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_left_solid1 {
+            get {
+                object obj = ResourceManager.GetObject("chevron-left-solid1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_right_solid {
+            get {
+                object obj = ResourceManager.GetObject("chevron-right-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_right_solid1 {
+            get {
+                object obj = ResourceManager.GetObject("chevron-right-solid1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
