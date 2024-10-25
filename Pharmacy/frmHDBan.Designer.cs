@@ -42,6 +42,13 @@
             this.lb = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ma_HDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ma_Thuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.So_Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Don_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanh_Tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -57,13 +64,6 @@
             this.Ma_NV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tong_tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dien_Giai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ma_HDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ma_Thuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.So_Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Don_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thanh_Tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -82,10 +82,10 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1089, 710);
+            this.button1.Location = new System.Drawing.Point(1123, 726);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 57);
+            this.button1.Size = new System.Drawing.Size(111, 41);
             this.button1.TabIndex = 24;
             this.button1.Text = "PRINT";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,6 +212,61 @@
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(672, 407);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.Width = 62;
+            // 
+            // Ma_HDB
+            // 
+            this.Ma_HDB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Ma_HDB.HeaderText = "Mã HĐ bán";
+            this.Ma_HDB.MinimumWidth = 8;
+            this.Ma_HDB.Name = "Ma_HDB";
+            this.Ma_HDB.Width = 117;
+            // 
+            // Ma_Thuoc
+            // 
+            this.Ma_Thuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Ma_Thuoc.HeaderText = "Danh mục thuốc";
+            this.Ma_Thuoc.MinimumWidth = 8;
+            this.Ma_Thuoc.Name = "Ma_Thuoc";
+            this.Ma_Thuoc.Width = 149;
+            // 
+            // DVT
+            // 
+            this.DVT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DVT.HeaderText = "DVT";
+            this.DVT.MinimumWidth = 8;
+            this.DVT.Name = "DVT";
+            this.DVT.Width = 77;
+            // 
+            // So_Luong
+            // 
+            this.So_Luong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.So_Luong.HeaderText = "Số lượng";
+            this.So_Luong.MinimumWidth = 8;
+            this.So_Luong.Name = "So_Luong";
+            // 
+            // Don_Gia
+            // 
+            this.Don_Gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Don_Gia.HeaderText = "Đơn giá";
+            this.Don_Gia.MinimumWidth = 8;
+            this.Don_Gia.Name = "Don_Gia";
+            this.Don_Gia.Width = 93;
+            // 
+            // Thanh_Tien
+            // 
+            this.Thanh_Tien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Thanh_Tien.HeaderText = "Thành tiền";
+            this.Thanh_Tien.MinimumWidth = 8;
+            this.Thanh_Tien.Name = "Thanh_Tien";
+            this.Thanh_Tien.Width = 111;
             // 
             // groupBox2
             // 
@@ -353,61 +408,6 @@
             this.Dien_Giai.MinimumWidth = 8;
             this.Dien_Giai.Name = "Dien_Giai";
             this.Dien_Giai.Width = 106;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.Width = 62;
-            // 
-            // Ma_HDB
-            // 
-            this.Ma_HDB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Ma_HDB.HeaderText = "Mã HĐ bán";
-            this.Ma_HDB.MinimumWidth = 8;
-            this.Ma_HDB.Name = "Ma_HDB";
-            this.Ma_HDB.Width = 126;
-            // 
-            // Ma_Thuoc
-            // 
-            this.Ma_Thuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Ma_Thuoc.HeaderText = "Danh mục thuốc";
-            this.Ma_Thuoc.MinimumWidth = 8;
-            this.Ma_Thuoc.Name = "Ma_Thuoc";
-            this.Ma_Thuoc.Width = 149;
-            // 
-            // DVT
-            // 
-            this.DVT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DVT.HeaderText = "DVT";
-            this.DVT.MinimumWidth = 8;
-            this.DVT.Name = "DVT";
-            this.DVT.Width = 77;
-            // 
-            // So_Luong
-            // 
-            this.So_Luong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.So_Luong.HeaderText = "Số lượng";
-            this.So_Luong.MinimumWidth = 8;
-            this.So_Luong.Name = "So_Luong";
-            // 
-            // Don_Gia
-            // 
-            this.Don_Gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Don_Gia.HeaderText = "Đơn giá";
-            this.Don_Gia.MinimumWidth = 8;
-            this.Don_Gia.Name = "Don_Gia";
-            this.Don_Gia.Width = 93;
-            // 
-            // Thanh_Tien
-            // 
-            this.Thanh_Tien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Thanh_Tien.HeaderText = "Thành tiền";
-            this.Thanh_Tien.MinimumWidth = 8;
-            this.Thanh_Tien.Name = "Thanh_Tien";
-            this.Thanh_Tien.Width = 111;
             // 
             // frmHDBan
             // 
