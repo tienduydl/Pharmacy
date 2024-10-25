@@ -126,11 +126,23 @@
     <Compile Include="frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerReport.Designer.cs">
+      <DependentUpon>frmCustomerReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmployee.Designer.cs">
       <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExpiredReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExpiredReport.Designer.cs">
+      <DependentUpon>frmExpiredReport.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMedicine.cs">
       <SubType>Form</SubType>
@@ -143,6 +155,24 @@
     </Compile>
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportCost.Designer.cs">
+      <DependentUpon>frmReportCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportRevenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportRevenue.Designer.cs">
+      <DependentUpon>frmReportRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportStock.Designer.cs">
+      <DependentUpon>frmReportStock.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSupplier.cs">
       <SubType>Form</SubType>
@@ -208,8 +238,14 @@
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerReport.resx">
+      <DependentUpon>frmCustomerReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExpiredReport.resx">
+      <DependentUpon>frmExpiredReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHDBan.resx">
       <DependentUpon>frmHDBan.cs</DependentUpon>
@@ -219,6 +255,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportCost.resx">
+      <DependentUpon>frmReportCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportRevenue.resx">
+      <DependentUpon>frmReportRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportStock.resx">
+      <DependentUpon>frmReportStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
