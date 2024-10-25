@@ -31,5 +31,10 @@ namespace Pharmacy
         {
 
         }
+
+        private void AddHDN_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

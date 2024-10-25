@@ -150,6 +150,24 @@
     <Compile Include="frmSupplier.Designer.cs">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHDBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHDBan.Designer.cs">
+      <DependentUpon>frmHDBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHDNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHDNhap.Designer.cs">
+      <DependentUpon>frmHDNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmxuatthuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmxuatthuoc.Designer.cs">
+      <DependentUpon>frmxuatthuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="PharmacyDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -193,6 +211,9 @@
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHDBan.resx">
+      <DependentUpon>frmHDBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMedicine.resx">
       <DependentUpon>frmMedicine.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +222,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHDNhap.resx">
+      <DependentUpon>frmHDNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmxuatthuoc.resx">
+      <DependentUpon>frmxuatthuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -71,5 +71,15 @@ namespace Pharmacy
         {
             OpenChildForm(new UserInfo());
         }
+
+        private void nhậpThuốcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void danhMụcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
