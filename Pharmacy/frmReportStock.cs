@@ -16,5 +16,10 @@ namespace Pharmacy
         {
             InitializeComponent();
         }
+
+        private void frmReportStock_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

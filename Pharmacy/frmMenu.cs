@@ -81,5 +81,45 @@ namespace Pharmacy
         {
 
         }
+
+        private void bánThuốcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmHDNhap());
+        }
+
+        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void báoCáoChiPhíToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmReportCost());
+        }
+
+        private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmReportRevenue());
+        }
+
+        private void báoCáoTồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmReportStock());
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hóaĐơnBánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmHDBan());
+        }
     }
 }
