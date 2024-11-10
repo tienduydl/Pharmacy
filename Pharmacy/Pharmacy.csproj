@@ -203,6 +203,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PharmacyDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProductItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductItem.Designer.cs">
+      <DependentUpon>ProductItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfo.cs">
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmxuatthuoc.resx">
       <DependentUpon>frmxuatthuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductItem.resx">
+      <DependentUpon>ProductItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -464,6 +473,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\angles-right-solid1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thuoc ho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

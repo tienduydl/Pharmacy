@@ -49,7 +49,7 @@ namespace Pharmacy
 
         private void nhậpMớiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmAddMedicine());
+            OpenChildForm(new AddHDN());
         }
 
         private void nhậpMớiToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -65,6 +65,31 @@ namespace Pharmacy
         private void thôngTinUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm(new UserInfo());
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmCustomer());
+        }
+
+        private void danhSáchHóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmHDNhap());
+        }
+
+        private void hóaĐơnBánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmHDBan());
+        }
+
+        private void phiếuXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
