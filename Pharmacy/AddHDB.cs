@@ -40,7 +40,7 @@ namespace Pharmacy
         }
         private void LoadAllMed()
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
             sql = "Select * from DanhMucThuoc ";
 
             using (SqlConnection conn = new SqlConnection(constr))
@@ -263,7 +263,7 @@ namespace Pharmacy
         private int getmaxHDBcount()
         {
             int count = 0;
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
