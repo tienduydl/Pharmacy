@@ -103,7 +103,7 @@ namespace Pharmacy
         {
             constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";        
                
-            switch (selectmaloai.Text)
+            switch (selectmaloai.SelectedText)
             {
                 case "Thuốc điều trị": maloai = "L01";
                     break;

@@ -20,7 +20,9 @@ namespace Pharmacy
         DataTable dt = new DataTable();
         string sql, constr;
         bool addnewFlag = false;
+        private byte[] imagebyte;
         string maloai;
+
         public frmMedicine()
         {
             InitializeComponent();
@@ -118,8 +120,6 @@ namespace Pharmacy
                 dataGridView1.DataSource = dt;
                
                 NapCT();
-
-
             }
         }
 
@@ -137,6 +137,10 @@ namespace Pharmacy
                 txtphanloai.Visible = false;
                 savemedbutton.Visible = true;
                 txtdongia.ReadOnly = false;
+                medpic.Enabled = true;
+                if(medpic.Image != null) { imagebyte = ConvertImageToBytes(medpic.Image); }
+                
+                
             }
             else
             {
@@ -146,10 +150,10 @@ namespace Pharmacy
                 txtdvtqd.ReadOnly = true;
                 txthsqd.ReadOnly = true;
                 selectmaloai.Visible = false;
-                txtphanloai.Text =selectmaloai.Text;
                 txtphanloai.Visible = true;
                 savemedbutton.Visible = false;
                 txtdongia.ReadOnly = true;
+                medpic.Enabled = false;
             }
         }
         private void reloadbutton_Click(object sender, EventArgs e)
@@ -177,8 +181,7 @@ namespace Pharmacy
 
         private void savemedbutton_Click(object sender, EventArgs e)
         {
-            
-                switch (selectmaloai.Text)
+            switch (selectmaloai.Text)
                 {
                     case "Thuốc điều trị":
                         maloai = "L01";
@@ -193,15 +196,23 @@ namespace Pharmacy
                         maloai = "L04";
                         break;
                 }
-                sql = "Update DanhMucThuoc set Ten_Thuoc = N'" + txttenthuoc.Text + "',DVT = N'" + txtdvt.Text + "',DVT_QD = N'" + txtdvtqd.Text + "',HSQD = @HSQD, DonGia = '" + txtdongia.Text + "',Mo_ta = N'" + txtmota.Text + "',Ma_Loai = @Maloai " +
-                    "where Ma_Thuoc = '"+txtmathuoc.Text+"'";
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+            sql = "Update DanhMucThuoc set Ten_Thuoc = N'" + txttenthuoc.Text + "',DVT = N'" + txtdvt.Text + "',DVT_QD = N'" + txtdvtqd.Text + "',HSQD = @HSQD, DonGia = '" + txtdongia.Text + "',Mo_ta = N'" + txtmota.Text + "',Ma_Loai = @MaLoai ,Hinh_Anh = @Hinhanh" +
+                    " where Ma_Thuoc = '"+txtmathuoc.Text+"'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            
+                cmd.Parameters.AddWithValue("@HSQD", decimal.Parse(txthsqd.Text));
+                cmd.Parameters.AddWithValue("@MaLoai",maloai);
+                    
+                if (medpic.Image == null)
                 {
-                    cmd.Parameters.AddWithValue("@HSQD", decimal.Parse(txthsqd.Text));
-                    cmd.Parameters.AddWithValue("@Maloai", maloai.ToString());
-                    int result = cmd.ExecuteNonQuery();
-
-                    if (result > 0)
+                    cmd.Parameters.Add("@Hinhanh", SqlDbType.VarBinary).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@Hinhanh", imagebyte);
+                }
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
                     {
                         MessageBox.Show("Thông tin đã được lưu thành công!");
 
@@ -210,7 +221,7 @@ namespace Pharmacy
                     {
                         MessageBox.Show("Có lỗi khi lưu.");
                     }
-                }
+                
             
             addnewFlag = true;
             textupdate();
@@ -262,6 +273,54 @@ namespace Pharmacy
             }
         }
 
+        private void medpic_Paint(object sender, PaintEventArgs e)
+        {
+            if (medpic.Image == null)
+            {
+                // Tạo Font và Brush cho dòng chữ
+                using (Font font = new Font("Arial", 11, FontStyle.Italic))
+                using (Brush brush = new SolidBrush(Color.Gray))
+                {
+                    string text = "Ấn để thêm ảnh";
+                    SizeF textSize = e.Graphics.MeasureString(text, font);
+
+                    // Tính toán vị trí để đặt dòng chữ ở giữa PictureBox
+                    float x = (medpic.Width - textSize.Width) / 2;
+                    float y = (medpic.Height - textSize.Height) / 2;
+
+                    // Vẽ dòng chữ lên PictureBox
+                    e.Graphics.DrawString(text, font, brush, x, y);
+                }
+            }
+        }
+
+        private void medpic_Click(object sender, EventArgs e)
+        {
+            // Khởi tạo OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            openFileDialog.Title = "Chọn một ảnh";
+
+            // Kiểm tra xem người dùng đã chọn ảnh hay chưa
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Lấy đường dẫn file ảnh được chọn
+                string filePath = openFileDialog.FileName;
+
+                // Hiển thị ảnh trong PictureBox
+                medpic.Image = Image.FromFile(filePath);
+                medpic.SizeMode = PictureBoxSizeMode.Zoom; // Để ảnh vừa với PictureBox
+                imagebyte = ConvertImageToBytes(medpic.Image);
+            }
+        }
+        private byte[] ConvertImageToBytes(System.Drawing.Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, image.RawFormat);
+                return ms.ToArray();
+            }
+        }
         private void frmMedicine_Load(object sender, EventArgs e)
         {
                 constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
