@@ -54,8 +54,10 @@ namespace Pharmacy
                     while (reader.Read())
                     {
                         ProductItem item = new ProductItem();
+                        item.MaThuoc = reader["Ma_Thuoc"].ToString();
                         item.TenThuoc = reader["Ten_Thuoc"].ToString();
                         item.Price = reader["DonGia"].ToString();
+                        item.Donvitinh = reader["DVT_QD"].ToString();
                         if (reader["Hinh_Anh"]!= DBNull.Value)
                         {
                             byte[] imagebytes = (byte[])reader["Hinh_Anh"];
@@ -79,9 +81,9 @@ namespace Pharmacy
                 decimal soLuong = item.soluong; 
                 decimal donGia = decimal.Parse(item.Price);
                 decimal thanhTien = donGia * soLuong;
-
-                // Tính số thứ tự
-                int soThuTu = dataGridView1.Rows.Count;
+                string maThuoc = item.MaThuoc;
+                string dvt = item.Donvitinh;
+               
                 bool found = false;
                 foreach(DataGridViewRow row in dataGridView1.Rows)
                 {
@@ -101,7 +103,7 @@ namespace Pharmacy
 
                 if (!found)
                 {
-                    dataGridView1.Rows.Add(soThuTu, tenThuoc, donGia.ToString(), soLuong.ToString(), thanhTien.ToString());
+                    dataGridView1.Rows.Add(maThuoc, tenThuoc, dvt, donGia.ToString(), soLuong.ToString(), thanhTien.ToString());
                 }
                 
             }
@@ -156,11 +158,6 @@ namespace Pharmacy
         }
         
         
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -260,7 +257,7 @@ namespace Pharmacy
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một dòng trong DataGridView.");
+                MessageBox.Show("Vui lòng chọn một sản phẩm để trả.");
             }
         }
         private int getmaxHDBcount()
@@ -289,9 +286,10 @@ namespace Pharmacy
         }
         private void savebutton_Click(object sender, EventArgs e)
         {
-            sql = "Insert into HoaDonBan (Ma_CT,Ngay_CT,Ma_KH,Tong_tien,Dien_Giai" +
-                " Values ('" + txtmahdb.Text + "','" + ngayhoadon.Value + "','" + comboBox2.SelectedValue + "','" + txttotal.Text + "','" + txtghichu.Text + "')";
+            sql = "Insert into HoaDonBan (Ma_CT,Ngay_CT,Ma_KH,Ma_NV,Tong_tien,Dien_Giai)" +
+                " Values ('" + txtmahdb.Text + "',@Ngay_CT,'" + comboBox2.SelectedValue + "','"+txtnv.Text+"','" + txttotal.Text + "',N'" + txtghichu.Text + "')";
             cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Ngay_CT", ngayhoadon.Value);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -300,9 +298,17 @@ namespace Pharmacy
             {
                 if (!row.IsNewRow)
                 {
-                    sql = "Insert into CTHoaDonBan ";
+                    string i = String.Concat(txtmahdb.Text,"-", row.Index+1);
+                    sql = "Insert into CTHoaDonBan ( ID,Ma_HDB,Ma_Thuoc,DVT,So_Luong,Don_Gia,Thanh_Tien) " +
+                        "Values ( '" + i + "','"+txtmahdb.Text+"','" + row.Cells["Ma_Thuoc"].Value + "',N'" + row.Cells["DVT"].Value + "','" + row.Cells["So_Luong"].Value + "','" + row.Cells["Don_Gia"].Value + "','" + row.Cells["Thanh_Tien"].Value + "')";
+                    cmd = new SqlCommand(sql, conn);
+                    conn.Open(); cmd.ExecuteNonQuery(); conn.Close();
                 }
             }
+            MessageBox.Show("Lưu thông tin thành công!");
+            GenerateHDBCode();
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
         }
 
         private void AddHDB_Load(object sender, EventArgs e)
@@ -311,8 +317,6 @@ namespace Pharmacy
             LoadCus();
             GenerateHDBCode();
         }
-
-
         }
     }
 

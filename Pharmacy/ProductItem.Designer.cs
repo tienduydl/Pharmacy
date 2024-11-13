@@ -35,20 +35,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.mednamelabel = new System.Windows.Forms.Label();
             this.hinhanhthuoc = new System.Windows.Forms.PictureBox();
+            this.medcodelabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.soluongbaninput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanhthuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // giathuoclabel
             // 
-            this.giathuoclabel.Location = new System.Drawing.Point(81, 111);
+            this.giathuoclabel.Location = new System.Drawing.Point(81, 121);
             this.giathuoclabel.Name = "giathuoclabel";
             this.giathuoclabel.Size = new System.Drawing.Size(105, 22);
             this.giathuoclabel.TabIndex = 19;
             // 
             // soluongbaninput
             // 
-            this.soluongbaninput.Location = new System.Drawing.Point(81, 139);
+            this.soluongbaninput.Location = new System.Drawing.Point(81, 149);
             this.soluongbaninput.Name = "soluongbaninput";
             this.soluongbaninput.Size = new System.Drawing.Size(78, 22);
             this.soluongbaninput.TabIndex = 18;
@@ -56,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 141);
+            this.label1.Location = new System.Drawing.Point(3, 151);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 17;
@@ -67,7 +68,7 @@
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.Color.Turquoise;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(226, 132);
+            this.button2.Location = new System.Drawing.Point(226, 142);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 33);
             this.button2.TabIndex = 16;
@@ -78,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 117);
+            this.label3.Location = new System.Drawing.Point(3, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 15;
@@ -88,7 +89,7 @@
             // 
             this.mednamelabel.AutoSize = true;
             this.mednamelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mednamelabel.Location = new System.Drawing.Point(106, 81);
+            this.mednamelabel.Location = new System.Drawing.Point(106, 91);
             this.mednamelabel.Name = "mednamelabel";
             this.mednamelabel.Size = new System.Drawing.Size(76, 20);
             this.mednamelabel.TabIndex = 14;
@@ -97,17 +98,28 @@
             // hinhanhthuoc
             // 
             this.hinhanhthuoc.Image = global::Pharmacy.Properties.Resources.image_2__1_;
-            this.hinhanhthuoc.Location = new System.Drawing.Point(101, 11);
+            this.hinhanhthuoc.Location = new System.Drawing.Point(101, 21);
             this.hinhanhthuoc.Name = "hinhanhthuoc";
             this.hinhanhthuoc.Size = new System.Drawing.Size(86, 64);
             this.hinhanhthuoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.hinhanhthuoc.TabIndex = 13;
             this.hinhanhthuoc.TabStop = false;
             // 
+            // medcodelabel
+            // 
+            this.medcodelabel.AutoSize = true;
+            this.medcodelabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.medcodelabel.Location = new System.Drawing.Point(9, 21);
+            this.medcodelabel.Name = "medcodelabel";
+            this.medcodelabel.Size = new System.Drawing.Size(75, 20);
+            this.medcodelabel.TabIndex = 20;
+            this.medcodelabel.Text = "Mã thuốc";
+            // 
             // ProductItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.medcodelabel);
             this.Controls.Add(this.giathuoclabel);
             this.Controls.Add(this.soluongbaninput);
             this.Controls.Add(this.label1);
@@ -133,5 +145,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label mednamelabel;
         private System.Windows.Forms.PictureBox hinhanhthuoc;
+        private System.Windows.Forms.Label medcodelabel;
     }
 }

@@ -266,7 +266,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Nhân viên",
             "Quản lý"});
-            this.comboBox1.Location = new System.Drawing.Point(20, 534);
+            this.comboBox1.Location = new System.Drawing.Point(21, 537);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(350, 24);
             this.comboBox1.TabIndex = 16;

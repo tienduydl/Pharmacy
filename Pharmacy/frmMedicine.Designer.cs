@@ -329,12 +329,15 @@
             // 
             // medpic
             // 
+            this.medpic.Enabled = false;
             this.medpic.Location = new System.Drawing.Point(228, 18);
             this.medpic.Name = "medpic";
             this.medpic.Size = new System.Drawing.Size(253, 158);
             this.medpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.medpic.TabIndex = 14;
             this.medpic.TabStop = false;
+            this.medpic.Click += new System.EventHandler(this.medpic_Click);
+            this.medpic.Paint += new System.Windows.Forms.PaintEventHandler(this.medpic_Paint);
             // 
             // savemedbutton
             // 
@@ -499,7 +502,7 @@
             this.txtdvtqd.Multiline = true;
             this.txtdvtqd.Name = "txtdvtqd";
             this.txtdvtqd.ReadOnly = true;
-            this.txtdvtqd.Size = new System.Drawing.Size(160, 28);
+            this.txtdvtqd.Size = new System.Drawing.Size(254, 28);
             this.txtdvtqd.TabIndex = 0;
             // 
             // txtdvt
@@ -622,7 +625,7 @@
             this.btnPrev.FlatAppearance.BorderSize = 0;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
-            this.btnPrev.Location = new System.Drawing.Point(627, 163);
+            this.btnPrev.Location = new System.Drawing.Point(627, 161);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(37, 27);

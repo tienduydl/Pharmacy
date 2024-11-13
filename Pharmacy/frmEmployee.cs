@@ -97,10 +97,11 @@ namespace Pharmacy
                 txthovaten.ReadOnly = false;
                 txtchucvu.Visible = false;
                 comboBox1.Visible = true;
-                comboBox1.Text = txtchucvu.Text;
+                comboBox1.SelectedText = txtchucvu.Text;
                 txtemail.ReadOnly = false;
                 txtusername.ReadOnly = false;
                 txtpassword .ReadOnly = false;
+                txtsdt.ReadOnly = false;
                 pictureBox1.Enabled = true;
                 savebutton.Visible = true;
             }
@@ -108,10 +109,11 @@ namespace Pharmacy
             {
                 txthovaten.ReadOnly = true;
                 txtchucvu.Visible = true;
-                comboBox1.Visible = true;
+                comboBox1.Visible = false;
                 txtemail.ReadOnly = true;
                 txtusername.ReadOnly =  true;
                 txtpassword.ReadOnly = true;
+                txtsdt.ReadOnly= true;
                 pictureBox1.Enabled = false;
                 savebutton .Visible = false;
             }
