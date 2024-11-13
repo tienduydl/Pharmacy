@@ -323,7 +323,7 @@ namespace Pharmacy
         }
         private void frmMedicine_Load(object sender, EventArgs e)
         {
-                constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+                constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
                 conn.ConnectionString = constr;
                 conn.Open();
                 sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +

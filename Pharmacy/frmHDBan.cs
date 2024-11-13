@@ -183,7 +183,7 @@ namespace Pharmacy
 
         private void frmHDBan_Load(object sender, EventArgs e)
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
             conn.ConnectionString = constr;
             conn.Open();
             sql = "select * from HoaDonBan";
