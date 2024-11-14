@@ -101,7 +101,7 @@
             this.hinhanhthuoc.Location = new System.Drawing.Point(101, 21);
             this.hinhanhthuoc.Name = "hinhanhthuoc";
             this.hinhanhthuoc.Size = new System.Drawing.Size(86, 64);
-            this.hinhanhthuoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hinhanhthuoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hinhanhthuoc.TabIndex = 13;
             this.hinhanhthuoc.TabStop = false;
             // 
@@ -119,6 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.medcodelabel);
             this.Controls.Add(this.giathuoclabel);
             this.Controls.Add(this.soluongbaninput);
@@ -128,7 +129,7 @@
             this.Controls.Add(this.mednamelabel);
             this.Controls.Add(this.hinhanhthuoc);
             this.Name = "ProductItem";
-            this.Size = new System.Drawing.Size(305, 193);
+            this.Size = new System.Drawing.Size(303, 191);
             ((System.ComponentModel.ISupportInitialize)(this.soluongbaninput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanhthuoc)).EndInit();
             this.ResumeLayout(false);

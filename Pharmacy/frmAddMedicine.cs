@@ -77,7 +77,7 @@ namespace Pharmacy
         private int getmaxDrugcount()
         {
             int count = 0;
-            constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -101,9 +101,9 @@ namespace Pharmacy
 
      private void addmedicine()
         {
-            constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";        
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";        
                
-            switch (selectmaloai.SelectedText)
+            switch (selectmaloai.Text)
             {
                 case "Thuốc điều trị": maloai = "L01";
                     break;

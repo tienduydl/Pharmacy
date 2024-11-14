@@ -40,7 +40,7 @@ namespace Pharmacy
         }
         private void LoadAllMed()
         {
-            constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
             sql = "Select * from DanhMucThuoc ";
 
             using (SqlConnection conn = new SqlConnection(constr))
@@ -161,7 +161,7 @@ namespace Pharmacy
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            UpdateAllMed();
+            if (!(string.IsNullOrEmpty(textBox1.Text) || textBox1.Text == "Tìm kiếm...")) { UpdateAllMed(); }
         }
         
 
@@ -263,7 +263,7 @@ namespace Pharmacy
         private int getmaxHDBcount()
         {
             int count = 0;
-            constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -307,8 +307,7 @@ namespace Pharmacy
             }
             MessageBox.Show("Lưu thông tin thành công!");
             GenerateHDBCode();
-            dataGridView1.DataSource = null;
-            dataGridView1.Refresh();
+            dataGridView1.Rows.Clear();
         }
 
         private void AddHDB_Load(object sender, EventArgs e)
