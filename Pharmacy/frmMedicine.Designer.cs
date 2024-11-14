@@ -305,6 +305,7 @@
             this.selectmaloai.Size = new System.Drawing.Size(191, 24);
             this.selectmaloai.TabIndex = 17;
             this.selectmaloai.Visible = false;
+            this.selectmaloai.SelectedIndexChanged += new System.EventHandler(this.selectmaloai_SelectedIndexChanged);
             // 
             // label1
             // 

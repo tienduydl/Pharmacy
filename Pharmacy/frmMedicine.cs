@@ -133,7 +133,21 @@ namespace Pharmacy
                 txtdvtqd.ReadOnly = false;
                 txthsqd.ReadOnly = false;
                 selectmaloai.Visible = true;
-                selectmaloai.Text = txtphanloai.Text;
+                switch (txtphanloai.Text)
+                {
+                    case "Thuốc điều trị":
+                        selectmaloai.SelectedIndex = 0;
+                        break;
+                    case "Thực phẩm chức năng":
+                        selectmaloai.SelectedIndex = 1;
+                        break;
+                    case "Thuốc kháng sinh":
+                        selectmaloai.SelectedIndex = 2;
+                        break;
+                    case "Thuốc giảm đau và chống viêm":
+                        selectmaloai.SelectedIndex = 3;
+                        break;
+                }
                 txtphanloai.Visible = false;
                 savemedbutton.Visible = true;
                 txtdongia.ReadOnly = false;
@@ -151,6 +165,7 @@ namespace Pharmacy
                 txthsqd.ReadOnly = true;
                 selectmaloai.Visible = false;
                 txtphanloai.Visible = true;
+                txtphanloai.Text = selectmaloai.Text;
                 savemedbutton.Visible = false;
                 txtdongia.ReadOnly = true;
                 medpic.Enabled = false;
@@ -180,22 +195,7 @@ namespace Pharmacy
         }
 
         private void savemedbutton_Click(object sender, EventArgs e)
-        {
-            switch (selectmaloai.Text)
-                {
-                    case "Thuốc điều trị":
-                        maloai = "L01";
-                        break;
-                    case "Thực phẩm chức năng":
-                        maloai = "L02";
-                        break;
-                    case "Thuốc kháng sinh":
-                        maloai = "L03";
-                        break;
-                    case "Thuốc giảm đau và chống viêm":
-                        maloai = "L04";
-                        break;
-                }
+        {            
             sql = "Update DanhMucThuoc set Ten_Thuoc = N'" + txttenthuoc.Text + "',DVT = N'" + txtdvt.Text + "',DVT_QD = N'" + txtdvtqd.Text + "',HSQD = @HSQD, DonGia = '" + txtdongia.Text + "',Mo_ta = N'" + txtmota.Text + "',Ma_Loai = @MaLoai ,Hinh_Anh = @Hinhanh" +
                     " where Ma_Thuoc = '"+txtmathuoc.Text+"'";
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -321,9 +321,29 @@ namespace Pharmacy
                 return ms.ToArray();
             }
         }
+
+        private void selectmaloai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (selectmaloai.SelectedIndex)
+            {
+                case 0:
+                    maloai = "L01";
+                    break;
+                case 1:
+                    maloai = "L02";
+                    break;
+                case 2:
+                    maloai = "L03";
+                    break;
+                case 3:
+                    maloai = "L04";
+                    break;
+            }           
+        }
+
         private void frmMedicine_Load(object sender, EventArgs e)
         {
-                constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
+                constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
                 conn.ConnectionString = constr;
                 conn.Open();
                 sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +

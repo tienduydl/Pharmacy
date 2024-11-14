@@ -6,6 +6,9 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Drawing;
 using System.IO;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -181,9 +184,94 @@ namespace Pharmacy
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Save PDF File";
+                saveFileDialog.FileName = "HoaDon"+txtmahdb.Text+".pdf"; // Tên file mặc định
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Đường dẫn file mà người dùng đã chọn
+                    string filePath = saveFileDialog.FileName;
+
+                    // Gọi hàm tạo PDF và lưu vào đường dẫn filePath
+                    CreatePdf(filePath);
+                }
+            }
+
+        }
+        private void CreatePdf(string filePath)
+        {
+            // Kiểm tra xem file có tồn tại không, nếu có thì xóa
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+
+            // Tạo tài liệu PDF
+            Document document = new Document(PageSize.A6);
+            PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+
+            try
+            {
+                // Mở tài liệu PDF để thêm nội dung
+                document.Open();
+                
+                // Thêm tiêu đề và thông tin chung của hóa đơn
+                document.Add(new Paragraph("HÓA ĐƠN BÁN HÀNG"));
+                document.Add(new Paragraph("--------------------------------------------------------")); // Dòng trống
+                document.Add(new Paragraph("Mã đơn hàng: "+txtmahdb.Text));
+                document.Add(new Paragraph("Ngày đơn hàng: " + txtngayhdb.Text));
+                document.Add(new Paragraph("Người tạo: "+txtmanv.Text));
+                document.Add(new Paragraph("Khách hàng: "+txtmakh.Text));
+                document.Add(new Paragraph("Tổng tiền: "+txttongtien.Text));
+                document.Add(new Paragraph("--------------------------------------------------------")); // Dòng trống
+
+                // Tạo bảng cho chi tiết hóa đơn
+                PdfPTable table = new PdfPTable(6);
+                table.WidthPercentage = 100;
+                float[] columnWidths = { 1f, 3f, 1f, 1f,2f,2f };
+                table.SetWidths(columnWidths);
+                // Thêm tiêu đề cho các cột
+                table.AddCell("STT");
+                table.AddCell("Tên Thuốc");
+                table.AddCell("Số Lượng");
+                table.AddCell("Đơn Vị Tính");
+                table.AddCell("Đơn giá");
+                table.AddCell("Thành Tiền");
+                // Thêm bảng vào tài liệu
+                foreach (DataGridViewRow row in CThoadon.Rows) {
+                    if (!row.IsNewRow)
+                    {
+                        table.AddCell(row.Index.ToString()+1);
+                        table.AddCell(row.Cells["Ten_Thuoc"].Value.ToString());
+                        table.AddCell(row.Cells["So_Luong"].Value.ToString());
+                        table.AddCell(row.Cells["DVT"].Value.ToString());
+                        table.AddCell(row.Cells["Don_Gia"].Value.ToString());
+                        table.AddCell(row.Cells["Thanh_Tien"].Value.ToString());
+                    }
+                }
+                document.Add(table);
+                document.Add(new Paragraph("--------------------------------------------------------"));
+                document.Add(new Paragraph("Tổng tiền: " + txttongtien.Text));
+                MessageBox.Show("Lưu hóa đơn thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu!");
+            }
+            finally
+            {
+                // Đóng tài liệu PDF
+                document.Close();
+            }
+        }
         private void frmHDBan_Load(object sender, EventArgs e)
         {
-            constr = "Data Source=192.168.1.121;Initial Catalog=Pharmacy;Encrypt=False;User id=sa;Password = 1234";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
             conn.ConnectionString = constr;
             conn.Open();
             sql = "select * from HoaDonBan";
