@@ -292,14 +292,41 @@ namespace Pharmacy
                 if (!row.IsNewRow)
                 {
                     string i = String.Concat(txtmahdn.Text, "-", row.Index + 1);
-                    sql = "Insert into CTHoaDonNhap ( Ma_Lo,Ma_HDN,Ma_Thuoc,Ma_NCC,NSX,HSD,DVT,So_Luong,Don_Gia,Thanh_Tien) " +
-                        "Values ( '" + i + "','" + txtmahdn.Text + "','" + row.Cells["Ma_Thuoc"].Value.ToString() + "','" + row.Cells["NCC"].Value.ToString() + "','" + DateTime.ParseExact(row.Cells["NgaySX"].Value.ToString(), "d", null) + "'," +
-                        "'" +DateTime.ParseExact( row.Cells["HSD"].Value.ToString(),"d",null) +"',N'" +row.Cells["DVT"].Value.ToString() + "','" + row.Cells["So_Luong"].Value + "','" + row.Cells["Don_Gia"].Value + "','" + row.Cells["Thanh_Tien"].Value + "');" +
-                        " DECLARE @maxID nvarchar(20);DECLARE @newID nvarchar(20);SELECT @maxID = MAX(ID) FROM TonKho;IF @maxID IS NULL SET @newID = 'TK1';ELSE SET @newID = 'TK' + CAST(CAST(SUBSTRING(@maxID, 3, LEN(@maxID) - 2) AS INT) + 1 AS NVARCHAR);" +
-                        "Insert into TonKho (ID,Ma_Thuoc,Ma_Lo,So_Luong_Goc,So_Luong_Ton) values (@newID,'" + row.Cells["Ma_Thuoc"].Value + "','"+i+"','" + row.Cells["So_Luong"].Value + "','" + row.Cells["So_Luong"].Value + "')";
-                        
-                    cmd = new SqlCommand(sql, conn);
-                    conn.Open(); cmd.ExecuteNonQuery(); conn.Close();
+
+                    // Chuyển đổi NgaySX và HSD
+                    DateTime ngaySX;
+                    DateTime hsd;
+                    bool isNgaySXValid = DateTime.TryParse(row.Cells["NgaySX"].Value.ToString(), out ngaySX);
+                    bool isHSDValid = DateTime.TryParse(row.Cells["HSD"].Value.ToString(), out hsd);
+
+                    // Tạo câu lệnh SQL với tham số
+                    string sql = "    BEGIN TRANSACTION; INSERT INTO CTHoaDonNhap (Ma_Lo, Ma_HDN, Ma_Thuoc, Ma_NCC, NSX, HSD, DVT, So_Luong, Don_Gia, Thanh_Tien)" +
+                        "    VALUES (@Ma_Lo, @Ma_HDN, @Ma_Thuoc, @Ma_NCC, @NSX, @HSD, @DVT, @So_Luong, @Don_Gia, @Thanh_Tien);" +
+                        "    DECLARE @maxID nvarchar(20);    DECLARE @newID nvarchar(20);    SELECT @maxID = MAX(ID) FROM TonKho;" +
+                        "    IF @maxID IS NULL        SET @newID = 'TK1';    ELSE        SET @newID = 'TK' + CAST(CAST(SUBSTRING(@maxID, 3, LEN(@maxID) - 2) AS INT) + 1 AS NVARCHAR);" +
+                        "    INSERT INTO TonKho (ID, Ma_Thuoc, Ma_Lo, So_Luong_Goc, So_Luong_Ton)    VALUES (@newID, @Ma_Thuoc, @Ma_Lo, @So_Luong_Goc, @So_Luong_Ton);    COMMIT TRANSACTION;";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        // Thêm các tham số vào câu lệnh SQL
+                        cmd.Parameters.AddWithValue("@Ma_Lo", i);
+                        cmd.Parameters.AddWithValue("@Ma_HDN", txtmahdn.Text);
+                        cmd.Parameters.AddWithValue("@Ma_Thuoc", row.Cells["Ma_Thuoc"].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Ma_NCC", row.Cells["NCC"].Value.ToString());
+                        cmd.Parameters.AddWithValue("@NSX", isNgaySXValid ? (object)ngaySX : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@HSD", isHSDValid ? (object)hsd : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@DVT", row.Cells["DVT"].Value.ToString());
+                        cmd.Parameters.AddWithValue("@So_Luong", row.Cells["So_Luong"].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Don_Gia", row.Cells["Don_Gia"].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Thanh_Tien", row.Cells["Thanh_Tien"].Value.ToString());
+                        cmd.Parameters.AddWithValue("@So_Luong_Goc", row.Cells["So_Luong"].Value.ToString());  // Giả sử số lượng gốc là số lượng nhập
+                        cmd.Parameters.AddWithValue("@So_Luong_Ton", row.Cells["So_Luong"].Value.ToString());   // Giả sử số lượng tồn là số lượng nhập
+
+                        // Mở kết nối và thực thi câu lệnh
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
                 }
             }
             MessageBox.Show("Lưu thông tin thành công!");
