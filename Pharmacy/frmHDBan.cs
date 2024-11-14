@@ -190,14 +190,12 @@ namespace Pharmacy
             {
                 saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
                 saveFileDialog.Title = "Save PDF File";
-                saveFileDialog.FileName = "HoaDon"+txtmahdb.Text+".pdf"; // Tên file mặc định
+                saveFileDialog.FileName = "HoaDon"+txtmahdb.Text+".pdf";
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Đường dẫn file mà người dùng đã chọn
                     string filePath = saveFileDialog.FileName;
 
-                    // Gọi hàm tạo PDF và lưu vào đường dẫn filePath
                     CreatePdf(filePath);
                 }
             }

@@ -37,6 +37,8 @@
             this.Tong_tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dien_Giai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,7 +54,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lb = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.CTHoaDonNhap = new System.Windows.Forms.DataGridView();
             this.Ma_Lo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ma_HDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ma_Thuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,27 +67,29 @@
             this.Thanh_Tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.filterbutton = new System.Windows.Forms.Button();
+            this.reloadbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CTHoaDonNhap)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(14, 190);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(438, 425);
+            this.groupBox1.Size = new System.Drawing.Size(710, 425);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách hoá đơn";
@@ -106,7 +110,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(419, 376);
+            this.dataGridView1.Size = new System.Drawing.Size(691, 376);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -152,8 +156,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.filterbutton);
+            this.groupBox2.Controls.Add(this.reloadbutton);
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.pictureBox2);
@@ -165,17 +169,33 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(434, 134);
+            this.groupBox2.Size = new System.Drawing.Size(706, 134);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bộ lọc phiếu nhập";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(377, 81);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(145, 22);
+            this.dateTimePicker2.TabIndex = 11;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(97, 81);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(143, 22);
+            this.dateTimePicker1.TabIndex = 10;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
-            this.pictureBox2.Location = new System.Drawing.Point(380, 41);
+            this.pictureBox2.Location = new System.Drawing.Point(504, 42);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 18);
@@ -185,7 +205,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(208, 86);
+            this.label3.Location = new System.Drawing.Point(281, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 3;
@@ -194,12 +214,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(76, 38);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(334, 22);
+            this.textBox1.Size = new System.Drawing.Size(458, 22);
             this.textBox1.TabIndex = 2;
             // 
             // label2
@@ -223,7 +241,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.textBox7);
             this.groupBox3.Controls.Add(this.textBox6);
             this.groupBox3.Controls.Add(this.textBox5);
@@ -233,11 +252,11 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.lb);
             this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Location = new System.Drawing.Point(471, 41);
+            this.groupBox3.Location = new System.Drawing.Point(773, 41);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(636, 574);
+            this.groupBox3.Size = new System.Drawing.Size(622, 574);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin phiếu nhập";
@@ -315,7 +334,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Controls.Add(this.CTHoaDonNhap);
             this.groupBox4.Location = new System.Drawing.Point(16, 150);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
@@ -325,10 +344,10 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chi tiết hoá đơn";
             // 
-            // dataGridView2
+            // CTHoaDonNhap
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CTHoaDonNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CTHoaDonNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_Lo,
             this.Ma_HDN,
             this.Ma_Thuoc,
@@ -339,13 +358,13 @@
             this.So_Luong,
             this.Don_Gia,
             this.Thanh_Tien});
-            this.dataGridView2.Location = new System.Drawing.Point(11, 22);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(597, 375);
-            this.dataGridView2.TabIndex = 0;
+            this.CTHoaDonNhap.Location = new System.Drawing.Point(11, 22);
+            this.CTHoaDonNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CTHoaDonNhap.Name = "CTHoaDonNhap";
+            this.CTHoaDonNhap.RowHeadersWidth = 62;
+            this.CTHoaDonNhap.RowTemplate.Height = 28;
+            this.CTHoaDonNhap.Size = new System.Drawing.Size(597, 375);
+            this.CTHoaDonNhap.TabIndex = 0;
             // 
             // Ma_Lo
             // 
@@ -448,7 +467,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1003, 619);
+            this.button1.Location = new System.Drawing.Point(1303, 628);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 36);
@@ -458,27 +477,93 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dateTimePicker1
+            // btnLast
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(76, 81);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(126, 22);
-            this.dateTimePicker1.TabIndex = 10;
+            this.btnLast.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Image = global::Pharmacy.Properties.Resources.angles_right_solid1;
+            this.btnLast.Location = new System.Drawing.Point(730, 273);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(37, 32);
+            this.btnLast.TabIndex = 43;
+            this.btnLast.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker2
+            // btnNext
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(284, 80);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(126, 22);
-            this.dateTimePicker2.TabIndex = 11;
+            this.btnNext.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Image = global::Pharmacy.Properties.Resources.chevron_left_solid1;
+            this.btnNext.Location = new System.Drawing.Point(730, 250);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(37, 24);
+            this.btnNext.TabIndex = 44;
+            this.btnNext.UseVisualStyleBackColor = false;
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
+            this.btnFirst.Location = new System.Drawing.Point(730, 200);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(37, 34);
+            this.btnFirst.TabIndex = 45;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPrev.FlatAppearance.BorderSize = 0;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
+            this.btnPrev.Location = new System.Drawing.Point(730, 231);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(37, 28);
+            this.btnPrev.TabIndex = 46;
+            this.btnPrev.UseVisualStyleBackColor = false;
+            // 
+            // filterbutton
+            // 
+            this.filterbutton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.filterbutton.Image = global::Pharmacy.Properties.Resources.filter;
+            this.filterbutton.Location = new System.Drawing.Point(583, 33);
+            this.filterbutton.Name = "filterbutton";
+            this.filterbutton.Size = new System.Drawing.Size(87, 36);
+            this.filterbutton.TabIndex = 45;
+            this.filterbutton.Text = "Lọc";
+            this.filterbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.filterbutton.UseVisualStyleBackColor = false;
+            // 
+            // reloadbutton
+            // 
+            this.reloadbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reloadbutton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.reloadbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
+            this.reloadbutton.Location = new System.Drawing.Point(583, 75);
+            this.reloadbutton.Name = "reloadbutton";
+            this.reloadbutton.Size = new System.Drawing.Size(87, 36);
+            this.reloadbutton.TabIndex = 44;
+            this.reloadbutton.Text = "Xóa lọc";
+            this.reloadbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.reloadbutton.UseVisualStyleBackColor = false;
             // 
             // frmHDNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 712);
+            this.ClientSize = new System.Drawing.Size(1415, 726);
+            this.Controls.Add(this.btnLast);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnFirst);
+            this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox3);
@@ -496,7 +581,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CTHoaDonNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,7 +614,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView CTHoaDonNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma_Lo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma_HDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma_Thuoc;
@@ -542,5 +627,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanh_Tien;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button filterbutton;
+        private System.Windows.Forms.Button reloadbutton;
     }
 }
