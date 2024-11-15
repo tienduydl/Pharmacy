@@ -33,5 +33,16 @@ namespace Pharmacy.Properties {
                 return ((string)(this["PharmacyConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-2URP72G\\SQLEXPRESS;Initial Catalog=Pharmacy;Integrated Securi" +
+            "ty=True;TrustServerCertificate=True")]
+        public string PharmacyConnectionString1 {
+            get {
+                return ((string)(this["PharmacyConnectionString1"]));
+            }
+        }
     }
 }
