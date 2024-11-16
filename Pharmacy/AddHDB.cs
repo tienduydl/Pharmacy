@@ -31,9 +31,11 @@ namespace Pharmacy
         {
             sql = "Select Ma_KH, Ten_KH from KhachHang";
             conn = new SqlConnection(constr);
+            conn.Open();
             da = new SqlDataAdapter(sql, conn);
             dt = new DataTable();
             da.Fill(dt);
+            conn.Close();
             comboBox2.DisplayMember = "Ten_KH";
             comboBox2.ValueMember = "Ma_KH";
             comboBox2.DataSource = dt;
@@ -70,6 +72,7 @@ namespace Pharmacy
                     fpanelsanpham.Controls.Add(item);
                     }
                   }
+                conn.Close();
                 }
             }
         private void ProductItem_AddClicked(object sender, EventArgs e)
@@ -151,12 +154,14 @@ namespace Pharmacy
                                 item.HinhAnh = Image.FromStream(ms);
                             }
                         }
+                        item.AddClicked += ProductItem_AddClicked;
                         fpanelsanpham.Controls.Add(item);
                     }
                 }
+                conn.Close();
             }
         }
-        
+
         
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -272,6 +277,7 @@ namespace Pharmacy
                 {
                     conn.Open();
                     count = (int)command.ExecuteScalar();
+                    conn.Close();
                 }
             }
 

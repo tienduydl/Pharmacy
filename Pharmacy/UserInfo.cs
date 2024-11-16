@@ -26,5 +26,10 @@ namespace Pharmacy
         {
 
         }
+
+        private void UserInfo_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

@@ -143,6 +143,7 @@ namespace Pharmacy
                                 item.HinhAnh = Image.FromStream(ms);
                             }
                         }
+                        item.AddClickedNhap += ProductNhap_AddClicked;
                         flowLayoutPanel1.Controls.Add(item);
                     }
                 }

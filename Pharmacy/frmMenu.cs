@@ -121,5 +121,12 @@ namespace Pharmacy
         {
             OpenChildForm(new frmHDBan());
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmlogin login = new frmlogin();
+            login.ShowDialog();
+        }
     }
 }
