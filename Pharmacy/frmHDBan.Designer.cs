@@ -70,12 +70,14 @@
             this.Ma_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tong_tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dien_Giai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trang_Thai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.delmedbutton = new System.Windows.Forms.Button();
+            this.xuathangbutton = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CThoadon)).BeginInit();
@@ -125,7 +127,7 @@
             this.txtmakh.Location = new System.Drawing.Point(117, 103);
             this.txtmakh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmakh.Name = "txtmakh";
-            this.txtmakh.Size = new System.Drawing.Size(222, 22);
+            this.txtmakh.Size = new System.Drawing.Size(223, 22);
             this.txtmakh.TabIndex = 12;
             // 
             // label
@@ -139,11 +141,11 @@
             // 
             // txtdiengiai
             // 
-            this.txtdiengiai.Location = new System.Drawing.Point(458, 103);
+            this.txtdiengiai.Location = new System.Drawing.Point(459, 103);
             this.txtdiengiai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtdiengiai.Multiline = true;
             this.txtdiengiai.Name = "txtdiengiai";
-            this.txtdiengiai.Size = new System.Drawing.Size(222, 43);
+            this.txtdiengiai.Size = new System.Drawing.Size(223, 43);
             this.txtdiengiai.TabIndex = 10;
             // 
             // label8
@@ -157,26 +159,26 @@
             // 
             // txttongtien
             // 
-            this.txttongtien.Location = new System.Drawing.Point(458, 67);
+            this.txttongtien.Location = new System.Drawing.Point(459, 66);
             this.txttongtien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txttongtien.Name = "txttongtien";
-            this.txttongtien.Size = new System.Drawing.Size(222, 22);
+            this.txttongtien.Size = new System.Drawing.Size(223, 22);
             this.txttongtien.TabIndex = 8;
             // 
             // txtngayhdb
             // 
-            this.txtngayhdb.Location = new System.Drawing.Point(458, 31);
+            this.txtngayhdb.Location = new System.Drawing.Point(459, 31);
             this.txtngayhdb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtngayhdb.Name = "txtngayhdb";
-            this.txtngayhdb.Size = new System.Drawing.Size(222, 22);
+            this.txtngayhdb.Size = new System.Drawing.Size(223, 22);
             this.txtngayhdb.TabIndex = 7;
             // 
             // txtmanv
             // 
-            this.txtmanv.Location = new System.Drawing.Point(117, 67);
+            this.txtmanv.Location = new System.Drawing.Point(117, 66);
             this.txtmanv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmanv.Name = "txtmanv";
-            this.txtmanv.Size = new System.Drawing.Size(222, 22);
+            this.txtmanv.Size = new System.Drawing.Size(223, 22);
             this.txtmanv.TabIndex = 6;
             // 
             // txtmahdb
@@ -184,7 +186,7 @@
             this.txtmahdb.Location = new System.Drawing.Point(117, 31);
             this.txtmahdb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmahdb.Name = "txtmahdb";
-            this.txtmahdb.Size = new System.Drawing.Size(222, 22);
+            this.txtmahdb.Size = new System.Drawing.Size(223, 22);
             this.txtmahdb.TabIndex = 5;
             // 
             // label6
@@ -200,7 +202,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(392, 35);
+            this.label5.Location = new System.Drawing.Point(392, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 3;
@@ -218,7 +220,7 @@
             // lb
             // 
             this.lb.AutoSize = true;
-            this.lb.Location = new System.Drawing.Point(17, 35);
+            this.lb.Location = new System.Drawing.Point(17, 34);
             this.lb.Name = "lb";
             this.lb.Size = new System.Drawing.Size(84, 16);
             this.lb.TabIndex = 1;
@@ -329,11 +331,11 @@
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(22, 44);
+            this.groupBox2.Location = new System.Drawing.Point(21, 44);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(742, 134);
+            this.groupBox2.Size = new System.Drawing.Size(741, 134);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bộ lọc phiếu nhập";
@@ -343,6 +345,7 @@
             this.filterbutton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.filterbutton.Image = global::Pharmacy.Properties.Resources.filter;
             this.filterbutton.Location = new System.Drawing.Point(591, 27);
+            this.filterbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.filterbutton.Name = "filterbutton";
             this.filterbutton.Size = new System.Drawing.Size(87, 36);
             this.filterbutton.TabIndex = 43;
@@ -358,6 +361,7 @@
             this.reloadbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
             this.reloadbutton.Location = new System.Drawing.Point(591, 69);
+            this.reloadbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reloadbutton.Name = "reloadbutton";
             this.reloadbutton.Size = new System.Drawing.Size(87, 36);
             this.reloadbutton.TabIndex = 42;
@@ -370,16 +374,18 @@
             // 
             this.enddate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.enddate.Location = new System.Drawing.Point(367, 81);
+            this.enddate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enddate.Name = "enddate";
-            this.enddate.Size = new System.Drawing.Size(198, 22);
+            this.enddate.Size = new System.Drawing.Size(199, 22);
             this.enddate.TabIndex = 11;
             // 
             // startdate
             // 
             this.startdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startdate.Location = new System.Drawing.Point(76, 81);
+            this.startdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startdate.Name = "startdate";
-            this.startdate.Size = new System.Drawing.Size(198, 22);
+            this.startdate.Size = new System.Drawing.Size(199, 22);
             this.startdate.TabIndex = 10;
             // 
             // pictureBox2
@@ -388,7 +394,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(535, 42);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 18);
+            this.pictureBox2.Size = new System.Drawing.Size(29, 18);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
@@ -434,11 +440,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 189);
+            this.groupBox1.Location = new System.Drawing.Point(21, 190);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(742, 425);
+            this.groupBox1.Size = new System.Drawing.Size(741, 425);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách hoá đơn";
@@ -455,13 +461,14 @@
             this.Ma_NV,
             this.Ma_KH,
             this.Tong_tien,
-            this.Dien_Giai});
+            this.Dien_Giai,
+            this.Trang_Thai});
             this.dataGridView1.Location = new System.Drawing.Point(5, 20);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 376);
+            this.dataGridView1.Size = new System.Drawing.Size(724, 377);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -518,13 +525,21 @@
             this.Dien_Giai.Name = "Dien_Giai";
             this.Dien_Giai.Width = 83;
             // 
+            // Trang_Thai
+            // 
+            this.Trang_Thai.DataPropertyName = "Trang_Thai";
+            this.Trang_Thai.HeaderText = "Status";
+            this.Trang_Thai.MinimumWidth = 6;
+            this.Trang_Thai.Name = "Trang_Thai";
+            this.Trang_Thai.Width = 73;
+            // 
             // btnLast
             // 
             this.btnLast.BackColor = System.Drawing.SystemColors.Control;
             this.btnLast.FlatAppearance.BorderSize = 0;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast.Image = global::Pharmacy.Properties.Resources.angles_right_solid1;
-            this.btnLast.Location = new System.Drawing.Point(770, 281);
+            this.btnLast.Location = new System.Drawing.Point(771, 281);
             this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(37, 32);
@@ -538,10 +553,10 @@
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = global::Pharmacy.Properties.Resources.chevron_left_solid1;
-            this.btnNext.Location = new System.Drawing.Point(770, 258);
+            this.btnNext.Location = new System.Drawing.Point(771, 258);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(37, 24);
+            this.btnNext.Size = new System.Drawing.Size(37, 25);
             this.btnNext.TabIndex = 40;
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -552,7 +567,7 @@
             this.btnFirst.FlatAppearance.BorderSize = 0;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
-            this.btnFirst.Location = new System.Drawing.Point(770, 208);
+            this.btnFirst.Location = new System.Drawing.Point(771, 208);
             this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(37, 34);
@@ -566,7 +581,7 @@
             this.btnPrev.FlatAppearance.BorderSize = 0;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
-            this.btnPrev.Location = new System.Drawing.Point(770, 239);
+            this.btnPrev.Location = new System.Drawing.Point(771, 239);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(37, 28);
@@ -582,7 +597,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1394, 631);
+            this.button1.Location = new System.Drawing.Point(1395, 631);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 33);
@@ -596,17 +611,35 @@
             // 
             this.delmedbutton.Image = global::Pharmacy.Properties.Resources.trash_solid1;
             this.delmedbutton.Location = new System.Drawing.Point(696, 619);
+            this.delmedbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.delmedbutton.Name = "delmedbutton";
-            this.delmedbutton.Size = new System.Drawing.Size(45, 45);
+            this.delmedbutton.Size = new System.Drawing.Size(45, 46);
             this.delmedbutton.TabIndex = 43;
             this.delmedbutton.UseVisualStyleBackColor = false;
             this.delmedbutton.Click += new System.EventHandler(this.delmedbutton_Click);
+            // 
+            // xuathangbutton
+            // 
+            this.xuathangbutton.BackColor = System.Drawing.Color.Gray;
+            this.xuathangbutton.FlatAppearance.BorderSize = 0;
+            this.xuathangbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.xuathangbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.xuathangbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.xuathangbutton.Location = new System.Drawing.Point(1253, 632);
+            this.xuathangbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xuathangbutton.Name = "xuathangbutton";
+            this.xuathangbutton.Size = new System.Drawing.Size(99, 33);
+            this.xuathangbutton.TabIndex = 44;
+            this.xuathangbutton.Text = "Xuất hàng";
+            this.xuathangbutton.UseVisualStyleBackColor = false;
+            this.xuathangbutton.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmHDBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1618, 772);
+            this.ClientSize = new System.Drawing.Size(1619, 772);
+            this.Controls.Add(this.xuathangbutton);
             this.Controls.Add(this.delmedbutton);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnNext);
@@ -675,14 +708,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanh_Tien;
         private System.Windows.Forms.TextBox txtmakh;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button filterbutton;
+        private System.Windows.Forms.Button reloadbutton;
+        private System.Windows.Forms.Button delmedbutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma_CT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_CT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma_NV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma_KH;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tong_tien;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dien_Giai;
-        private System.Windows.Forms.Button filterbutton;
-        private System.Windows.Forms.Button reloadbutton;
-        private System.Windows.Forms.Button delmedbutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Trang_Thai;
+        private System.Windows.Forms.Button xuathangbutton;
     }
 }

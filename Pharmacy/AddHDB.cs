@@ -292,8 +292,8 @@ namespace Pharmacy
         }
         private void savebutton_Click(object sender, EventArgs e)
         {
-            sql = "Insert into HoaDonBan (Ma_CT,Ngay_CT,Ma_KH,Ma_NV,Tong_tien,Dien_Giai)" +
-                " Values ('" + txtmahdb.Text + "',@Ngay_CT,'" + comboBox2.SelectedValue + "','"+txtnv.Text+"','" + txttotal.Text + "',N'" + txtghichu.Text + "')";
+            sql = "Insert into HoaDonBan (Ma_CT,Ngay_CT,Ma_KH,Ma_NV,Tong_tien,Dien_Giai,Trang_Thai)" +
+                " Values ('" + txtmahdb.Text + "',@Ngay_CT,'" + comboBox2.SelectedValue + "','"+txtnv.Text+"','" + txttotal.Text + "',N'" + txtghichu.Text + "',N'Chờ xuất')";
             cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@Ngay_CT", ngayhoadon.Value);
             conn.Open();
@@ -321,6 +321,7 @@ namespace Pharmacy
            LoadAllMed();
             LoadCus();
             GenerateHDBCode();
+            txtnv.Text = frmlogin.UserSession.CurrentNhanVien.MaNV.ToString();
         }
         }
     }

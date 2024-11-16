@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace Pharmacy
 {
@@ -24,11 +25,12 @@ namespace Pharmacy
         DataTable dt = new DataTable();
         DataTable dt1 = new DataTable();
         string sql, constr;
+        public string mahoadonban;
         public frmHDBan()
         {
             InitializeComponent();
         }
-        public void NapCT()
+        private void NapCT()
         {
             if (!dataGridView1.CurrentRow.IsNewRow)
             {
@@ -47,6 +49,14 @@ namespace Pharmacy
                 da1.Fill(dt1);
                 CThoadon.DataSource = dt1;
                 CThoadon.Refresh();
+                if (dataGridView1.Rows[i].Cells["Trang_Thai"].Value.ToString() == "Đã xuất hàng")
+                {
+                    xuathangbutton.Enabled = false;
+                }
+                else
+                {
+                    xuathangbutton.Enabled=true;
+                }
             }
         }
 
@@ -104,23 +114,7 @@ namespace Pharmacy
                 textBox1.ForeColor = Color.Black;
             }
         }
-        private void UpdateHDB()
-        {
-            if (string.IsNullOrEmpty(textBox1.Text) || textBox1.Text == "Tìm theo mã hóa đơn")
-            {
-                sql = "select * from HoaDonBan";
-            }
-            else
-            {
-                sql = "select * form HoaDonBan where Ma_CT LIKE '%"+textBox1.Text+"%'";
-            }
-            da = new SqlDataAdapter(sql, conn);
-            dt.Clear();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
-            NapCT();
-        }
+       
 
         private void filterbutton_Click(object sender, EventArgs e)
         {
@@ -190,7 +184,7 @@ namespace Pharmacy
             {
                 saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
                 saveFileDialog.Title = "Save PDF File";
-                saveFileDialog.FileName = "HoaDon"+txtmahdb.Text+".pdf";
+                saveFileDialog.FileName = "HoaDonBan"+txtmahdb.Text+".pdf";
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -210,28 +204,28 @@ namespace Pharmacy
             }
 
             // Tạo tài liệu PDF
-            Document document = new Document(PageSize.A6);
+            Document document = new Document(PageSize.A5);
             PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
 
             try
             {
                 // Mở tài liệu PDF để thêm nội dung
                 document.Open();
-                
+
                 // Thêm tiêu đề và thông tin chung của hóa đơn
                 document.Add(new Paragraph("HÓA ĐƠN BÁN HÀNG"));
-                document.Add(new Paragraph("--------------------------------------------------------")); // Dòng trống
-                document.Add(new Paragraph("Mã đơn hàng: "+txtmahdb.Text));
+                document.Add(new Paragraph("----------------------------------------------------------------------------------------------------------------")); // Dòng trống
+                document.Add(new Paragraph("Mã đơn hàng: " + txtmahdb.Text));
                 document.Add(new Paragraph("Ngày đơn hàng: " + txtngayhdb.Text));
-                document.Add(new Paragraph("Người tạo: "+txtmanv.Text));
-                document.Add(new Paragraph("Khách hàng: "+txtmakh.Text));
-                document.Add(new Paragraph("Tổng tiền: "+txttongtien.Text));
-                document.Add(new Paragraph("--------------------------------------------------------")); // Dòng trống
+                document.Add(new Paragraph("Người tạo: " + txtmanv.Text));
+                document.Add(new Paragraph("Khách hàng: " + txtmakh.Text));
+                document.Add(new Paragraph("Tổng tiền: " + txttongtien.Text));
+                document.Add(new Paragraph("----------------------------------------------------------------------------------------------------------------")); // Dòng trống
 
                 // Tạo bảng cho chi tiết hóa đơn
                 PdfPTable table = new PdfPTable(6);
                 table.WidthPercentage = 100;
-                float[] columnWidths = { 1f, 3f, 1f, 1f,2f,2f };
+                float[] columnWidths = { 1f, 3f, 1f, 1f, 2f, 2f };
                 table.SetWidths(columnWidths);
                 // Thêm tiêu đề cho các cột
                 table.AddCell("STT");
@@ -241,10 +235,11 @@ namespace Pharmacy
                 table.AddCell("Đơn giá");
                 table.AddCell("Thành Tiền");
                 // Thêm bảng vào tài liệu
-                foreach (DataGridViewRow row in CThoadon.Rows) {
+                foreach (DataGridViewRow row in CThoadon.Rows)
+                {
                     if (!row.IsNewRow)
                     {
-                        table.AddCell(row.Index.ToString()+1);
+                        table.AddCell(row.Index.ToString() + 1);
                         table.AddCell(row.Cells["Ten_Thuoc"].Value.ToString());
                         table.AddCell(row.Cells["So_Luong"].Value.ToString());
                         table.AddCell(row.Cells["DVT"].Value.ToString());
@@ -253,7 +248,7 @@ namespace Pharmacy
                     }
                 }
                 document.Add(table);
-                document.Add(new Paragraph("--------------------------------------------------------"));
+                document.Add(new Paragraph("----------------------------------------------------------------------------------------------------------------"));
                 document.Add(new Paragraph("Tổng tiền: " + txttongtien.Text));
                 MessageBox.Show("Lưu hóa đơn thành công!");
             }
@@ -267,6 +262,43 @@ namespace Pharmacy
                 document.Close();
             }
         }
+        public class ChiTietDonHang
+        {
+            public string MaThuoc { get; set; }
+            public string TenThuoc { get; set; }
+            public string DonViTinh { get; set; }
+            public decimal SoLuong { get; set; }
+        }
+        public List<ChiTietDonHang> GetDanhSachChiTietDonHang()
+        {
+            // Lấy danh sách từ DataGridView hoặc danh sách hiện tại
+            List<ChiTietDonHang> danhSach = new List<ChiTietDonHang>();
+
+            foreach (DataGridViewRow ctrow in CThoadon.Rows)
+            {
+                if (!ctrow.IsNewRow)
+                {
+                    ChiTietDonHang chitiet = new ChiTietDonHang()
+                    {
+                        MaThuoc = ctrow.Cells["Ma_THuoc"].Value.ToString(),
+                        TenThuoc = ctrow.Cells["Ten_Thuoc"].Value.ToString(),
+                        DonViTinh = ctrow.Cells["DVT"].Value.ToString(),
+                        SoLuong = decimal.Parse(ctrow.Cells["So_Luong"].Value.ToString())
+                    };
+                    danhSach.Add(chitiet);
+
+                }
+            }
+            return danhSach;
+        }
+        public string mahdbref;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<ChiTietDonHang> danhSach = GetDanhSachChiTietDonHang();
+            AddPhieuXuat addPhieuXuat = new AddPhieuXuat(danhSach, txtmahdb.Text);
+            addPhieuXuat.Show();
+        }
+
         private void frmHDBan_Load(object sender, EventArgs e)
         {
             constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
