@@ -41,5 +41,10 @@ namespace Pharmacy
         {
 
         }
+
+        private void AddPhieuXuat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

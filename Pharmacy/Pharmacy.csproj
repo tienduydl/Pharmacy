@@ -150,6 +150,12 @@
     <Compile Include="frmExpiredReport.Designer.cs">
       <DependentUpon>frmExpiredReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmlogin.Designer.cs">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMedicine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHDBan.resx">
       <DependentUpon>frmHDBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmlogin.resx">
+      <DependentUpon>frmlogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMedicine.resx">
       <DependentUpon>frmMedicine.cs</DependentUpon>
