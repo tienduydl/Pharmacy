@@ -210,6 +210,7 @@
     <Compile Include="frmxuatthuoc.Designer.cs">
       <DependentUpon>frmxuatthuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanvienInfo.cs" />
     <Compile Include="PharmacyDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -226,6 +227,12 @@
     </Compile>
     <Compile Include="ProductNhap.Designer.cs">
       <DependentUpon>ProductNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductXuat.Designer.cs">
+      <DependentUpon>ProductXuat.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -306,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductNhap.resx">
       <DependentUpon>ProductNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductXuat.resx">
+      <DependentUpon>ProductXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -518,6 +528,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-text.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

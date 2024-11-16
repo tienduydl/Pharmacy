@@ -44,6 +44,7 @@ namespace Pharmacy
                 medcodelabel.Text = value;
             } }
         public string Donvitinh { get; set; }
+        
         public decimal soluong { get { return soluongbaninput.Value; } set { soluongbaninput.Value = value; } }
         public event EventHandler AddClicked;
 

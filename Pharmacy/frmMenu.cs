@@ -64,7 +64,7 @@ namespace Pharmacy
 
         private void xuấtThuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AddPhieuXuat());
+            OpenChildForm(new frmxuatthuoc());
         }
 
         private void thôngTinUserToolStripMenuItem_Click(object sender, EventArgs e)

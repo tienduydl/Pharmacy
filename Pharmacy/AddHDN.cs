@@ -278,61 +278,90 @@ namespace Pharmacy
         }
         private void savebutton_Click(object sender, EventArgs e)
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
-            sql = "Insert into HoaDonNhap (Ma_CT,Ngay_CT,Ma_NV,Tong_tien,Dien_Giai)" +
-                " Values ('" + txtmahdn.Text + "',@Ngay_CT,'" + txtnv.Text + "','" + txttongtien.Text + "',N'" + txtdiengiai.Text + "')";
-            conn = new SqlConnection(constr);
-            cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@Ngay_CT", txtngayhdn.Value);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            try
             {
-                if (!row.IsNewRow)
+                // Chuỗi kết nối
+                string constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password=1234";
+                using (SqlConnection conn = new SqlConnection(constr))
                 {
-                    string i = String.Concat(txtmahdn.Text, "-", row.Index + 1);
-
-                    // Chuyển đổi NgaySX và HSD
-                    DateTime ngaySX;
-                    DateTime hsd;
-                    bool isNgaySXValid = DateTime.TryParse(row.Cells["NgaySX"].Value.ToString(), out ngaySX);
-                    bool isHSDValid = DateTime.TryParse(row.Cells["HSD"].Value.ToString(), out hsd);
-
-                    // Tạo câu lệnh SQL với tham số
-                    string sql = "    BEGIN TRANSACTION; INSERT INTO CTHoaDonNhap (Ma_Lo, Ma_HDN, Ma_Thuoc, Ma_NCC, NSX, HSD, DVT, So_Luong, Don_Gia, Thanh_Tien)" +
-                        "    VALUES (@Ma_Lo, @Ma_HDN, @Ma_Thuoc, @Ma_NCC, @NSX, @HSD, @DVT, @So_Luong, @Don_Gia, @Thanh_Tien);" +
-                        "    DECLARE @maxID nvarchar(20);    DECLARE @newID nvarchar(20);    SELECT @maxID = MAX(ID) FROM TonKho;" +
-                        "    IF @maxID IS NULL        SET @newID = 'TK1';    ELSE        SET @newID = 'TK' + CAST(CAST(SUBSTRING(@maxID, 3, LEN(@maxID) - 2) AS INT) + 1 AS NVARCHAR);" +
-                        "    INSERT INTO TonKho (ID, Ma_Thuoc, Ma_Lo, So_Luong_Goc, So_Luong_Ton)    VALUES (@newID, @Ma_Thuoc, @Ma_Lo, @So_Luong_Goc, @So_Luong_Ton);    COMMIT TRANSACTION;";
-
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    // Thêm thông tin hóa đơn nhập
+                    string sqlHDN = "INSERT INTO HoaDonNhap (Ma_CT, Ngay_CT, Ma_NV, Tong_tien, Dien_Giai) " +
+                                    "VALUES (@Ma_CT, @Ngay_CT, @Ma_NV, @Tong_tien, @Dien_Giai)";
+                    using (SqlCommand cmd = new SqlCommand(sqlHDN, conn))
                     {
-                        // Thêm các tham số vào câu lệnh SQL
-                        cmd.Parameters.AddWithValue("@Ma_Lo", i);
-                        cmd.Parameters.AddWithValue("@Ma_HDN", txtmahdn.Text);
-                        cmd.Parameters.AddWithValue("@Ma_Thuoc", row.Cells["Ma_Thuoc"].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Ma_NCC", row.Cells["NCC"].Value.ToString());
-                        cmd.Parameters.AddWithValue("@NSX", isNgaySXValid ? (object)ngaySX : DBNull.Value);
-                        cmd.Parameters.AddWithValue("@HSD", isHSDValid ? (object)hsd : DBNull.Value);
-                        cmd.Parameters.AddWithValue("@DVT", row.Cells["DVT"].Value.ToString());
-                        cmd.Parameters.AddWithValue("@So_Luong", row.Cells["So_Luong"].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Don_Gia", row.Cells["Don_Gia"].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Thanh_Tien", row.Cells["Thanh_Tien"].Value.ToString());
-                        cmd.Parameters.AddWithValue("@So_Luong_Goc", row.Cells["So_Luong"].Value.ToString());  // Giả sử số lượng gốc là số lượng nhập
-                        cmd.Parameters.AddWithValue("@So_Luong_Ton", row.Cells["So_Luong"].Value.ToString());   // Giả sử số lượng tồn là số lượng nhập
+                        cmd.Parameters.AddWithValue("@Ma_CT", txtmahdn.Text);
+                        cmd.Parameters.AddWithValue("@Ngay_CT", txtngayhdn.Value);
+                        cmd.Parameters.AddWithValue("@Ma_NV", txtnv.Text);
+                        cmd.Parameters.AddWithValue("@Tong_tien", txttongtien.Text);
+                        cmd.Parameters.AddWithValue("@Dien_Giai", txtdiengiai.Text);
 
-                        // Mở kết nối và thực thi câu lệnh
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         conn.Close();
                     }
+
+                    // Duyệt qua các dòng trong DataGridView
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            // Chuyển đổi giá trị ngày
+                            DateTime.TryParse(row.Cells["NgaySX"].Value?.ToString(), out DateTime ngaySX);
+                            DateTime.TryParse(row.Cells["HSD"].Value?.ToString(), out DateTime hsd);
+
+                            // Tạo mã lô
+                            string maLo = $"{txtmahdn.Text}-{row.Index + 1}";
+
+                            // Thêm thông tin chi tiết hóa đơn nhập và tồn kho
+                            string sqlCTHDN = @"
+                            BEGIN TRANSACTION;
+                            INSERT INTO CTHoaDonNhap (Ma_Lo, Ma_HDN, Ma_Thuoc, Ma_NCC, NSX, HSD, DVT, So_Luong, Don_Gia, Thanh_Tien)
+                            VALUES (@Ma_Lo, @Ma_HDN, @Ma_Thuoc, @Ma_NCC, @NSX, @HSD, @DVT, @So_Luong, @Don_Gia, @Thanh_Tien);
+
+                            DECLARE @maxID NVARCHAR(20), @newID NVARCHAR(20);
+                            SELECT @maxID = ISNULL(MAX(CAST(SUBSTRING(ID, 3, LEN(ID) - 2) AS INT)), 0) 
+                            FROM TonKho 
+                            WHERE ID LIKE 'TK%' AND ISNUMERIC(SUBSTRING(ID, 3, LEN(ID) - 2)) = 1;
+
+                            IF @maxID = 0
+                                SET @newID = 'TK1';
+                            ELSE
+                                SET @newID = 'TK' + CAST(@maxID + 1 AS NVARCHAR);
+
+                            INSERT INTO TonKho (ID, Ma_Thuoc, Ma_Lo, So_Luong_Goc, So_Luong_Ton)
+                            VALUES (@newID, @Ma_Thuoc, @Ma_Lo, @So_Luong, @So_Luong);
+
+                            COMMIT TRANSACTION;";
+
+                            using (SqlCommand cmd = new SqlCommand(sqlCTHDN, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@Ma_Lo", maLo);
+                                cmd.Parameters.AddWithValue("@Ma_HDN", txtmahdn.Text);
+                                cmd.Parameters.AddWithValue("@Ma_Thuoc", row.Cells["Ma_Thuoc"].Value?.ToString() ?? "");
+                                cmd.Parameters.AddWithValue("@Ma_NCC", row.Cells["NCC"].Value?.ToString() ?? "");
+                                cmd.Parameters.AddWithValue("@NSX", ngaySX == DateTime.MinValue ? DBNull.Value : (object)ngaySX);
+                                cmd.Parameters.AddWithValue("@HSD", hsd == DateTime.MinValue ? DBNull.Value : (object)hsd);
+                                cmd.Parameters.AddWithValue("@DVT", row.Cells["DVT"].Value?.ToString() ?? "");
+                                cmd.Parameters.AddWithValue("@So_Luong", row.Cells["So_Luong"].Value?.ToString() ?? "0");
+                                cmd.Parameters.AddWithValue("@Don_Gia", row.Cells["Don_Gia"].Value?.ToString() ?? "0");
+                                cmd.Parameters.AddWithValue("@Thanh_Tien", row.Cells["Thanh_Tien"].Value?.ToString() ?? "0");
+
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                            }
+                        }
+                    }
                 }
+
+                MessageBox.Show("Lưu thông tin thành công!");
+                GenerateHDNCode();
+                dataGridView1.Rows.Clear();
             }
-            MessageBox.Show("Lưu thông tin thành công!");
-            GenerateHDNCode();
-            dataGridView1.Rows.Clear();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
