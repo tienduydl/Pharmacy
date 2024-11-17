@@ -51,7 +51,7 @@ namespace Pharmacy
         private int getmaxPXcount()
         {
             int count = 0;
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -75,7 +75,7 @@ namespace Pharmacy
         }
         private void LoadAllMed()
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
             List<string> maThuocList = new List<string>();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {

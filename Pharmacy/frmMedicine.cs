@@ -49,6 +49,7 @@ namespace Pharmacy
                 txtsoluong.Text = dataGridView1.Rows[i].Cells["SLTonKho"].Value.ToString();
                 txthsqd.Text = dataGridView1.Rows[i].Cells["HSquydoi"].Value.ToString();
                 txtphanloai.Text = dataGridView1.Rows[i].Cells["Ten_Loai"].Value.ToString();
+                txtdongianhap.Text = dataGridView1.Rows[i].Cells["DonGiaBan"].Value.ToString();
                 if (dataGridView1.CurrentRow.Index == dataGridView1.RowCount - 1 || dataGridView1.Rows[i].Cells["Hinh_Anh"].Value ==DBNull.Value)
                 {
                     medpic.Image = null;
@@ -111,7 +112,7 @@ namespace Pharmacy
                 cmd = new SqlCommand(sql);
                 cmd.Connection = conn;
                 cmd.ExecuteNonQuery();
-                sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
+                sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
                 "\r\nfrom DanhMucThuoc as dmt left join TonKho as tk on dmt.Ma_Thuoc = tk.Ma_Thuoc left join Loai on dmt.Ma_Loai = Loai.Ma_Loai" +
                 "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai";
                 dt.Clear();
@@ -132,6 +133,7 @@ namespace Pharmacy
                 txtdvt.ReadOnly = false;
                 txtdvtqd.ReadOnly = false;
                 txthsqd.ReadOnly = false;
+                txtdongianhap.ReadOnly = false;
                 selectmaloai.Visible = true;
                 switch (txtphanloai.Text)
                 {
@@ -169,12 +171,13 @@ namespace Pharmacy
                 savemedbutton.Visible = false;
                 txtdongia.ReadOnly = true;
                 medpic.Enabled = false;
+                txtdongianhap.ReadOnly = true;
             }
         }
         private void reloadbutton_Click(object sender, EventArgs e)
         {
             
-            sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
+            sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
                 "\r\nfrom DanhMucThuoc as dmt left join TonKho as tk on dmt.Ma_Thuoc = tk.Ma_Thuoc left join Loai on dmt.Ma_Loai = Loai.Ma_Loai" +
                 "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai";
             da = new SqlDataAdapter(sql, conn);
@@ -196,7 +199,7 @@ namespace Pharmacy
 
         private void savemedbutton_Click(object sender, EventArgs e)
         {            
-            sql = "Update DanhMucThuoc set Ten_Thuoc = N'" + txttenthuoc.Text + "',DVT = N'" + txtdvt.Text + "',DVT_QD = N'" + txtdvtqd.Text + "',HSQD = @HSQD, DonGia = '" + txtdongia.Text + "',Mo_ta = N'" + txtmota.Text + "',Ma_Loai = @MaLoai ,Hinh_Anh = @Hinhanh" +
+            sql = "Update DanhMucThuoc set Ten_Thuoc = N'" + txttenthuoc.Text + "',DVT = N'" + txtdvt.Text + "',DVT_QD = N'" + txtdvtqd.Text + "',HSQD = @HSQD, DonGia = '" + txtdongia.Text + "',Mo_ta = N'" + txtmota.Text + "',Ma_Loai = @MaLoai ,Hinh_Anh = @Hinhanh, DonGiaNhap = '"+txtdongianhap.Text+"'" +
                     " where Ma_Thuoc = '"+txtmathuoc.Text+"'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             
@@ -231,13 +234,13 @@ namespace Pharmacy
         {
             if (string.IsNullOrEmpty(textBox1.Text)||textBox1.Text == "Tìm kiếm theo tên")
             {
-                sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
+                sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
                 "\r\nfrom DanhMucThuoc as dmt left join TonKho as tk on dmt.Ma_Thuoc = tk.Ma_Thuoc left join Loai on dmt.Ma_Loai = Loai.Ma_Loai" +
                 "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai";
             }
             else
             {
-                sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
+                sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
                 "\r\nfrom DanhMucThuoc as dmt left join TonKho as tk on dmt.Ma_Thuoc = tk.Ma_Thuoc left join Loai on dmt.Ma_Loai = Loai.Ma_Loai Where dmt.Ten_Thuoc LIKE N'%"+textBox1.Text+"%'" +
                 "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai";
             }
@@ -343,10 +346,10 @@ namespace Pharmacy
 
         private void frmMedicine_Load(object sender, EventArgs e)
         {
-                constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+                constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
                 conn.ConnectionString = constr;
                 conn.Open();
-                sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
+                sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
                 "\r\nfrom DanhMucThuoc as dmt left join TonKho as tk on dmt.Ma_Thuoc = tk.Ma_Thuoc left join Loai on dmt.Ma_Loai = Loai.Ma_Loai" +
                 "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai";
                 da = new SqlDataAdapter(sql, conn);

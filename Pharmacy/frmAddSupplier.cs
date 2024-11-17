@@ -25,7 +25,7 @@ namespace Pharmacy
         private int getmaxSplcount()
         {
             int count = 0;
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -59,7 +59,7 @@ namespace Pharmacy
 
         private void addsupplier()
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
             SqlConnection conn = new SqlConnection(constr);
             sql = "Insert into NhaCungCap(Ma_NCC,Ten_NCC,SDT,DiaChi,MaSoThue) Values (N'"+addsplcode.Text+"',N'"+addsplten.Text+"','"+addsplsdt.Text+"',N'"+addspldiachi.Text+"','"+addsplmst.Text+"')";
             SqlCommand cmd = new SqlCommand(sql, conn);

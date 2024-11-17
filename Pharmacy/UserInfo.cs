@@ -77,7 +77,7 @@ namespace Pharmacy
 
         private void updatebutton_Click(object sender, EventArgs e)
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
             using (conn = new SqlConnection(constr))
             {
                 sql = "UPDATE Nhanvien SET Ten_NV = @TenNV, SDT = @SDT, Email = @Email, Username = @Username, Password = @Password, Hinh_Anh = @Hinhanh WHERE Ma_NV = @MaNV";

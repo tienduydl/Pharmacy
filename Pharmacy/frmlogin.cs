@@ -31,7 +31,7 @@ namespace Pharmacy
         private void button1_Click(object sender, EventArgs e)
         {
             // Connection string to the database
-            string connectionString = @"Data Source=LAPTOP-I5KR571R\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            string connectionString = @"Data Source=DESKTOP-ILTU31H\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
 
             // SQL query to fetch the role (Chuc_vu) based on username and password
             string query = "SELECT * FROM Nhanvien WHERE LOWER(Username) = LOWER(@Username) AND Password = @Password";
@@ -78,7 +78,7 @@ namespace Pharmacy
                             Email = reader.GetString(4),
                             Username = reader.GetString(5),
                             Password = reader.GetString(6),
-                            HinhAnh = (byte[])reader["Hinh_Anh"]
+                            HinhAnh = reader["Hinh_Anh"] == DBNull.Value ? null : (byte[])reader["Hinh_Anh"]
 
                         };
 

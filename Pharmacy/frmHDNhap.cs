@@ -267,7 +267,7 @@ namespace Pharmacy
 
         private void frmHDNhap_Load(object sender, EventArgs e)
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
             conn.ConnectionString = constr;
             conn.Open();
             sql = "select * from HoaDonNhap";

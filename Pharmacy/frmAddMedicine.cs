@@ -77,7 +77,7 @@ namespace Pharmacy
         private int getmaxDrugcount()
         {
             int count = 0;
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -101,7 +101,7 @@ namespace Pharmacy
 
      private void addmedicine()
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";        
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";        
                
             switch (selectmaloai.Text)
             {
@@ -119,8 +119,8 @@ namespace Pharmacy
             }
             using (SqlConnection conn = new SqlConnection(constr)) {
                 
-                    sql = "Insert into DanhMucThuoc(Ma_Thuoc,Ten_Thuoc,DVT,DVT_QD,HSQD,DonGia,Mo_ta,Ma_Loai,Hinh_Anh)" +
-                         "Values ('" + addmathuoc.Text + "',N'" + addtenthuoc.Text + "',N'" + adddvt.Text + "',N'" + adddvtqd.Text + "',@HSQD,'" + adddongia.Text + "',N'" + addmota.Text + "',@MaLoai,@HinhAnh)";
+                    sql = "Insert into DanhMucThuoc(Ma_Thuoc,Ten_Thuoc,DVT,DVT_QD,HSQD,DonGia,Mo_ta,Ma_Loai,Hinh_Anh,Gia_Nhap)" +
+                         "Values ('" + addmathuoc.Text + "',N'" + addtenthuoc.Text + "',N'" + adddvt.Text + "',N'" + adddvtqd.Text + "',@HSQD,'" + adddongia.Text + "',N'" + addmota.Text + "',@MaLoai,@HinhAnh, '"+txtgianhap.Text+"')";
                 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {

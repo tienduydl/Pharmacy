@@ -26,7 +26,7 @@ namespace Pharmacy
         private int getmaxCuscount()
         {
             int count = 0;
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -49,7 +49,7 @@ namespace Pharmacy
         }
         private void addcus()
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
             SqlConnection conn = new SqlConnection(constr);
             sql = "Insert into KhachHang (Ma_KH,Ten_KH,SDT,DiaChi,Email) Values (N'" + txtmakh.Text + "',N'" + txthoten.Text + "','" + txtsdt.Text + "',N'" + txtdiachi.Text + "',N'" + txtemail.Text + "')";
             SqlCommand cmd = new SqlCommand(sql, conn);

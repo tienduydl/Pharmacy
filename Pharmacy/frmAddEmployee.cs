@@ -28,7 +28,7 @@ namespace Pharmacy
         private int getmaxEmpcount()
         {
             int count = 0;
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -100,7 +100,7 @@ namespace Pharmacy
         }
         private void savebutton_Click(object sender, EventArgs e)
         {
-            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
+            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
             sql = "Insert into Nhanvien (Ma_NV,Ten_NV,Chuc_vu,SDT,Email,Username,Password,Hinh_Anh) values " +
                 "('" + addempcode.Text + "',N'" + addempten.Text + "',N'" + txtempchucvu.Text + "','" + addempsdt.Text + "',N'" + addempemail.Text + "','" + addusername.Text + "','" + addpassword.Text + "',@Hinhanh)";
             conn = new SqlConnection(constr);
