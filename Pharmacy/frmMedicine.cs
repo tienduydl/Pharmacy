@@ -49,7 +49,7 @@ namespace Pharmacy
                 txtsoluong.Text = dataGridView1.Rows[i].Cells["SLTonKho"].Value.ToString();
                 txthsqd.Text = dataGridView1.Rows[i].Cells["HSquydoi"].Value.ToString();
                 txtphanloai.Text = dataGridView1.Rows[i].Cells["Ten_Loai"].Value.ToString();
-                txtdongianhap.Text = dataGridView1.Rows[i].Cells["DonGiaBan"].Value.ToString();
+                txtdongianhap.Text = dataGridView1.Rows[i].Cells["DonGiaNhap"].Value.ToString();
                 if (dataGridView1.CurrentRow.Index == dataGridView1.RowCount - 1 || dataGridView1.Rows[i].Cells["Hinh_Anh"].Value ==DBNull.Value)
                 {
                     medpic.Image = null;
@@ -351,7 +351,7 @@ namespace Pharmacy
                 conn.Open();
                 sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
                 "\r\nfrom DanhMucThuoc as dmt left join TonKho as tk on dmt.Ma_Thuoc = tk.Ma_Thuoc left join Loai on dmt.Ma_Loai = Loai.Ma_Loai" +
-                "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai";
+                "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai, dmt.DonGiaNhap";
                 da = new SqlDataAdapter(sql, conn);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;

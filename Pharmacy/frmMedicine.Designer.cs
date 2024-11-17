@@ -31,12 +31,25 @@
             this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvitinh_QD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSquydoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLTonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hinh_Anh = new System.Windows.Forms.DataGridViewImageColumn();
             this.danhMucThuocBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.pharmacyDataSet = new Pharmacy.PharmacyDataSet();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtdongianhap = new System.Windows.Forms.TextBox();
             this.selectmaloai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtphanloai = new System.Windows.Forms.TextBox();
@@ -70,19 +83,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.danhMucThuocBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.danhMucThuocBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtdongianhap = new System.Windows.Forms.TextBox();
-            this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten_Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donvitinh_QD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HSquydoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLTonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hinh_Anh = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhMucThuocBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).BeginInit();
@@ -135,6 +135,96 @@
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // MaThuoc
+            // 
+            this.MaThuoc.DataPropertyName = "Ma_Thuoc";
+            this.MaThuoc.HeaderText = "Mã thuốc";
+            this.MaThuoc.MinimumWidth = 6;
+            this.MaThuoc.Name = "MaThuoc";
+            this.MaThuoc.Width = 111;
+            // 
+            // TenThuoc
+            // 
+            this.TenThuoc.DataPropertyName = "Ten_Thuoc";
+            this.TenThuoc.HeaderText = "Tên thuốc";
+            this.TenThuoc.MinimumWidth = 6;
+            this.TenThuoc.Name = "TenThuoc";
+            this.TenThuoc.Width = 116;
+            // 
+            // Ten_Loai
+            // 
+            this.Ten_Loai.DataPropertyName = "Ten_Loai";
+            this.Ten_Loai.HeaderText = "Phân loại";
+            this.Ten_Loai.MinimumWidth = 6;
+            this.Ten_Loai.Name = "Ten_Loai";
+            this.Ten_Loai.Width = 110;
+            // 
+            // Donvitinh
+            // 
+            this.Donvitinh.DataPropertyName = "DVT";
+            this.Donvitinh.HeaderText = "Đơn vị tính";
+            this.Donvitinh.MinimumWidth = 6;
+            this.Donvitinh.Name = "Donvitinh";
+            this.Donvitinh.Width = 119;
+            // 
+            // Donvitinh_QD
+            // 
+            this.Donvitinh_QD.DataPropertyName = "DVT_QD";
+            this.Donvitinh_QD.HeaderText = "Đơn vị tính quy đổi";
+            this.Donvitinh_QD.MinimumWidth = 6;
+            this.Donvitinh_QD.Name = "Donvitinh_QD";
+            this.Donvitinh_QD.Width = 173;
+            // 
+            // HSquydoi
+            // 
+            this.HSquydoi.DataPropertyName = "HSQD";
+            this.HSquydoi.HeaderText = "Hệ số quy đổi";
+            this.HSquydoi.MinimumWidth = 6;
+            this.HSquydoi.Name = "HSquydoi";
+            this.HSquydoi.Width = 141;
+            // 
+            // SLTonKho
+            // 
+            this.SLTonKho.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SLTonKho.DataPropertyName = "SLTonKho";
+            this.SLTonKho.HeaderText = "Lượng tồn kho";
+            this.SLTonKho.MinimumWidth = 6;
+            this.SLTonKho.Name = "SLTonKho";
+            this.SLTonKho.Width = 147;
+            // 
+            // DonGiaNhap
+            // 
+            this.DonGiaNhap.DataPropertyName = "DonGiaNhap";
+            this.DonGiaNhap.HeaderText = "Giá nhập";
+            this.DonGiaNhap.MinimumWidth = 8;
+            this.DonGiaNhap.Name = "DonGiaNhap";
+            this.DonGiaNhap.Width = 110;
+            // 
+            // DG
+            // 
+            this.DG.DataPropertyName = "DonGia";
+            this.DG.HeaderText = "Đơn giá bán";
+            this.DG.MinimumWidth = 6;
+            this.DG.Name = "DG";
+            this.DG.Width = 131;
+            // 
+            // MT
+            // 
+            this.MT.DataPropertyName = "Mo_ta";
+            this.MT.HeaderText = "Mô tả";
+            this.MT.MinimumWidth = 6;
+            this.MT.Name = "MT";
+            this.MT.Width = 85;
+            // 
+            // Hinh_Anh
+            // 
+            this.Hinh_Anh.DataPropertyName = "Hinh_Anh";
+            this.Hinh_Anh.HeaderText = "Hình ảnh";
+            this.Hinh_Anh.MinimumWidth = 6;
+            this.Hinh_Anh.Name = "Hinh_Anh";
+            this.Hinh_Anh.Visible = false;
+            this.Hinh_Anh.Width = 79;
+            // 
             // danhMucThuocBindingSource2
             // 
             this.danhMucThuocBindingSource2.DataMember = "DanhMucThuoc";
@@ -185,6 +275,7 @@
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.txtdongianhap);
@@ -210,11 +301,32 @@
             this.panel3.Controls.Add(this.txtdvt);
             this.panel3.Controls.Add(this.txttenthuoc);
             this.panel3.Controls.Add(this.txtmathuoc);
-            this.panel3.Location = new System.Drawing.Point(767, 138);
+            this.panel3.Location = new System.Drawing.Point(753, 134);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(583, 807);
+            this.panel3.Size = new System.Drawing.Size(583, 782);
             this.panel3.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.Location = new System.Drawing.Point(21, 508);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(123, 25);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Đơn giá nhập";
+            // 
+            // txtdongianhap
+            // 
+            this.txtdongianhap.Location = new System.Drawing.Point(21, 544);
+            this.txtdongianhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtdongianhap.Multiline = true;
+            this.txtdongianhap.Name = "txtdongianhap";
+            this.txtdongianhap.ReadOnly = true;
+            this.txtdongianhap.Size = new System.Drawing.Size(213, 34);
+            this.txtdongianhap.TabIndex = 18;
             // 
             // selectmaloai
             // 
@@ -275,7 +387,7 @@
             this.savemedbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.savemedbutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
             this.savemedbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.savemedbutton.Location = new System.Drawing.Point(429, 759);
+            this.savemedbutton.Location = new System.Drawing.Point(429, 722);
             this.savemedbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.savemedbutton.Name = "savemedbutton";
             this.savemedbutton.Size = new System.Drawing.Size(112, 38);
@@ -394,12 +506,12 @@
             // 
             // txtmota
             // 
-            this.txtmota.Location = new System.Drawing.Point(26, 627);
+            this.txtmota.Location = new System.Drawing.Point(20, 619);
             this.txtmota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmota.Multiline = true;
             this.txtmota.Name = "txtmota";
             this.txtmota.ReadOnly = true;
-            this.txtmota.Size = new System.Drawing.Size(518, 88);
+            this.txtmota.Size = new System.Drawing.Size(518, 80);
             this.txtmota.TabIndex = 0;
             // 
             // txtsoluong
@@ -585,117 +697,6 @@
             // danhMucThuocBindingSource
             // 
             this.danhMucThuocBindingSource.DataMember = "DanhMucThuoc";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(21, 508);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 25);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Đơn giá nhập";
-            // 
-            // txtdongianhap
-            // 
-            this.txtdongianhap.Location = new System.Drawing.Point(21, 544);
-            this.txtdongianhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtdongianhap.Multiline = true;
-            this.txtdongianhap.Name = "txtdongianhap";
-            this.txtdongianhap.ReadOnly = true;
-            this.txtdongianhap.Size = new System.Drawing.Size(213, 34);
-            this.txtdongianhap.TabIndex = 18;
-            // 
-            // MaThuoc
-            // 
-            this.MaThuoc.DataPropertyName = "Ma_Thuoc";
-            this.MaThuoc.HeaderText = "Mã thuốc";
-            this.MaThuoc.MinimumWidth = 6;
-            this.MaThuoc.Name = "MaThuoc";
-            this.MaThuoc.Width = 111;
-            // 
-            // TenThuoc
-            // 
-            this.TenThuoc.DataPropertyName = "Ten_Thuoc";
-            this.TenThuoc.HeaderText = "Tên thuốc";
-            this.TenThuoc.MinimumWidth = 6;
-            this.TenThuoc.Name = "TenThuoc";
-            this.TenThuoc.Width = 116;
-            // 
-            // Ten_Loai
-            // 
-            this.Ten_Loai.DataPropertyName = "Ten_Loai";
-            this.Ten_Loai.HeaderText = "Phân loại";
-            this.Ten_Loai.MinimumWidth = 6;
-            this.Ten_Loai.Name = "Ten_Loai";
-            this.Ten_Loai.Width = 110;
-            // 
-            // Donvitinh
-            // 
-            this.Donvitinh.DataPropertyName = "DVT";
-            this.Donvitinh.HeaderText = "Đơn vị tính";
-            this.Donvitinh.MinimumWidth = 6;
-            this.Donvitinh.Name = "Donvitinh";
-            this.Donvitinh.Width = 119;
-            // 
-            // Donvitinh_QD
-            // 
-            this.Donvitinh_QD.DataPropertyName = "DVT_QD";
-            this.Donvitinh_QD.HeaderText = "Đơn vị tính quy đổi";
-            this.Donvitinh_QD.MinimumWidth = 6;
-            this.Donvitinh_QD.Name = "Donvitinh_QD";
-            this.Donvitinh_QD.Width = 173;
-            // 
-            // HSquydoi
-            // 
-            this.HSquydoi.DataPropertyName = "HSQD";
-            this.HSquydoi.HeaderText = "Hệ số quy đổi";
-            this.HSquydoi.MinimumWidth = 6;
-            this.HSquydoi.Name = "HSquydoi";
-            this.HSquydoi.Width = 141;
-            // 
-            // SLTonKho
-            // 
-            this.SLTonKho.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SLTonKho.DataPropertyName = "SLTonKho";
-            this.SLTonKho.HeaderText = "Lượng tồn kho";
-            this.SLTonKho.MinimumWidth = 6;
-            this.SLTonKho.Name = "SLTonKho";
-            this.SLTonKho.Width = 147;
-            // 
-            // DonGiaNhap
-            // 
-            this.DonGiaNhap.DataPropertyName = "DonGiaNhap";
-            this.DonGiaNhap.HeaderText = "Giá nhập";
-            this.DonGiaNhap.MinimumWidth = 8;
-            this.DonGiaNhap.Name = "DonGiaNhap";
-            this.DonGiaNhap.Width = 110;
-            // 
-            // DG
-            // 
-            this.DG.DataPropertyName = "DonGia";
-            this.DG.HeaderText = "Đơn giá bán";
-            this.DG.MinimumWidth = 6;
-            this.DG.Name = "DG";
-            this.DG.Width = 131;
-            // 
-            // MT
-            // 
-            this.MT.DataPropertyName = "Mo_ta";
-            this.MT.HeaderText = "Mô tả";
-            this.MT.MinimumWidth = 6;
-            this.MT.Name = "MT";
-            this.MT.Width = 85;
-            // 
-            // Hinh_Anh
-            // 
-            this.Hinh_Anh.DataPropertyName = "Hinh_Anh";
-            this.Hinh_Anh.HeaderText = "Hình ảnh";
-            this.Hinh_Anh.MinimumWidth = 6;
-            this.Hinh_Anh.Name = "Hinh_Anh";
-            this.Hinh_Anh.Visible = false;
-            this.Hinh_Anh.Width = 79;
             // 
             // frmMedicine
             // 
