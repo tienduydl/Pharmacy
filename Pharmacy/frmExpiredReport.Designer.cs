@@ -28,82 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rptExpire = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.comFilter = new System.Windows.Forms.ComboBox();
+            this.dtTo = new System.Windows.Forms.DateTimePicker();
+            this.dtFrom = new System.Windows.Forms.DateTimePicker();
+            this.resetfilterbutt = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(405, 96);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 26);
-            this.textBox3.TabIndex = 38;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(148, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 26);
-            this.textBox2.TabIndex = 37;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(327, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Đến ngày :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Từ ngày :";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column7,
-            this.Column4,
-            this.Column3,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(72, 170);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1100, 501);
-            this.dataGridView1.TabIndex = 33;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(425, 47);
+            this.label1.Location = new System.Drawing.Point(642, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(356, 32);
             this.label1.TabIndex = 31;
@@ -120,136 +63,139 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Báo cáo tình trạng thuốc";
             // 
-            // textBox1
+            // rptExpire
             // 
-            this.textBox1.Location = new System.Drawing.Point(692, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 26);
-            this.textBox1.TabIndex = 39;
+            this.rptExpire.Location = new System.Drawing.Point(42, 177);
+            this.rptExpire.Name = "rptExpire";
+            this.rptExpire.ServerReport.BearerToken = null;
+            this.rptExpire.Size = new System.Drawing.Size(1378, 599);
+            this.rptExpire.TabIndex = 41;
+            // 
+            // comFilter
+            // 
+            this.comFilter.FormattingEnabled = true;
+            this.comFilter.Location = new System.Drawing.Point(836, 131);
+            this.comFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comFilter.Name = "comFilter";
+            this.comFilter.Size = new System.Drawing.Size(162, 28);
+            this.comFilter.TabIndex = 70;
+            // 
+            // dtTo
+            // 
+            this.dtTo.CustomFormat = "dd/MM/yyyy";
+            this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTo.Location = new System.Drawing.Point(559, 132);
+            this.dtTo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtTo.Name = "dtTo";
+            this.dtTo.Size = new System.Drawing.Size(142, 26);
+            this.dtTo.TabIndex = 69;
+            // 
+            // dtFrom
+            // 
+            this.dtFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFrom.Location = new System.Drawing.Point(291, 131);
+            this.dtFrom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtFrom.Name = "dtFrom";
+            this.dtFrom.Size = new System.Drawing.Size(140, 26);
+            this.dtFrom.TabIndex = 68;
+            // 
+            // resetfilterbutt
+            // 
+            this.resetfilterbutt.BackColor = System.Drawing.Color.Navy;
+            this.resetfilterbutt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetfilterbutt.ForeColor = System.Drawing.Color.White;
+            this.resetfilterbutt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.resetfilterbutt.Location = new System.Drawing.Point(1038, 128);
+            this.resetfilterbutt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.resetfilterbutt.Name = "resetfilterbutt";
+            this.resetfilterbutt.Size = new System.Drawing.Size(79, 32);
+            this.resetfilterbutt.TabIndex = 67;
+            this.resetfilterbutt.Text = "Reset";
+            this.resetfilterbutt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.resetfilterbutt.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(474, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Đến ngày :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(215, 133);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "Từ ngày :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(614, 99);
+            this.label5.Location = new System.Drawing.Point(760, 133);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
-            this.label5.TabIndex = 36;
+            this.label5.TabIndex = 65;
             this.label5.Text = "Lọc theo:";
             // 
-            // button1
+            // btnCreate
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Brown;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = global::Pharmacy.Properties.Resources.notes_medical_solid__1_1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1084, 114);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 32);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Tạo";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "Mã Thuốc";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 115;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Tên Thuốc";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "ĐVT";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.HeaderText = "Ngày Sản Xuất";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 152;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column3.HeaderText = "Hạn Sử Dụng";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 142;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column5.HeaderText = "Hạn Sử Dụng Còn Lại";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 164;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.HeaderText = "Trạng Thái";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 111;
+            this.btnCreate.BackColor = System.Drawing.Color.Brown;
+            this.btnCreate.FlatAppearance.BorderSize = 0;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCreate.Image = global::Pharmacy.Properties.Resources.notes_medical_solid__1_1;
+            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreate.Location = new System.Drawing.Point(1152, 127);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(79, 32);
+            this.btnCreate.TabIndex = 66;
+            this.btnCreate.Text = "Tạo";
+            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // frmExpiredReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1253, 683);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(1459, 798);
+            this.Controls.Add(this.comFilter);
+            this.Controls.Add(this.dtTo);
+            this.Controls.Add(this.dtFrom);
+            this.Controls.Add(this.resetfilterbutt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.rptExpire);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
             this.Name = "frmExpiredReport";
             this.Text = "frmExpiredReport";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmExpiredReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private Microsoft.Reporting.WinForms.ReportViewer rptExpire;
+        private System.Windows.Forms.ComboBox comFilter;
+        private System.Windows.Forms.DateTimePicker dtTo;
+        private System.Windows.Forms.DateTimePicker dtFrom;
+        private System.Windows.Forms.Button resetfilterbutt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button btnCreate;
     }
 }
