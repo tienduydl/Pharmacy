@@ -45,7 +45,10 @@ namespace Pharmacy
             } }
         public string Donvitinh { get; set; }
         
-        public decimal soluong { get { return soluongbaninput.Value; } set { soluongbaninput.Value = value; } }
+        public decimal soluonggoc { get { return soluongbaninput.Value; } set { soluongbaninput.Value = value; } }
+        public decimal soluongquydoi { get { return selectsoluong2.Value; } set { selectsoluong2.Value = value; } }
+        public string dvtqd { get; set; }
+        public decimal hesoquydoi { get; set; }
         public event EventHandler AddClicked;
 
         private void button2_Click(object sender, EventArgs e)

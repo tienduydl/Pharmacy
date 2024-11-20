@@ -89,7 +89,14 @@ namespace Pharmacy
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+            frmlogin login = new frmlogin();
+            login.ShowDialog();
+        }
+
+        private void xuấtThuốcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmxuatthuoc());
         }
     }
 }

@@ -86,7 +86,7 @@
             <Top>0.69604cm</Top>
             <Left>6.47304cm</Left>
             <Height>0.89986cm</Height>
-            <Width>8.79708cm</Width>
+            <Width>9.15691cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -151,9 +151,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox22</rd:DefaultName>
             <Top>9.28589cm</Top>
-            <Left>15.64651cm</Left>
+            <Left>14.86963cm</Left>
             <Height>0.6cm</Height>
-            <Width>5.16347cm</Width>
+            <Width>5.94035cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -804,7 +804,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NSX.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>dd/MM/yyyy</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -834,7 +836,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!HSD.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>dd/MM/yyyy</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -893,8 +897,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!ConLai.Value &lt; 1, "Hết hạn", 
-    IIF(Fields!ConLai.Value &lt; 15, "Sắp hết hạn", "Còn hạn"))</Value>
+                                  <Value>=IIF(IsNothing(Fields!ConLai.Value), "Dữ liệu không hợp lệ",
+    IIF(CInt(Fields!ConLai.Value) &lt; 1, "Hết hạn",
+        IIF(CInt(Fields!ConLai.Value) &lt; 15, "Sắp hết hạn", "Còn hạn")))</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -948,7 +953,7 @@
             <Top>2.88078cm</Top>
             <Left>0.49389cm</Left>
             <Height>1.2cm</Height>
-            <Width>20.97617cm</Width>
+            <Width>20.97616cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>

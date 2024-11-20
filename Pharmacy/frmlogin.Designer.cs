@@ -35,7 +35,6 @@
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.clearbutton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,23 +100,12 @@
             this.clearbutton.UseVisualStyleBackColor = true;
             this.clearbutton.Click += new System.EventHandler(this.clearbutton_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(285, 194);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Quên mật khẩu?";
-            this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
-            // 
             // frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(527, 329);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.clearbutton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtpassword);
@@ -143,6 +131,5 @@
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button clearbutton;
-        private System.Windows.Forms.Label label3;
     }
 }

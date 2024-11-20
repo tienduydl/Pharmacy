@@ -27,7 +27,7 @@ namespace Pharmacy
         }
         private void LoadAllMed()
         {
-            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
             sql = "Select * from DanhMucThuoc ";
 
             using (SqlConnection conn = new SqlConnection(constr))
@@ -108,16 +108,16 @@ namespace Pharmacy
             }
             else if ((string.IsNullOrEmpty(textBox1.Text) || textBox1.Text == "Tìm kiếm...") && comboboxprev != -1)
             {
-                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai" +
+                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,DVT,Hinh_Anh,Ten_Loai" +
                     " from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where Ten_Loai LIKE N'%" + comboBox1.Text + "%'  ";
             }
             else if (comboboxprev == -1)
             {
-                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where Ten_Thuoc  LIKE N'%" + textBox1.Text + "%' ";
+                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,DVT,Hinh_Anh,Ten_Loai from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where Ten_Thuoc  LIKE N'%" + textBox1.Text + "%' ";
             }
             else
             {
-                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where  Ten_Thuoc  LIKE N'%" + textBox1.Text + "%' and Ten_Loai LIKE N'" + comboBox1.Text + "' ";
+                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,DVT,Hinh_Anh,Ten_Loai from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where  Ten_Thuoc  LIKE N'%" + textBox1.Text + "%' and Ten_Loai LIKE N'" + comboBox1.Text + "' ";
             }
 
             using (SqlConnection conn = new SqlConnection(constr))
@@ -135,6 +135,7 @@ namespace Pharmacy
                         item.MaThuoc = reader["Ma_Thuoc"].ToString();
                         item.TenThuoc = reader["Ten_Thuoc"].ToString();
                         item.GiaNhap = reader["DonGia"].ToString();
+                        item.Donvitinh = reader["DVT"].ToString();
                         if (reader["Hinh_Anh"] != DBNull.Value)
                         {
                             byte[] imagebytes = (byte[])reader["Hinh_Anh"];
@@ -174,6 +175,7 @@ namespace Pharmacy
         {
             LoadAllMed();
             GenerateHDNCode();
+            txtnv.Text = frmlogin.UserSession.CurrentNhanVien.MaNV.ToString();
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -281,7 +283,7 @@ namespace Pharmacy
             try
             {
                 // Chuỗi kết nối
-                string constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+                string constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
                 using (SqlConnection conn = new SqlConnection(constr))
                 {
                     // Thêm thông tin hóa đơn nhập

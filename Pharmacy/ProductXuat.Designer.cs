@@ -42,10 +42,9 @@
             this.txthsd = new System.Windows.Forms.TextBox();
             this.txtslton = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.selectsoluong2 = new System.Windows.Forms.NumericUpDown();
             this.txtmaton = new System.Windows.Forms.Label();
-            this.txtdvt = new System.Windows.Forms.Label();
+            this.selectsoluong2 = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectsoluong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectsoluong2)).BeginInit();
@@ -98,6 +97,7 @@
             this.txttenthuoc.Size = new System.Drawing.Size(55, 20);
             this.txttenthuoc.TabIndex = 17;
             this.txttenthuoc.Text = "Tên SP";
+            this.txttenthuoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -113,9 +113,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(36, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 16);
+            this.label4.Size = new System.Drawing.Size(96, 16);
             this.label4.TabIndex = 22;
-            this.label4.Text = "Số lượng (Hộp/Lọ)";
+            this.label4.Text = "Số lượng (Gốc)";
             // 
             // addbutton
             // 
@@ -174,22 +174,6 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "Số lượng tồn:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 263);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 16);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Số lượng (Vỉ)";
-            // 
-            // selectsoluong2
-            // 
-            this.selectsoluong2.Location = new System.Drawing.Point(168, 261);
-            this.selectsoluong2.Name = "selectsoluong2";
-            this.selectsoluong2.Size = new System.Drawing.Size(63, 22);
-            this.selectsoluong2.TabIndex = 34;
-            // 
             // txtmaton
             // 
             this.txtmaton.AutoSize = true;
@@ -201,23 +185,26 @@
             this.txtmaton.TabIndex = 36;
             this.txtmaton.Text = "Mã tồn";
             // 
-            // txtdvt
+            // selectsoluong2
             // 
-            this.txtdvt.AutoSize = true;
-            this.txtdvt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdvt.ForeColor = System.Drawing.Color.IndianRed;
-            this.txtdvt.Location = new System.Drawing.Point(256, 82);
-            this.txtdvt.Name = "txtdvt";
-            this.txtdvt.Size = new System.Drawing.Size(52, 17);
-            this.txtdvt.TabIndex = 37;
-            this.txtdvt.Text = "Mã tồn";
-            this.txtdvt.Visible = false;
+            this.selectsoluong2.Location = new System.Drawing.Point(168, 261);
+            this.selectsoluong2.Name = "selectsoluong2";
+            this.selectsoluong2.Size = new System.Drawing.Size(63, 22);
+            this.selectsoluong2.TabIndex = 34;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(36, 263);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 16);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Số lượng (Quy đổi)";
             // 
             // ProductXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtdvt);
             this.Controls.Add(this.txtmaton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.selectsoluong2);
@@ -262,9 +249,8 @@
         private System.Windows.Forms.TextBox txthsd;
         private System.Windows.Forms.TextBox txtslton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown selectsoluong2;
         private System.Windows.Forms.Label txtmaton;
-        private System.Windows.Forms.Label txtdvt;
+        private System.Windows.Forms.NumericUpDown selectsoluong2;
+        private System.Windows.Forms.Label label6;
     }
 }

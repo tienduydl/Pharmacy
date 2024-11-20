@@ -55,11 +55,11 @@ namespace Pharmacy
         public string hsd { get { return txthsd.Text; } set { txthsd.Text = value; } }
         public string slton { get { return txtslton.Text; }
             set { txtslton.Text = value; } }
-        public decimal slhop { get { return selectsoluong1.Value; } set { selectsoluong1.Value = value; } }
-        public decimal slvi { get { return selectsoluong2.Value; } set { selectsoluong2.Value = value; } }
+        public decimal slgoc { get { return selectsoluong1.Value; } set { selectsoluong1.Value = value; } }
+        public decimal slquydoi { get { return selectsoluong2.Value; } set { selectsoluong2.Value = value; } }
         public string matonkho { get { return txtmaton.Text; } set { txtmaton.Text = value; } }
         public decimal hesoquydoi { get; set; }
-        public string donvitinh { get { return txtdvt.Text; } set { txtdvt.Text = value; if (txtdvt.Text == "Lọ") { selectsoluong2.Visible = false; label6.Visible = false; } } }
+        public string donvitinh { get; set; }
         public event EventHandler AddClickedXuat;
         private void addbutton_Click(object sender, EventArgs e)
         {

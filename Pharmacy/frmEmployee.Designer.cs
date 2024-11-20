@@ -121,6 +121,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -139,7 +141,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(671, 502);
+            this.dataGridView1.Size = new System.Drawing.Size(981, 502);
             this.dataGridView1.TabIndex = 11;
             // 
             // MaNV
@@ -235,6 +237,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.comboBox1);
@@ -254,7 +257,7 @@
             this.panel3.Controls.Add(this.txtsdt);
             this.panel3.Controls.Add(this.txthovaten);
             this.panel3.Controls.Add(this.txtmanv);
-            this.panel3.Location = new System.Drawing.Point(764, 62);
+            this.panel3.Location = new System.Drawing.Point(1058, 76);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(404, 636);
@@ -468,11 +471,12 @@
             // 
             // btnLast
             // 
+            this.btnLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLast.FlatAppearance.BorderSize = 0;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast.Image = global::Pharmacy.Properties.Resources.angles_right_solid1;
-            this.btnLast.Location = new System.Drawing.Point(711, 221);
+            this.btnLast.Location = new System.Drawing.Point(1015, 221);
             this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(37, 35);
@@ -482,11 +486,12 @@
             // 
             // btnNext
             // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNext.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = global::Pharmacy.Properties.Resources.chevron_left_solid1;
-            this.btnNext.Location = new System.Drawing.Point(711, 197);
+            this.btnNext.Location = new System.Drawing.Point(1015, 197);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(37, 23);
@@ -496,11 +501,12 @@
             // 
             // btnPrev
             // 
+            this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrev.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPrev.FlatAppearance.BorderSize = 0;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
-            this.btnPrev.Location = new System.Drawing.Point(711, 176);
+            this.btnPrev.Location = new System.Drawing.Point(1015, 176);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(37, 31);
@@ -510,13 +516,14 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = global::Pharmacy.Properties.Resources.notes_medical_solid__1_1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(588, 63);
+            this.button1.Location = new System.Drawing.Point(909, 60);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 30);
@@ -528,11 +535,12 @@
             // 
             // btnFirst
             // 
+            this.btnFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFirst.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnFirst.FlatAppearance.BorderSize = 0;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
-            this.btnFirst.Location = new System.Drawing.Point(711, 149);
+            this.btnFirst.Location = new System.Drawing.Point(1015, 149);
             this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(37, 28);
@@ -542,8 +550,9 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Image = global::Pharmacy.Properties.Resources.pen_to_square_solid1;
-            this.button2.Location = new System.Drawing.Point(579, 604);
+            this.button2.Location = new System.Drawing.Point(894, 615);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(44, 38);
             this.button2.TabIndex = 22;
@@ -552,8 +561,9 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Image = global::Pharmacy.Properties.Resources.trash_solid1;
-            this.button3.Location = new System.Drawing.Point(644, 604);
+            this.button3.Location = new System.Drawing.Point(965, 615);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(44, 37);
             this.button3.TabIndex = 23;
@@ -570,9 +580,10 @@
             // 
             // reloadbutton
             // 
+            this.reloadbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.reloadbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
-            this.reloadbutton.Location = new System.Drawing.Point(524, 54);
+            this.reloadbutton.Location = new System.Drawing.Point(854, 53);
             this.reloadbutton.Name = "reloadbutton";
             this.reloadbutton.Size = new System.Drawing.Size(40, 39);
             this.reloadbutton.TabIndex = 42;
@@ -584,7 +595,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1212, 765);
+            this.ClientSize = new System.Drawing.Size(1622, 765);
             this.Controls.Add(this.reloadbutton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

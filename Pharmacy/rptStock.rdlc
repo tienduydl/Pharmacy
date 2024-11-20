@@ -63,7 +63,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>BÁO CÁO CHI PHÍ NHẬP THUỐC</Value>
+                    <Value>BÁO CÁO TỒN KHO</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
                       <FontSize>16pt</FontSize>
@@ -74,10 +74,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.66104cm</Top>
-            <Left>6.50832cm</Left>
+            <Top>0.69632cm</Top>
+            <Left>8.05349cm</Left>
             <Height>0.89986cm</Height>
-            <Width>8.79708cm</Width>
+            <Width>5.70675cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -669,7 +669,7 @@
             <Top>3.67453cm</Top>
             <Left>0.46427cm</Left>
             <Height>1.2cm</Height>
-            <Width>19.40017cm</Width>
+            <Width>19.40019cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -677,36 +677,6 @@
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="prTime">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!prTime.Value</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>prTime</rd:DefaultName>
-            <Top>1.91064cm</Top>
-            <Left>9.79523cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>4</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox53">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -726,7 +696,7 @@
             <Left>14.38955cm</Left>
             <Height>0.6cm</Height>
             <Width>6.14046cm</Width>
-            <ZIndex>5</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -756,7 +726,7 @@
             <Left>17.36443cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -793,10 +763,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>1.76953cm</Top>
-              <Left>17.94045cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <Top>1.7907cm</Top>
+              <Left>17.89812cm</Left>
+              <Height>0.57883cm</Height>
+              <Width>2.54233cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

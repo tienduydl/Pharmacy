@@ -41,7 +41,7 @@ namespace Pharmacy
                 txttongtien.Text = dataGridView1.Rows[i].Cells["Tong_Tien"].Value.ToString();
                 txtdiengiai.Text = dataGridView1.Rows[i].Cells["Dien_Giai"].Value.ToString();
                 txtmakh.Text = dataGridView1.Rows[i].Cells["Ma_KH"].Value.ToString();
-                string sql1 = "Select ID,ct.Ma_Thuoc, dm.Ten_Thuoc,dm.DVT_QD as DVT,ct.So_Luong,ct.Don_Gia, ct.Thanh_Tien " +
+                string sql1 = "Select ID,ct.Ma_Thuoc, dm.Ten_Thuoc,dm.DVT,ct.So_Luong,ct.Don_Gia, ct.Thanh_Tien " +
                 "from CTHoaDonBan ct left join DanhMucThuoc dm on ct.Ma_Thuoc = dm.Ma_Thuoc " +
                 "Where Ma_HDB = '" + txtmahdb.Text + "'";
                 da1 = new SqlDataAdapter(sql1, conn);
@@ -159,24 +159,6 @@ namespace Pharmacy
             NapCT();
         }
 
-        private void delmedbutton_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này?", "Xác nhận yêu cầu",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                int i = Convert.ToInt16(dataGridView1.CurrentRow.Index.ToString());
-                sql = "Delete from HoaDonBan where Ma_CT = '" + dataGridView1.Rows[i].Cells["Ma_CT"].Value.ToString() + "'";
-                cmd = new SqlCommand(sql);
-                cmd.Connection = conn;
-                cmd.ExecuteNonQuery();
-                sql = "select * from HoaDonBan";
-                dt.Clear();
-                da = new SqlDataAdapter(sql, conn);
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                NapCT();
-            }
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -202,10 +184,14 @@ namespace Pharmacy
             {
                 File.Delete(filePath);
             }
+            string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "times.ttf");
 
             // Tạo tài liệu PDF
             Document document = new Document(PageSize.A5);
             PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+            BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            iTextSharp.text.Font timesNewRoman = new iTextSharp.text.Font(bf, 12);
+            iTextSharp.text.Font times = new iTextSharp.text.Font(bf, 10);
 
             try
             {
@@ -213,13 +199,13 @@ namespace Pharmacy
                 document.Open();
 
                 // Thêm tiêu đề và thông tin chung của hóa đơn
-                document.Add(new Paragraph("HÓA ĐƠN BÁN HÀNG"));
+                document.Add(new Paragraph("HÓA ĐƠN BÁN HÀNG",timesNewRoman));
                 document.Add(new Paragraph("----------------------------------------------------------------------------------------------------------------")); // Dòng trống
-                document.Add(new Paragraph("Mã đơn hàng: " + txtmahdb.Text));
-                document.Add(new Paragraph("Ngày đơn hàng: " + txtngayhdb.Text));
-                document.Add(new Paragraph("Người tạo: " + txtmanv.Text));
-                document.Add(new Paragraph("Khách hàng: " + txtmakh.Text));
-                document.Add(new Paragraph("Tổng tiền: " + txttongtien.Text));
+                document.Add(new Paragraph("Mã đơn hàng: " + txtmahdb.Text,times));
+                document.Add(new Paragraph("Ngày đơn hàng: " + txtngayhdb.Text,times));
+                document.Add(new Paragraph("Người tạo: " + txtmanv.Text,times));
+                document.Add(new Paragraph("Khách hàng: " + txtmakh.Text,times));
+                document.Add(new Paragraph("Tổng tiền: " + txttongtien.Text,times));
                 document.Add(new Paragraph("----------------------------------------------------------------------------------------------------------------")); // Dòng trống
 
                 // Tạo bảng cho chi tiết hóa đơn
@@ -228,6 +214,11 @@ namespace Pharmacy
                 float[] columnWidths = { 1f, 3f, 1f, 1f, 2f, 2f };
                 table.SetWidths(columnWidths);
                 // Thêm tiêu đề cho các cột
+                table.AddCell(new PdfPCell(new Phrase("Tên thuốc", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+                table.AddCell(new PdfPCell(new Phrase("Tên thuốc", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+                table.AddCell(new PdfPCell(new Phrase("Tên thuốc", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+                table.AddCell(new PdfPCell(new Phrase("Tên thuốc", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+                table.AddCell(new PdfPCell(new Phrase("Tên thuốc", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
                 table.AddCell("STT");
                 table.AddCell("Tên Thuốc");
                 table.AddCell("Số Lượng");
@@ -239,17 +230,28 @@ namespace Pharmacy
                 {
                     if (!row.IsNewRow)
                     {
-                        table.AddCell(row.Index.ToString() + 1);
-                        table.AddCell(row.Cells["Ten_Thuoc"].Value.ToString());
-                        table.AddCell(row.Cells["So_Luong"].Value.ToString());
-                        table.AddCell(row.Cells["DVT"].Value.ToString());
-                        table.AddCell(row.Cells["Don_Gia"].Value.ToString());
-                        table.AddCell(row.Cells["Thanh_Tien"].Value.ToString());
+                        table.AddCell(new PdfPCell(new Phrase(row.Index.ToString() + 1, times)) { HorizontalAlignment = Element.ALIGN_CENTER });
+                        table.AddCell(new PdfPCell(new Phrase(row.Cells["Ten_Thuoc"].Value?.ToString() ?? "", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+                        table.AddCell(new PdfPCell(new Phrase(row.Cells["So_Luong"].Value?.ToString() ?? "", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+                        table.AddCell(new PdfPCell(new Phrase(row.Cells["DVT"].Value?.ToString() ?? "", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+                        table.AddCell(new PdfPCell(new Phrase(row.Cells["Don_Gia"].Value?.ToString() ?? "", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+                        table.AddCell(new PdfPCell(new Phrase(row.Cells["Thanh_Tien"].Value?.ToString() ?? "", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
+
                     }
                 }
                 document.Add(table);
-                document.Add(new Paragraph("----------------------------------------------------------------------------------------------------------------"));
-                document.Add(new Paragraph("Tổng tiền: " + txttongtien.Text));
+                Paragraph totalParagraph = new Paragraph("Tổng tiền: " + txttongtien.Text, times);
+                totalParagraph.Alignment = Element.ALIGN_RIGHT; // Căn phải
+                totalParagraph.SpacingBefore = 20f; // Khoảng cách so với bảng
+                document.Add(totalParagraph);
+                DateTime today = DateTime.Now;
+                string currentDate = $"Hà Nội, Ngày {today.Day} Tháng {today.Month} Năm {today.Year}";
+
+                // Thêm dòng "Hà Nội, Ngày...Tháng...Năm..." dưới bảng
+                Paragraph dateParagraph = new Paragraph(currentDate, times);
+                dateParagraph.Alignment = Element.ALIGN_RIGHT; // Căn phải
+                dateParagraph.SpacingBefore = 20f; // Khoảng cách so với bảng
+                document.Add(dateParagraph);
                 MessageBox.Show("Lưu hóa đơn thành công!");
             }
             catch (Exception ex)
@@ -301,7 +303,7 @@ namespace Pharmacy
 
         private void frmHDBan_Load(object sender, EventArgs e)
         {
-            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
             conn.ConnectionString = constr;
             conn.Open();
             sql = "select * from HoaDonBan";

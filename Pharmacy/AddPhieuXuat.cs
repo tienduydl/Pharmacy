@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.RdlExpressions.ExpressionHostObjectModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +52,7 @@ namespace Pharmacy
         private int getmaxPXcount()
         {
             int count = 0;
-            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -75,7 +76,7 @@ namespace Pharmacy
         }
         private void LoadAllMed()
         {
-            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
             List<string> maThuocList = new List<string>();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -139,13 +140,22 @@ namespace Pharmacy
         private void ProductXuat_AddClicked(object sender, EventArgs e)
         {
             var item = sender as ProductXuat;
-            if (item != null && (item.slhop > 0||item.slvi >0))
+            if (item != null && (item.slgoc > 0||item.slquydoi >0))
             {
                 string ID = txtmapx.Text + "-" + dataGridView2.RowCount;
                 string maTonkho = item.matonkho;              
                 string maThuoc = item.MaThuoc;
-                decimal soLuong = item.slvi * item.hesoquydoi + item.slhop * item.hesoquydoi; 
+                decimal soLuong = item.slgoc  + item.slquydoi * item.hesoquydoi; 
                 string DVTinh = item.donvitinh;
+                if(soLuong > decimal.Parse(item.slton)) {
+                    MessageBox.Show(
+                $"Số lượng xuất lớn hơn số lượng tồn!",
+                "Lỗi",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            );
+                    return;
+                }
 
                 bool found = false;
                 foreach (DataGridViewRow row in dataGridView2.Rows)
@@ -154,7 +164,7 @@ namespace Pharmacy
                     if (row.Cells["MaTK"].Value != null && row.Cells["MaTK"].Value.ToString() == maTonkho)
                     {
                         decimal currentQuantityInGrid = decimal.Parse(row.Cells["SoLuong"].Value.ToString());
-                        row.Cells["So_Luong"].Value = currentQuantityInGrid + soLuong;
+                        row.Cells["SoLuong"].Value = currentQuantityInGrid + soLuong;
                         found = true;
                         break;
                     }
@@ -164,7 +174,7 @@ namespace Pharmacy
                 {
                     dataGridView2.Rows.Add(ID,maTonkho,maThuoc,DVTinh, soLuong.ToString());
                 }
-
+                item.slton = (decimal.Parse(item.slton)-soLuong).ToString();
             }
         }
 
@@ -182,26 +192,40 @@ namespace Pharmacy
             {
                 if (!row.IsNewRow)
                 {
-                    sql = "Insert into CTPhieuXuat ( ID,Ma_PX,Ma_Thuoc,Ma_Kho,So_Luong) " +
-                        "Values ( '" + row.Cells["ID"].Value.ToString() + "','"+txtmapx.Text+"','" + row.Cells["MaThuoc"].Value.ToString() + "','" + row.Cells["MaTK"].Value + "','" + row.Cells["SoLuong"].Value + "')";
+                    sql = "INSERT INTO CTPhieuXuat (ID, Ma_PX, Ma_Thuoc, Ma_Kho, So_Luong) " +
+      "VALUES (@ID, @Ma_PX, @Ma_Thuoc, @Ma_Kho, @So_Luong)";
                     cmd = new SqlCommand(sql, conn);
-                    conn.Open(); cmd.ExecuteNonQuery(); conn.Close();
-                    sql = "update TonKho set So_Luong_Ton = So_Luong_Ton - '" + decimal.Parse(row.Cells["SoLuong"].Value.ToString()) + "' where ID = '" + row.Cells["MaTK"].Value.ToString() +"'";
+                    cmd.Parameters.AddWithValue("@ID", row.Cells["ID"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Ma_PX", txtmapx.Text);
+                    cmd.Parameters.AddWithValue("@Ma_Thuoc", row.Cells["MaThuoc"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Ma_Kho", row.Cells["MaTK"].Value);
+                    cmd.Parameters.AddWithValue("@So_Luong", decimal.Parse(row.Cells["SoLuong"].Value.ToString()));
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    sql = "UPDATE TonKho SET So_Luong_Ton = So_Luong_Ton - @So_Luong WHERE ID = @ID";
                     cmd = new SqlCommand(sql, conn);
-                    conn.Open(); cmd.ExecuteNonQuery();conn.Close();
+                    cmd.Parameters.AddWithValue("@So_Luong", decimal.Parse(row.Cells["SoLuong"].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@ID", row.Cells["MaTK"].Value.ToString());
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
                 }
             }
             sql = "update HoaDonBan set Trang_Thai =N'Đã xuất hàng' where Ma_CT = '" + txtmahdb.Text + "'";
             cmd = new SqlCommand(sql, conn);
             conn.Open(); cmd.ExecuteNonQuery();conn.Close();
             MessageBox.Show("Lưu thông tin thành công!");
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView2.CurrentRow != null && !dataGridView2.CurrentRow.IsNewRow)
             {
+
                 dataGridView2.Rows.Remove(dataGridView2.CurrentRow);
+
             }
         }
     }

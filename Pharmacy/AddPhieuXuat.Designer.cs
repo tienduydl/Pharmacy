@@ -32,6 +32,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Ma_Thuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_Thuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.So_Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtmota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,10 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.Ma_Thuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten_Thuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.So_Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,12 +76,13 @@
             this.panel4.Location = new System.Drawing.Point(917, 66);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(558, 250);
+            this.panel4.Size = new System.Drawing.Size(678, 250);
             this.panel4.TabIndex = 28;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_Thuoc,
@@ -93,8 +94,36 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(559, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(676, 246);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Ma_Thuoc
+            // 
+            this.Ma_Thuoc.HeaderText = "Mã thuốc";
+            this.Ma_Thuoc.MinimumWidth = 6;
+            this.Ma_Thuoc.Name = "Ma_Thuoc";
+            this.Ma_Thuoc.Width = 90;
+            // 
+            // Ten_Thuoc
+            // 
+            this.Ten_Thuoc.HeaderText = "Tên thuốc";
+            this.Ten_Thuoc.MinimumWidth = 6;
+            this.Ten_Thuoc.Name = "Ten_Thuoc";
+            this.Ten_Thuoc.Width = 95;
+            // 
+            // DVT
+            // 
+            this.DVT.HeaderText = "Đơn vị tính";
+            this.DVT.MinimumWidth = 6;
+            this.DVT.Name = "DVT";
+            this.DVT.Width = 96;
+            // 
+            // So_Luong
+            // 
+            this.So_Luong.HeaderText = "Số lượng";
+            this.So_Luong.MinimumWidth = 6;
+            this.So_Luong.Name = "So_Luong";
+            this.So_Luong.Width = 89;
             // 
             // panel5
             // 
@@ -119,7 +148,7 @@
             // txtmota
             // 
             this.txtmota.Location = new System.Drawing.Point(376, 102);
-            this.txtmota.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmota.Margin = new System.Windows.Forms.Padding(4);
             this.txtmota.Name = "txtmota";
             this.txtmota.Size = new System.Drawing.Size(433, 22);
             this.txtmota.TabIndex = 44;
@@ -136,7 +165,7 @@
             // txtmahdb
             // 
             this.txtmahdb.Location = new System.Drawing.Point(116, 102);
-            this.txtmahdb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmahdb.Margin = new System.Windows.Forms.Padding(4);
             this.txtmahdb.Name = "txtmahdb";
             this.txtmahdb.Size = new System.Drawing.Size(172, 22);
             this.txtmahdb.TabIndex = 42;
@@ -144,7 +173,7 @@
             // txtmanv
             // 
             this.txtmanv.Location = new System.Drawing.Point(637, 47);
-            this.txtmanv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmanv.Margin = new System.Windows.Forms.Padding(4);
             this.txtmanv.Name = "txtmanv";
             this.txtmanv.Size = new System.Drawing.Size(172, 22);
             this.txtmanv.TabIndex = 41;
@@ -152,7 +181,7 @@
             // txtmapx
             // 
             this.txtmapx.Location = new System.Drawing.Point(116, 46);
-            this.txtmapx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmapx.Margin = new System.Windows.Forms.Padding(4);
             this.txtmapx.Name = "txtmapx";
             this.txtmapx.Size = new System.Drawing.Size(172, 22);
             this.txtmapx.TabIndex = 40;
@@ -241,7 +270,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1375, 587);
+            this.button1.Location = new System.Drawing.Point(1493, 586);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 30);
@@ -251,37 +280,10 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Ma_Thuoc
-            // 
-            this.Ma_Thuoc.HeaderText = "Mã thuốc";
-            this.Ma_Thuoc.MinimumWidth = 6;
-            this.Ma_Thuoc.Name = "Ma_Thuoc";
-            this.Ma_Thuoc.Width = 90;
-            // 
-            // Ten_Thuoc
-            // 
-            this.Ten_Thuoc.HeaderText = "Tên thuốc";
-            this.Ten_Thuoc.MinimumWidth = 6;
-            this.Ten_Thuoc.Name = "Ten_Thuoc";
-            this.Ten_Thuoc.Width = 95;
-            // 
-            // DVT
-            // 
-            this.DVT.HeaderText = "Đơn vị tính";
-            this.DVT.MinimumWidth = 6;
-            this.DVT.Name = "DVT";
-            this.DVT.Width = 96;
-            // 
-            // So_Luong
-            // 
-            this.So_Luong.HeaderText = "Số lượng";
-            this.So_Luong.MinimumWidth = 6;
-            this.So_Luong.Name = "So_Luong";
-            this.So_Luong.Width = 89;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -294,7 +296,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(559, 246);
+            this.dataGridView2.Size = new System.Drawing.Size(677, 246);
             this.dataGridView2.TabIndex = 1;
             // 
             // ID
@@ -347,7 +349,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1512, 839);
+            this.ClientSize = new System.Drawing.Size(1629, 839);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.flowLayoutPanel1);

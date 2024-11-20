@@ -36,20 +36,23 @@
             this.mednamelabel = new System.Windows.Forms.Label();
             this.hinhanhthuoc = new System.Windows.Forms.PictureBox();
             this.medcodelabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.selectsoluong2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.soluongbaninput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanhthuoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectsoluong2)).BeginInit();
             this.SuspendLayout();
             // 
             // giathuoclabel
             // 
-            this.giathuoclabel.Location = new System.Drawing.Point(81, 121);
+            this.giathuoclabel.Location = new System.Drawing.Point(108, 121);
             this.giathuoclabel.Name = "giathuoclabel";
             this.giathuoclabel.Size = new System.Drawing.Size(105, 22);
             this.giathuoclabel.TabIndex = 19;
             // 
             // soluongbaninput
             // 
-            this.soluongbaninput.Location = new System.Drawing.Point(81, 149);
+            this.soluongbaninput.Location = new System.Drawing.Point(135, 149);
             this.soluongbaninput.Name = "soluongbaninput";
             this.soluongbaninput.Size = new System.Drawing.Size(78, 22);
             this.soluongbaninput.TabIndex = 18;
@@ -59,9 +62,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(99, 16);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Số lượng:";
+            this.label1.Text = "Số lượng (Gốc):";
             // 
             // button2
             // 
@@ -94,6 +97,7 @@
             this.mednamelabel.Size = new System.Drawing.Size(76, 20);
             this.mednamelabel.TabIndex = 14;
             this.mednamelabel.Text = "Tên thuốc";
+            this.mednamelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // hinhanhthuoc
             // 
@@ -115,11 +119,29 @@
             this.medcodelabel.TabIndex = 20;
             this.medcodelabel.Text = "Mã thuốc";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 16);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Số lượng (Quy đổi):";
+            // 
+            // selectsoluong2
+            // 
+            this.selectsoluong2.Location = new System.Drawing.Point(135, 177);
+            this.selectsoluong2.Name = "selectsoluong2";
+            this.selectsoluong2.Size = new System.Drawing.Size(78, 22);
+            this.selectsoluong2.TabIndex = 36;
+            // 
             // ProductItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.selectsoluong2);
             this.Controls.Add(this.medcodelabel);
             this.Controls.Add(this.giathuoclabel);
             this.Controls.Add(this.soluongbaninput);
@@ -129,9 +151,10 @@
             this.Controls.Add(this.mednamelabel);
             this.Controls.Add(this.hinhanhthuoc);
             this.Name = "ProductItem";
-            this.Size = new System.Drawing.Size(303, 191);
+            this.Size = new System.Drawing.Size(303, 213);
             ((System.ComponentModel.ISupportInitialize)(this.soluongbaninput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanhthuoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectsoluong2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +170,7 @@
         private System.Windows.Forms.Label mednamelabel;
         private System.Windows.Forms.PictureBox hinhanhthuoc;
         private System.Windows.Forms.Label medcodelabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown selectsoluong2;
     }
 }

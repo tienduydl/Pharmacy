@@ -73,7 +73,6 @@
             this.txttenthuoc = new System.Windows.Forms.TextBox();
             this.txtmathuoc = new System.Windows.Forms.TextBox();
             this.danhMucThuocTableAdapter1 = new Pharmacy.PharmacyDataSetTableAdapters.DanhMucThuocTableAdapter();
-            this.reloadbutton = new System.Windows.Forms.Button();
             this.delmedbutton = new System.Windows.Forms.Button();
             this.editmedbutton = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
@@ -99,9 +98,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(32, 22);
+            this.label2.Location = new System.Drawing.Point(28, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 32);
+            this.label2.Size = new System.Drawing.Size(163, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Danh mục thuốc";
             // 
@@ -126,12 +125,12 @@
             this.MT,
             this.Hinh_Anh});
             this.dataGridView1.DataSource = this.danhMucThuocBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 138);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 110);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 492);
+            this.dataGridView1.Size = new System.Drawing.Size(588, 394);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -141,7 +140,7 @@
             this.MaThuoc.HeaderText = "Mã thuốc";
             this.MaThuoc.MinimumWidth = 6;
             this.MaThuoc.Name = "MaThuoc";
-            this.MaThuoc.Width = 111;
+            this.MaThuoc.Width = 90;
             // 
             // TenThuoc
             // 
@@ -149,7 +148,7 @@
             this.TenThuoc.HeaderText = "Tên thuốc";
             this.TenThuoc.MinimumWidth = 6;
             this.TenThuoc.Name = "TenThuoc";
-            this.TenThuoc.Width = 116;
+            this.TenThuoc.Width = 95;
             // 
             // Ten_Loai
             // 
@@ -157,7 +156,7 @@
             this.Ten_Loai.HeaderText = "Phân loại";
             this.Ten_Loai.MinimumWidth = 6;
             this.Ten_Loai.Name = "Ten_Loai";
-            this.Ten_Loai.Width = 110;
+            this.Ten_Loai.Width = 92;
             // 
             // Donvitinh
             // 
@@ -165,7 +164,7 @@
             this.Donvitinh.HeaderText = "Đơn vị tính";
             this.Donvitinh.MinimumWidth = 6;
             this.Donvitinh.Name = "Donvitinh";
-            this.Donvitinh.Width = 119;
+            this.Donvitinh.Width = 96;
             // 
             // Donvitinh_QD
             // 
@@ -173,7 +172,7 @@
             this.Donvitinh_QD.HeaderText = "Đơn vị tính quy đổi";
             this.Donvitinh_QD.MinimumWidth = 6;
             this.Donvitinh_QD.Name = "Donvitinh_QD";
-            this.Donvitinh_QD.Width = 173;
+            this.Donvitinh_QD.Width = 143;
             // 
             // HSquydoi
             // 
@@ -181,7 +180,7 @@
             this.HSquydoi.HeaderText = "Hệ số quy đổi";
             this.HSquydoi.MinimumWidth = 6;
             this.HSquydoi.Name = "HSquydoi";
-            this.HSquydoi.Width = 141;
+            this.HSquydoi.Width = 119;
             // 
             // SLTonKho
             // 
@@ -190,7 +189,7 @@
             this.SLTonKho.HeaderText = "Lượng tồn kho";
             this.SLTonKho.MinimumWidth = 6;
             this.SLTonKho.Name = "SLTonKho";
-            this.SLTonKho.Width = 147;
+            this.SLTonKho.Width = 119;
             // 
             // DonGiaNhap
             // 
@@ -198,7 +197,7 @@
             this.DonGiaNhap.HeaderText = "Giá nhập";
             this.DonGiaNhap.MinimumWidth = 8;
             this.DonGiaNhap.Name = "DonGiaNhap";
-            this.DonGiaNhap.Width = 110;
+            this.DonGiaNhap.Width = 90;
             // 
             // DG
             // 
@@ -206,7 +205,7 @@
             this.DG.HeaderText = "Đơn giá bán";
             this.DG.MinimumWidth = 6;
             this.DG.Name = "DG";
-            this.DG.Width = 131;
+            this.DG.Width = 108;
             // 
             // MT
             // 
@@ -214,7 +213,7 @@
             this.MT.HeaderText = "Mô tả";
             this.MT.MinimumWidth = 6;
             this.MT.Name = "MT";
-            this.MT.Width = 85;
+            this.MT.Width = 69;
             // 
             // Hinh_Anh
             // 
@@ -239,20 +238,20 @@
             // 
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(37, 76);
+            this.panel2.Location = new System.Drawing.Point(33, 61);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(261, 56);
+            this.panel2.Size = new System.Drawing.Size(232, 45);
             this.panel2.TabIndex = 7;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
-            this.pictureBox2.Location = new System.Drawing.Point(222, 22);
+            this.pictureBox2.Location = new System.Drawing.Point(197, 18);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 21);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -261,11 +260,11 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(0, 18);
+            this.textBox1.Location = new System.Drawing.Point(0, 14);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 32);
+            this.textBox1.Size = new System.Drawing.Size(230, 26);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Tìm kiếm theo tên";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -301,10 +300,10 @@
             this.panel3.Controls.Add(this.txtdvt);
             this.panel3.Controls.Add(this.txttenthuoc);
             this.panel3.Controls.Add(this.txtmathuoc);
-            this.panel3.Location = new System.Drawing.Point(753, 134);
+            this.panel3.Location = new System.Drawing.Point(669, 107);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(583, 782);
+            this.panel3.Size = new System.Drawing.Size(519, 626);
             this.panel3.TabIndex = 17;
             // 
             // label8
@@ -312,20 +311,20 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(21, 508);
+            this.label8.Location = new System.Drawing.Point(19, 406);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 25);
+            this.label8.Size = new System.Drawing.Size(102, 20);
             this.label8.TabIndex = 19;
             this.label8.Text = "Đơn giá nhập";
             // 
             // txtdongianhap
             // 
-            this.txtdongianhap.Location = new System.Drawing.Point(21, 544);
+            this.txtdongianhap.Location = new System.Drawing.Point(19, 435);
             this.txtdongianhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtdongianhap.Multiline = true;
             this.txtdongianhap.Name = "txtdongianhap";
             this.txtdongianhap.ReadOnly = true;
-            this.txtdongianhap.Size = new System.Drawing.Size(213, 34);
+            this.txtdongianhap.Size = new System.Drawing.Size(190, 28);
             this.txtdongianhap.TabIndex = 18;
             // 
             // selectmaloai
@@ -333,13 +332,12 @@
             this.selectmaloai.FormattingEnabled = true;
             this.selectmaloai.Items.AddRange(new object[] {
             "Thuốc điều trị",
-            "Thực phẩm chức năng",
             "Thuốc kháng sinh",
-            "Thuốc giảm đau và chống viêm"});
-            this.selectmaloai.Location = new System.Drawing.Point(20, 286);
-            this.selectmaloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            "Dược mỹ phẩm",
+            "Thực phẩm chức năng"});
+            this.selectmaloai.Location = new System.Drawing.Point(18, 229);
             this.selectmaloai.Name = "selectmaloai";
-            this.selectmaloai.Size = new System.Drawing.Size(214, 28);
+            this.selectmaloai.Size = new System.Drawing.Size(191, 24);
             this.selectmaloai.TabIndex = 17;
             this.selectmaloai.Visible = false;
             this.selectmaloai.SelectedIndexChanged += new System.EventHandler(this.selectmaloai_SelectedIndexChanged);
@@ -349,29 +347,28 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(20, 245);
+            this.label1.Location = new System.Drawing.Point(18, 196);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Phân loại";
             // 
             // txtphanloai
             // 
-            this.txtphanloai.Location = new System.Drawing.Point(20, 280);
+            this.txtphanloai.Location = new System.Drawing.Point(18, 224);
             this.txtphanloai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtphanloai.Multiline = true;
             this.txtphanloai.Name = "txtphanloai";
             this.txtphanloai.ReadOnly = true;
-            this.txtphanloai.Size = new System.Drawing.Size(214, 54);
+            this.txtphanloai.Size = new System.Drawing.Size(191, 44);
             this.txtphanloai.TabIndex = 15;
             // 
             // medpic
             // 
             this.medpic.Enabled = false;
-            this.medpic.Location = new System.Drawing.Point(256, 22);
-            this.medpic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.medpic.Location = new System.Drawing.Point(228, 18);
             this.medpic.Name = "medpic";
-            this.medpic.Size = new System.Drawing.Size(285, 198);
+            this.medpic.Size = new System.Drawing.Size(253, 158);
             this.medpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.medpic.TabIndex = 14;
             this.medpic.TabStop = false;
@@ -387,10 +384,10 @@
             this.savemedbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.savemedbutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
             this.savemedbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.savemedbutton.Location = new System.Drawing.Point(429, 722);
+            this.savemedbutton.Location = new System.Drawing.Point(381, 578);
             this.savemedbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.savemedbutton.Name = "savemedbutton";
-            this.savemedbutton.Size = new System.Drawing.Size(112, 38);
+            this.savemedbutton.Size = new System.Drawing.Size(100, 30);
             this.savemedbutton.TabIndex = 13;
             this.savemedbutton.Text = "Lưu";
             this.savemedbutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -401,9 +398,9 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(454, 360);
+            this.label13.Location = new System.Drawing.Point(404, 288);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 20);
+            this.label13.Size = new System.Drawing.Size(0, 16);
             this.label13.TabIndex = 1;
             // 
             // label14
@@ -411,9 +408,9 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Gray;
-            this.label14.Location = new System.Drawing.Point(252, 422);
+            this.label14.Location = new System.Drawing.Point(224, 338);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 25);
+            this.label14.Size = new System.Drawing.Size(93, 20);
             this.label14.TabIndex = 1;
             this.label14.Text = "Đơn giá bán";
             // 
@@ -422,9 +419,9 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Gray;
-            this.label16.Location = new System.Drawing.Point(26, 592);
+            this.label16.Location = new System.Drawing.Point(23, 474);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 25);
+            this.label16.Size = new System.Drawing.Size(49, 20);
             this.label16.TabIndex = 1;
             this.label16.Text = "Mô tả";
             // 
@@ -433,9 +430,9 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Gray;
-            this.label15.Location = new System.Drawing.Point(21, 420);
+            this.label15.Location = new System.Drawing.Point(19, 336);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(156, 25);
+            this.label15.Size = new System.Drawing.Size(127, 20);
             this.label15.TabIndex = 1;
             this.label15.Text = "Số lượng tồn kho";
             // 
@@ -444,9 +441,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(251, 339);
+            this.label7.Location = new System.Drawing.Point(223, 271);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 25);
+            this.label7.Size = new System.Drawing.Size(103, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "Hệ số quy đổi";
             // 
@@ -455,9 +452,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(255, 246);
+            this.label6.Location = new System.Drawing.Point(227, 197);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 25);
+            this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Đvt quy đổi";
             // 
@@ -466,9 +463,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(21, 338);
+            this.label5.Location = new System.Drawing.Point(19, 270);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 25);
+            this.label5.Size = new System.Drawing.Size(33, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Đvt";
             // 
@@ -477,9 +474,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(21, 102);
+            this.label4.Location = new System.Drawing.Point(19, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 25);
+            this.label4.Size = new System.Drawing.Size(76, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Tên thuốc";
             // 
@@ -488,117 +485,103 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(21, 11);
+            this.label3.Location = new System.Drawing.Point(19, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 25);
+            this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Mã thuốc";
             // 
             // txtdongia
             // 
-            this.txtdongia.Location = new System.Drawing.Point(255, 456);
+            this.txtdongia.Location = new System.Drawing.Point(227, 365);
             this.txtdongia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtdongia.Multiline = true;
             this.txtdongia.Name = "txtdongia";
             this.txtdongia.ReadOnly = true;
-            this.txtdongia.Size = new System.Drawing.Size(284, 34);
+            this.txtdongia.Size = new System.Drawing.Size(253, 28);
             this.txtdongia.TabIndex = 0;
             // 
             // txtmota
             // 
-            this.txtmota.Location = new System.Drawing.Point(20, 619);
+            this.txtmota.Location = new System.Drawing.Point(18, 495);
             this.txtmota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmota.Multiline = true;
             this.txtmota.Name = "txtmota";
             this.txtmota.ReadOnly = true;
-            this.txtmota.Size = new System.Drawing.Size(518, 80);
+            this.txtmota.Size = new System.Drawing.Size(461, 65);
             this.txtmota.TabIndex = 0;
             // 
             // txtsoluong
             // 
-            this.txtsoluong.Location = new System.Drawing.Point(21, 456);
+            this.txtsoluong.Location = new System.Drawing.Point(19, 365);
             this.txtsoluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtsoluong.Multiline = true;
             this.txtsoluong.Name = "txtsoluong";
             this.txtsoluong.ReadOnly = true;
-            this.txtsoluong.Size = new System.Drawing.Size(213, 34);
+            this.txtsoluong.Size = new System.Drawing.Size(190, 28);
             this.txtsoluong.TabIndex = 0;
             // 
             // txthsqd
             // 
-            this.txthsqd.Location = new System.Drawing.Point(255, 372);
+            this.txthsqd.Location = new System.Drawing.Point(227, 298);
             this.txthsqd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txthsqd.Multiline = true;
             this.txthsqd.Name = "txthsqd";
             this.txthsqd.ReadOnly = true;
-            this.txthsqd.Size = new System.Drawing.Size(284, 34);
+            this.txthsqd.Size = new System.Drawing.Size(253, 28);
             this.txthsqd.TabIndex = 0;
             // 
             // txtdvtqd
             // 
-            this.txtdvtqd.Location = new System.Drawing.Point(255, 281);
+            this.txtdvtqd.Location = new System.Drawing.Point(227, 225);
             this.txtdvtqd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtdvtqd.Multiline = true;
             this.txtdvtqd.Name = "txtdvtqd";
             this.txtdvtqd.ReadOnly = true;
-            this.txtdvtqd.Size = new System.Drawing.Size(285, 34);
+            this.txtdvtqd.Size = new System.Drawing.Size(254, 28);
             this.txtdvtqd.TabIndex = 0;
             // 
             // txtdvt
             // 
-            this.txtdvt.Location = new System.Drawing.Point(21, 372);
+            this.txtdvt.Location = new System.Drawing.Point(19, 298);
             this.txtdvt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtdvt.Multiline = true;
             this.txtdvt.Name = "txtdvt";
             this.txtdvt.ReadOnly = true;
-            this.txtdvt.Size = new System.Drawing.Size(213, 34);
+            this.txtdvt.Size = new System.Drawing.Size(190, 28);
             this.txtdvt.TabIndex = 0;
             // 
             // txttenthuoc
             // 
-            this.txttenthuoc.Location = new System.Drawing.Point(20, 134);
+            this.txttenthuoc.Location = new System.Drawing.Point(18, 107);
             this.txttenthuoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txttenthuoc.Multiline = true;
             this.txttenthuoc.Name = "txttenthuoc";
             this.txttenthuoc.ReadOnly = true;
-            this.txttenthuoc.Size = new System.Drawing.Size(214, 83);
+            this.txttenthuoc.Size = new System.Drawing.Size(191, 67);
             this.txttenthuoc.TabIndex = 0;
             // 
             // txtmathuoc
             // 
-            this.txtmathuoc.Location = new System.Drawing.Point(21, 48);
+            this.txtmathuoc.Location = new System.Drawing.Point(19, 38);
             this.txtmathuoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmathuoc.Multiline = true;
             this.txtmathuoc.Name = "txtmathuoc";
             this.txtmathuoc.ReadOnly = true;
-            this.txtmathuoc.Size = new System.Drawing.Size(213, 34);
+            this.txtmathuoc.Size = new System.Drawing.Size(190, 28);
             this.txtmathuoc.TabIndex = 0;
             // 
             // danhMucThuocTableAdapter1
             // 
             this.danhMucThuocTableAdapter1.ClearBeforeFill = true;
             // 
-            // reloadbutton
-            // 
-            this.reloadbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reloadbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
-            this.reloadbutton.Location = new System.Drawing.Point(507, 76);
-            this.reloadbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.reloadbutton.Name = "reloadbutton";
-            this.reloadbutton.Size = new System.Drawing.Size(45, 49);
-            this.reloadbutton.TabIndex = 41;
-            this.reloadbutton.UseVisualStyleBackColor = true;
-            this.reloadbutton.Click += new System.EventHandler(this.reloadbutton_Click);
-            // 
             // delmedbutton
             // 
             this.delmedbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.delmedbutton.Image = global::Pharmacy.Properties.Resources.trash_solid1;
-            this.delmedbutton.Location = new System.Drawing.Point(638, 650);
-            this.delmedbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.delmedbutton.Location = new System.Drawing.Point(567, 520);
             this.delmedbutton.Name = "delmedbutton";
-            this.delmedbutton.Size = new System.Drawing.Size(44, 46);
+            this.delmedbutton.Size = new System.Drawing.Size(39, 37);
             this.delmedbutton.TabIndex = 40;
             this.delmedbutton.UseVisualStyleBackColor = false;
             this.delmedbutton.Click += new System.EventHandler(this.button3_Click);
@@ -607,10 +590,9 @@
             // 
             this.editmedbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editmedbutton.Image = global::Pharmacy.Properties.Resources.pen_to_square_solid1;
-            this.editmedbutton.Location = new System.Drawing.Point(569, 651);
-            this.editmedbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editmedbutton.Location = new System.Drawing.Point(506, 521);
             this.editmedbutton.Name = "editmedbutton";
-            this.editmedbutton.Size = new System.Drawing.Size(47, 45);
+            this.editmedbutton.Size = new System.Drawing.Size(42, 36);
             this.editmedbutton.TabIndex = 39;
             this.editmedbutton.UseVisualStyleBackColor = true;
             this.editmedbutton.Click += new System.EventHandler(this.button2_Click);
@@ -622,10 +604,10 @@
             this.btnLast.FlatAppearance.BorderSize = 0;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast.Image = global::Pharmacy.Properties.Resources.angles_right_solid1;
-            this.btnLast.Location = new System.Drawing.Point(705, 255);
+            this.btnLast.Location = new System.Drawing.Point(627, 204);
             this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(42, 39);
+            this.btnLast.Size = new System.Drawing.Size(37, 31);
             this.btnLast.TabIndex = 35;
             this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
@@ -637,10 +619,10 @@
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = global::Pharmacy.Properties.Resources.chevron_left_solid1;
-            this.btnNext.Location = new System.Drawing.Point(705, 225);
+            this.btnNext.Location = new System.Drawing.Point(627, 180);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(42, 29);
+            this.btnNext.Size = new System.Drawing.Size(37, 23);
             this.btnNext.TabIndex = 36;
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -652,10 +634,10 @@
             this.btnFirst.FlatAppearance.BorderSize = 0;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
-            this.btnFirst.Location = new System.Drawing.Point(705, 162);
+            this.btnFirst.Location = new System.Drawing.Point(627, 130);
             this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(42, 41);
+            this.btnFirst.Size = new System.Drawing.Size(37, 33);
             this.btnFirst.TabIndex = 37;
             this.btnFirst.UseVisualStyleBackColor = false;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
@@ -667,10 +649,10 @@
             this.btnPrev.FlatAppearance.BorderSize = 0;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
-            this.btnPrev.Location = new System.Drawing.Point(705, 201);
+            this.btnPrev.Location = new System.Drawing.Point(627, 161);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(42, 34);
+            this.btnPrev.Size = new System.Drawing.Size(37, 27);
             this.btnPrev.TabIndex = 38;
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
@@ -684,10 +666,10 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = global::Pharmacy.Properties.Resources.notes_medical_solid__1_1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(586, 88);
+            this.button1.Location = new System.Drawing.Point(521, 70);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 38);
+            this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 6;
             this.button1.Text = "Tạo mới";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -700,11 +682,10 @@
             // 
             // frmMedicine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1365, 948);
-            this.Controls.Add(this.reloadbutton);
+            this.ClientSize = new System.Drawing.Size(1213, 758);
             this.Controls.Add(this.delmedbutton);
             this.Controls.Add(this.editmedbutton);
             this.Controls.Add(this.btnLast);
@@ -794,7 +775,6 @@
         private PharmacyDataSet pharmacyDataSet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtphanloai;
-        private System.Windows.Forms.Button reloadbutton;
         private System.Windows.Forms.ComboBox selectmaloai;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtdongianhap;

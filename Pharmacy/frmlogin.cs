@@ -31,7 +31,7 @@ namespace Pharmacy
         private void button1_Click(object sender, EventArgs e)
         {
             // Connection string to the database
-            string connectionString = @"Data Source=DESKTOP-ILTU31H\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            string connectionString = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
 
             // SQL query to fetch the role (Chuc_vu) based on username and password
             string query = "SELECT * FROM Nhanvien WHERE LOWER(Username) = LOWER(@Username) AND Password = @Password";

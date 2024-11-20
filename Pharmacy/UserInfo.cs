@@ -40,7 +40,8 @@ namespace Pharmacy
                 using (var ms = new MemoryStream(frmlogin.UserSession.CurrentNhanVien.HinhAnh))
                 {
                     pictureBox1.Image = Image.FromStream(ms);
-                }
+                    imagebyte = ConvertImageToBytes(pictureBox1.Image);                
+            }
             }
             else
             {
@@ -77,7 +78,7 @@ namespace Pharmacy
 
         private void updatebutton_Click(object sender, EventArgs e)
         {
-            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
             using (conn = new SqlConnection(constr))
             {
                 sql = "UPDATE Nhanvien SET Ten_NV = @TenNV, SDT = @SDT, Email = @Email, Username = @Username, Password = @Password, Hinh_Anh = @Hinhanh WHERE Ma_NV = @MaNV";
@@ -150,7 +151,6 @@ namespace Pharmacy
                 txtpassword.ReadOnly = false;
                 pictureBox1.Enabled = true;
                 editbutton.Visible = false;
-                if(pictureBox1.Image !=null) { imagebyte = ConvertImageToBytes(pictureBox1.Image); }
             }
             else
             {

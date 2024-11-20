@@ -76,7 +76,6 @@
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.delmedbutton = new System.Windows.Forms.Button();
             this.xuathangbutton = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -117,7 +116,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(721, 570);
+            this.groupBox3.Size = new System.Drawing.Size(895, 570);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin phiếu xuất";
@@ -233,7 +232,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(683, 391);
+            this.groupBox4.Size = new System.Drawing.Size(873, 391);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chi tiết hoá đơn";
@@ -255,7 +254,7 @@
             this.CThoadon.Name = "CThoadon";
             this.CThoadon.RowHeadersWidth = 62;
             this.CThoadon.RowTemplate.Height = 28;
-            this.CThoadon.Size = new System.Drawing.Size(659, 369);
+            this.CThoadon.Size = new System.Drawing.Size(842, 369);
             this.CThoadon.TabIndex = 0;
             // 
             // ID
@@ -365,7 +364,6 @@
             this.reloadbutton.Name = "reloadbutton";
             this.reloadbutton.Size = new System.Drawing.Size(87, 36);
             this.reloadbutton.TabIndex = 42;
-            this.reloadbutton.Text = "Xóa lọc";
             this.reloadbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.reloadbutton.UseVisualStyleBackColor = false;
             this.reloadbutton.Click += new System.EventHandler(this.reloadbutton_Click);
@@ -591,13 +589,13 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.button1.BackColor = System.Drawing.Color.Green;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1395, 631);
+            this.button1.Location = new System.Drawing.Point(1576, 632);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 33);
@@ -607,25 +605,15 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // delmedbutton
-            // 
-            this.delmedbutton.Image = global::Pharmacy.Properties.Resources.trash_solid1;
-            this.delmedbutton.Location = new System.Drawing.Point(696, 619);
-            this.delmedbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.delmedbutton.Name = "delmedbutton";
-            this.delmedbutton.Size = new System.Drawing.Size(45, 46);
-            this.delmedbutton.TabIndex = 43;
-            this.delmedbutton.UseVisualStyleBackColor = false;
-            this.delmedbutton.Click += new System.EventHandler(this.delmedbutton_Click);
-            // 
             // xuathangbutton
             // 
             this.xuathangbutton.BackColor = System.Drawing.Color.Gray;
             this.xuathangbutton.FlatAppearance.BorderSize = 0;
             this.xuathangbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.xuathangbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xuathangbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.xuathangbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.xuathangbutton.Location = new System.Drawing.Point(1253, 632);
+            this.xuathangbutton.Location = new System.Drawing.Point(1443, 632);
             this.xuathangbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xuathangbutton.Name = "xuathangbutton";
             this.xuathangbutton.Size = new System.Drawing.Size(99, 33);
@@ -638,9 +626,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1619, 772);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1759, 772);
             this.Controls.Add(this.xuathangbutton);
-            this.Controls.Add(this.delmedbutton);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnFirst);
@@ -710,7 +698,6 @@
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Button filterbutton;
         private System.Windows.Forms.Button reloadbutton;
-        private System.Windows.Forms.Button delmedbutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma_CT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_CT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma_NV;

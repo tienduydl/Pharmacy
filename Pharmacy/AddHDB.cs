@@ -1,4 +1,5 @@
-﻿using Microsoft.Build.Evaluation;
+﻿using iTextSharp.text.pdf.parser;
+using Microsoft.Build.Evaluation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,7 @@ namespace Pharmacy
         }
         private void LoadAllMed()
         {
-            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
             sql = "Select * from DanhMucThuoc ";
 
             using (SqlConnection conn = new SqlConnection(constr))
@@ -59,7 +60,9 @@ namespace Pharmacy
                         item.MaThuoc = reader["Ma_Thuoc"].ToString();
                         item.TenThuoc = reader["Ten_Thuoc"].ToString();
                         item.Price = reader["DonGia"].ToString();
-                        item.Donvitinh = reader["DVT_QD"].ToString();
+                        item.Donvitinh = reader["DVT"].ToString();
+                        item.hesoquydoi = decimal.Parse(reader["HSQD"].ToString());
+                        item.dvtqd = reader["DVT_QD"].ToString();
                         if (reader["Hinh_Anh"]!= DBNull.Value)
                         {
                             byte[] imagebytes = (byte[])reader["Hinh_Anh"];
@@ -78,14 +81,16 @@ namespace Pharmacy
         private void ProductItem_AddClicked(object sender, EventArgs e)
         {
             var item = sender as ProductItem;
-            if (item != null && item.soluong >0)
+            if (item != null && (item.soluonggoc >0||item.soluongquydoi>0))
             {
                 string tenThuoc = item.TenThuoc;
-                decimal soLuong = item.soluong; 
+                decimal soLuong = item.soluongquydoi * item.hesoquydoi + item.soluonggoc;
+                decimal soLuongQD = item.soluongquydoi + item.soluonggoc / item.hesoquydoi;
                 decimal donGia = decimal.Parse(item.Price);
-                decimal thanhTien = donGia * soLuong;
+                decimal thanhTien = donGia * soLuong*item.hesoquydoi;
                 string maThuoc = item.MaThuoc;
                 string dvt = item.Donvitinh;
+                string dvtqd = item.dvtqd;
                
                 bool found = false;
                 foreach(DataGridViewRow row in dataGridView1.Rows)
@@ -93,8 +98,11 @@ namespace Pharmacy
                     if (row.IsNewRow) continue;
                     if (row.Cells["Ten_Thuoc"].Value != null && row.Cells["Ten_Thuoc"].Value.ToString() == tenThuoc)
                     {
-                        int currentQuantityInGrid = Convert.ToInt32(row.Cells["So_Luong"].Value);
+                        decimal currentQuantityInGrid = Convert.ToDecimal(row.Cells["So_Luong"].Value); 
                         row.Cells["So_Luong"].Value = currentQuantityInGrid + soLuong;
+
+                        decimal currentQuantityQD = Convert.ToDecimal(row.Cells["So_Luong_QD"].Value);
+                        row.Cells["So_Luong_QD"].Value = currentQuantityQD + soLuongQD;
 
                         decimal currentTotal = Convert.ToDecimal(row.Cells["Thanh_Tien"].Value);
                         row.Cells["Thanh_Tien"].Value = (currentQuantityInGrid + soLuong) * donGia;
@@ -106,7 +114,7 @@ namespace Pharmacy
 
                 if (!found)
                 {
-                    dataGridView1.Rows.Add(maThuoc, tenThuoc, dvt, donGia.ToString(), soLuong.ToString(), thanhTien.ToString());
+                    dataGridView1.Rows.Add(maThuoc, tenThuoc,  donGia.ToString(), soLuong.ToString(), dvt,soLuongQD.ToString(),dvtqd, thanhTien.ToString());
                 }
                 
             }
@@ -120,16 +128,16 @@ namespace Pharmacy
             }
             else if((string.IsNullOrEmpty(textBox1.Text) || textBox1.Text == "Tìm kiếm...") && comboboxprev != -1)
             {
-                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai" +
+                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai,DVT,DVT_QD,HSQD" +
                     "\r\nfrom DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where Ten_Loai LIKE N'" + comboBox1.Text + "'  ";
             }
             else if ( comboboxprev == -1)
             {
-                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where Ten_Thuoc  LIKE N'%" + textBox1.Text + "%' ";
+                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai,DVT,DVT_QD,HSQD from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where Ten_Thuoc  LIKE N'%" + textBox1.Text + "%' ";
             }
             else
             {
-                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where  Ten_Thuoc  LIKE N'%" + textBox1.Text + "%' and Ten_Loai LIKE N'" + comboBox1.Text + "' ";
+                sql = "select Ma_Thuoc,Ten_Thuoc,DonGia,Mo_ta,Hinh_Anh,Ten_Loai,DVT,DVT_QD,HSQD from DanhMucThuoc dm left join Loai on dm.Ma_Loai = Loai.Ma_Loai where  Ten_Thuoc  LIKE N'%" + textBox1.Text + "%' and Ten_Loai LIKE N'" + comboBox1.Text + "' ";
             }
 
                 using (SqlConnection conn = new SqlConnection(constr))
@@ -144,8 +152,12 @@ namespace Pharmacy
                     while (reader.Read())
                     {
                         ProductItem item = new ProductItem();
+                        item.MaThuoc = reader["Ma_Thuoc"].ToString();
                         item.TenThuoc = reader["Ten_Thuoc"].ToString();
                         item.Price = reader["DonGia"].ToString();
+                        item.Donvitinh = reader["DVT"].ToString();
+                        item.hesoquydoi = decimal.Parse(reader["HSQD"].ToString());
+                        item.dvtqd = reader["DVT_QD"].ToString();
                         if (reader["Hinh_Anh"] != DBNull.Value)
                         {
                             byte[] imagebytes = (byte[])reader["Hinh_Anh"];
@@ -239,7 +251,8 @@ namespace Pharmacy
             {
                 DataGridViewRow selectedRow = dataGridView1.CurrentRow;
                 int returnedQuantity = Convert.ToInt32(soluongtrainput.Text);
-                int currentQuantity = Convert.ToInt32(selectedRow.Cells["So_Luong"].Value);
+                int currentQuantity = Convert.ToInt32(selectedRow.Cells["So_Luong_QD"].Value);
+                decimal currentquantityQD = decimal.Parse(selectedRow.Cells["So_Luong"].Value.ToString());
 
                 if (returnedQuantity > currentQuantity)
                 {
@@ -248,7 +261,9 @@ namespace Pharmacy
                 }
 
                 int newQuantity = currentQuantity - returnedQuantity;
-                selectedRow.Cells["So_Luong"].Value = newQuantity;
+                selectedRow.Cells["So_Luong_QD"].Value = currentquantityQD - returnedQuantity * (currentquantityQD / currentQuantity);
+
+                selectedRow.Cells["So_Luong_QD"].Value = newQuantity;
                
                 decimal unitPrice = Convert.ToDecimal(selectedRow.Cells["Don_Gia"].Value);
                 selectedRow.Cells["Thanh_Tien"].Value = newQuantity * unitPrice;
@@ -268,7 +283,7 @@ namespace Pharmacy
         private int getmaxHDBcount()
         {
             int count = 0;
-            constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+            constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -305,10 +320,22 @@ namespace Pharmacy
                 if (!row.IsNewRow)
                 {
                     string i = String.Concat(txtmahdb.Text,"-", row.Index+1);
-                    sql = "Insert into CTHoaDonBan ( ID,Ma_HDB,Ma_Thuoc,DVT,So_Luong,Don_Gia,Thanh_Tien) " +
-                        "Values ( '" + i + "','"+txtmahdb.Text+"','" + row.Cells["Ma_Thuoc"].Value + "',N'" + row.Cells["DVT"].Value + "','" + row.Cells["So_Luong"].Value + "','" + row.Cells["Don_Gia"].Value + "','" + row.Cells["Thanh_Tien"].Value + "')";
-                    cmd = new SqlCommand(sql, conn);
-                    conn.Open(); cmd.ExecuteNonQuery(); conn.Close();
+                    string sql = "INSERT INTO CTHoaDonBan (ID, Ma_HDB, Ma_Thuoc, DVT, So_Luong, Don_Gia, Thanh_Tien, So_Luong_QD) " +
+                                 "VALUES (@ID, @Ma_HDB, @Ma_Thuoc, @DVT, @So_Luong, @Don_Gia, @Thanh_Tien, @So_Luong_QD)";
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ID", i);
+                        cmd.Parameters.AddWithValue("@Ma_HDB", txtmahdb.Text);
+                        cmd.Parameters.AddWithValue("@Ma_Thuoc", row.Cells["Ma_Thuoc"].Value.ToString());
+                        cmd.Parameters.AddWithValue("@DVT", row.Cells["DVT"].Value?.ToString() ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@So_Luong", decimal.TryParse(row.Cells["So_Luong"].Value?.ToString(), out var soLuong) ? soLuong : 0);
+                        cmd.Parameters.AddWithValue("@Don_Gia", row.Cells["Don_Gia"].Value?.ToString() ?? "");
+                        cmd.Parameters.AddWithValue("@Thanh_Tien", row.Cells["Thanh_Tien"].Value?.ToString() ?? "");
+                        cmd.Parameters.AddWithValue("@So_Luong_QD", decimal.TryParse(row.Cells["So_Luong_QD"].Value?.ToString(), out var soLuongQD) ? soLuongQD : 0);
+                        
+                        conn.Open(); cmd.ExecuteNonQuery(); conn.Close();
+                    }
+                   
                 }
             }
             MessageBox.Show("Lưu thông tin thành công!");

@@ -110,6 +110,7 @@
             this.txttenthuoc.Size = new System.Drawing.Size(55, 20);
             this.txttenthuoc.TabIndex = 1;
             this.txttenthuoc.Text = "Tên SP";
+            this.txttenthuoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 

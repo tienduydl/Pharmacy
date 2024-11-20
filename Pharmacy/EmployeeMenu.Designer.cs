@@ -46,9 +46,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.nhậpMớiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtThuốcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.phiếuXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.nhậpMớiToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.thôngTinUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,7 +99,7 @@
             this.menuManager.Location = new System.Drawing.Point(4, 142);
             this.menuManager.Name = "menuManager";
             this.menuManager.Padding = new System.Windows.Forms.Padding(8, 7, 0, 2);
-            this.menuManager.Size = new System.Drawing.Size(169, 389);
+            this.menuManager.Size = new System.Drawing.Size(169, 365);
             this.menuManager.TabIndex = 0;
             this.menuManager.Text = "menuStrip1";
             this.menuManager.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuManager_ItemClicked);
@@ -127,27 +125,27 @@
             // 
             this.nhânViênToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.pills_solid;
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(185, 28);
             this.nhânViênToolStripMenuItem.Text = "Thuốc";
             this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(182, 6);
             // 
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.address_book_solid;
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(185, 28);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
             this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(182, 6);
             // 
             // nhậpThuốcToolStripMenuItem
             // 
@@ -172,8 +170,8 @@
             this.danhSáchHóaĐơnNhậpToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.print_solid;
             this.danhSáchHóaĐơnNhậpToolStripMenuItem.Name = "danhSáchHóaĐơnNhậpToolStripMenuItem";
             this.danhSáchHóaĐơnNhậpToolStripMenuItem.RightToLeftAutoMirrorImage = true;
-            this.danhSáchHóaĐơnNhậpToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
-            this.danhSáchHóaĐơnNhậpToolStripMenuItem.Text = "Hóa đơn nhập";
+            this.danhSáchHóaĐơnNhậpToolStripMenuItem.Size = new System.Drawing.Size(291, 30);
+            this.danhSáchHóaĐơnNhậpToolStripMenuItem.Text = "Danh sách hóa đơn nhập";
             this.danhSáchHóaĐơnNhậpToolStripMenuItem.Click += new System.EventHandler(this.danhSáchHóaĐơnNhậpToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
@@ -213,30 +211,28 @@
             this.hóaĐơnBánToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hóaĐơnBánToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.document_png;
             this.hóaĐơnBánToolStripMenuItem.Name = "hóaĐơnBánToolStripMenuItem";
-            this.hóaĐơnBánToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
-            this.hóaĐơnBánToolStripMenuItem.Text = "Hóa đơn bán";
+            this.hóaĐơnBánToolStripMenuItem.Size = new System.Drawing.Size(281, 30);
+            this.hóaĐơnBánToolStripMenuItem.Text = "Danh sách hóa đơn bán";
             this.hóaĐơnBánToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnBánToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(278, 6);
             // 
             // nhậpMớiToolStripMenuItem1
             // 
             this.nhậpMớiToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhậpMớiToolStripMenuItem1.Image = global::Pharmacy.Properties.Resources.add;
             this.nhậpMớiToolStripMenuItem1.Name = "nhậpMớiToolStripMenuItem1";
-            this.nhậpMớiToolStripMenuItem1.Size = new System.Drawing.Size(228, 30);
+            this.nhậpMớiToolStripMenuItem1.Size = new System.Drawing.Size(281, 30);
             this.nhậpMớiToolStripMenuItem1.Text = "Nhập mới";
             this.nhậpMớiToolStripMenuItem1.Click += new System.EventHandler(this.nhậpMớiToolStripMenuItem1_Click);
             // 
             // xuấtThuốcToolStripMenuItem
             // 
             this.xuấtThuốcToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.phiếuXuấtToolStripMenuItem,
-            this.toolStripSeparator6,
-            this.nhậpMớiToolStripMenuItem2});
+            this.toolStripSeparator6});
             this.xuấtThuốcToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xuấtThuốcToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.xuấtThuốcToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.vial_virus_solid;
@@ -244,28 +240,14 @@
             this.xuấtThuốcToolStripMenuItem.Name = "xuấtThuốcToolStripMenuItem";
             this.xuấtThuốcToolStripMenuItem.Padding = new System.Windows.Forms.Padding(6, 20, 6, 0);
             this.xuấtThuốcToolStripMenuItem.Size = new System.Drawing.Size(160, 48);
-            this.xuấtThuốcToolStripMenuItem.Text = "Xuất hàng";
+            this.xuấtThuốcToolStripMenuItem.Text = "Phiếu xuất";
             this.xuấtThuốcToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // phiếuXuấtToolStripMenuItem
-            // 
-            this.phiếuXuấtToolStripMenuItem.Image = global::Pharmacy.Properties.Resources.document_png;
-            this.phiếuXuấtToolStripMenuItem.Name = "phiếuXuấtToolStripMenuItem";
-            this.phiếuXuấtToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
-            this.phiếuXuấtToolStripMenuItem.Text = "Phiếu xuất";
-            this.phiếuXuấtToolStripMenuItem.Click += new System.EventHandler(this.phiếuXuấtToolStripMenuItem_Click);
+            this.xuấtThuốcToolStripMenuItem.Click += new System.EventHandler(this.xuấtThuốcToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(225, 6);
-            // 
-            // nhậpMớiToolStripMenuItem2
-            // 
-            this.nhậpMớiToolStripMenuItem2.Image = global::Pharmacy.Properties.Resources.add;
-            this.nhậpMớiToolStripMenuItem2.Name = "nhậpMớiToolStripMenuItem2";
-            this.nhậpMớiToolStripMenuItem2.Size = new System.Drawing.Size(228, 30);
-            this.nhậpMớiToolStripMenuItem2.Text = "Nhập mới";
             // 
             // toolStripSeparator3
             // 
@@ -326,6 +308,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "EmployeeMenu";
             this.Text = "EmployeeMenu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuManager.ResumeLayout(false);
@@ -358,9 +341,7 @@
         private System.Windows.Forms.ToolStripMenuItem hóaĐơnBánToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhậpMớiToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem phiếuXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem nhậpMớiToolStripMenuItem2;
         private System.Windows.Forms.Panel panel2;
     }
 }

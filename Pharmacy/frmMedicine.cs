@@ -140,13 +140,13 @@ namespace Pharmacy
                     case "Thuốc điều trị":
                         selectmaloai.SelectedIndex = 0;
                         break;
-                    case "Thực phẩm chức năng":
+                    case "Thuốc kháng sinh":
                         selectmaloai.SelectedIndex = 1;
                         break;
-                    case "Thuốc kháng sinh":
+                    case "Dược mỹ phẩm":
                         selectmaloai.SelectedIndex = 2;
                         break;
-                    case "Thuốc giảm đau và chống viêm":
+                    case "Thực phẩm chức năng":
                         selectmaloai.SelectedIndex = 3;
                         break;
                 }
@@ -176,16 +176,7 @@ namespace Pharmacy
         }
         private void reloadbutton_Click(object sender, EventArgs e)
         {
-            
-            sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
-                "\r\nfrom DanhMucThuoc as dmt left join TonKho as tk on dmt.Ma_Thuoc = tk.Ma_Thuoc left join Loai on dmt.Ma_Loai = Loai.Ma_Loai" +
-                "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai";
-            da = new SqlDataAdapter(sql, conn);
-            dt.Clear();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
-            NapCT();
+           
 
         }
 
@@ -228,6 +219,16 @@ namespace Pharmacy
             
             addnewFlag = true;
             textupdate();
+
+            sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
+                "\r\nfrom DanhMucThuoc as dmt left join TonKho as tk on dmt.Ma_Thuoc = tk.Ma_Thuoc left join Loai on dmt.Ma_Loai = Loai.Ma_Loai" +
+                "\r\ngroup by dmt.Ma_Thuoc,dmt.Ten_Thuoc,dmt.Mo_ta,dmt.DonGia,dmt.DVT,dmt.DVT_QD,dmt.HSQD,dmt.Hinh_Anh,Loai.Ten_Loai, dmt.DonGiaNhap";
+            da = new SqlDataAdapter(sql, conn);
+            dt.Clear();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Refresh();
+            NapCT();
         }
 
         private void UpdateAllMed()
@@ -346,7 +347,7 @@ namespace Pharmacy
 
         private void frmMedicine_Load(object sender, EventArgs e)
         {
-                constr = "Data Source=DESKTOP-ILTU31H\\GIOS;Initial Catalog=Pharmacy;Integrated Security=True;Encrypt=False";
+                constr = "Data Source=LAPTOP-I5KR571R\\DUY;Initial Catalog=Pharmacy;Encrypt=False;User id=Pharmacy;Password = 1234";
                 conn.ConnectionString = constr;
                 conn.Open();
                 sql = "select dmt.Ma_Thuoc, dmt.Ten_Thuoc,dmt.DonGia,dmt.DVT,dmt.Hinh_Anh,dmt.DVT_QD,dmt.HSQD, dmt.DonGiaNhap, dmt.Mo_ta,Loai.Ten_Loai,sum(tk.So_Luong_Ton) as 'SLTonKho'" +
@@ -357,7 +358,11 @@ namespace Pharmacy
                 dataGridView1.DataSource = dt;
                 dataGridView1.Refresh();
                 NapCT();
-            
+            if(frmlogin.UserSession.CurrentNhanVien.Chucvu == "Nhân viên")
+            {
+                editmedbutton.Enabled = false;
+                delmedbutton.Enabled = false;
+            }
             
         }
     }
