@@ -45,7 +45,6 @@
             this.danhMucThuocBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.pharmacyDataSet = new Pharmacy.PharmacyDataSet();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,8 +52,6 @@
             this.selectmaloai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtphanloai = new System.Windows.Forms.TextBox();
-            this.medpic = new System.Windows.Forms.PictureBox();
-            this.savemedbutton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -79,6 +76,9 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
+            this.medpic = new System.Windows.Forms.PictureBox();
+            this.savemedbutton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.danhMucThuocBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.danhMucThuocBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -86,9 +86,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.danhMucThuocBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medpic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhMucThuocBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhMucThuocBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -115,15 +115,15 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaThuoc,
             this.TenThuoc,
-            this.Ten_Loai,
             this.Donvitinh,
             this.Donvitinh_QD,
             this.HSquydoi,
-            this.SLTonKho,
-            this.DonGiaNhap,
             this.DG,
             this.MT,
-            this.Hinh_Anh});
+            this.Hinh_Anh,
+            this.Ten_Loai,
+            this.SLTonKho,
+            this.DonGiaNhap});
             this.dataGridView1.DataSource = this.danhMucThuocBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(33, 110);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -222,7 +222,7 @@
             this.Hinh_Anh.MinimumWidth = 6;
             this.Hinh_Anh.Name = "Hinh_Anh";
             this.Hinh_Anh.Visible = false;
-            this.Hinh_Anh.Width = 79;
+            this.Hinh_Anh.Width = 65;
             // 
             // danhMucThuocBindingSource2
             // 
@@ -243,17 +243,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(232, 45);
             this.panel2.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
-            this.pictureBox2.Location = new System.Drawing.Point(197, 18);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
             // 
             // textBox1
             // 
@@ -362,38 +351,6 @@
             this.txtphanloai.ReadOnly = true;
             this.txtphanloai.Size = new System.Drawing.Size(191, 44);
             this.txtphanloai.TabIndex = 15;
-            // 
-            // medpic
-            // 
-            this.medpic.Enabled = false;
-            this.medpic.Location = new System.Drawing.Point(228, 18);
-            this.medpic.Name = "medpic";
-            this.medpic.Size = new System.Drawing.Size(253, 158);
-            this.medpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.medpic.TabIndex = 14;
-            this.medpic.TabStop = false;
-            this.medpic.Click += new System.EventHandler(this.medpic_Click);
-            this.medpic.Paint += new System.Windows.Forms.PaintEventHandler(this.medpic_Paint);
-            // 
-            // savemedbutton
-            // 
-            this.savemedbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.savemedbutton.BackColor = System.Drawing.Color.Green;
-            this.savemedbutton.FlatAppearance.BorderSize = 0;
-            this.savemedbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.savemedbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.savemedbutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
-            this.savemedbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.savemedbutton.Location = new System.Drawing.Point(381, 578);
-            this.savemedbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.savemedbutton.Name = "savemedbutton";
-            this.savemedbutton.Size = new System.Drawing.Size(100, 30);
-            this.savemedbutton.TabIndex = 13;
-            this.savemedbutton.Text = "Lưu";
-            this.savemedbutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.savemedbutton.UseVisualStyleBackColor = false;
-            this.savemedbutton.Visible = false;
-            this.savemedbutton.Click += new System.EventHandler(this.savemedbutton_Click);
             // 
             // label13
             // 
@@ -657,6 +614,49 @@
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
+            // medpic
+            // 
+            this.medpic.Enabled = false;
+            this.medpic.Location = new System.Drawing.Point(228, 18);
+            this.medpic.Name = "medpic";
+            this.medpic.Size = new System.Drawing.Size(253, 158);
+            this.medpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.medpic.TabIndex = 14;
+            this.medpic.TabStop = false;
+            this.medpic.Click += new System.EventHandler(this.medpic_Click);
+            this.medpic.Paint += new System.Windows.Forms.PaintEventHandler(this.medpic_Paint);
+            // 
+            // savemedbutton
+            // 
+            this.savemedbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.savemedbutton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.savemedbutton.FlatAppearance.BorderSize = 0;
+            this.savemedbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savemedbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.savemedbutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
+            this.savemedbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.savemedbutton.Location = new System.Drawing.Point(381, 578);
+            this.savemedbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.savemedbutton.Name = "savemedbutton";
+            this.savemedbutton.Size = new System.Drawing.Size(100, 30);
+            this.savemedbutton.TabIndex = 13;
+            this.savemedbutton.Text = "Lưu";
+            this.savemedbutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.savemedbutton.UseVisualStyleBackColor = false;
+            this.savemedbutton.Visible = false;
+            this.savemedbutton.Click += new System.EventHandler(this.savemedbutton_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
+            this.pictureBox2.Location = new System.Drawing.Point(197, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -706,10 +706,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medpic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhMucThuocBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhMucThuocBindingSource)).EndInit();
             this.ResumeLayout(false);

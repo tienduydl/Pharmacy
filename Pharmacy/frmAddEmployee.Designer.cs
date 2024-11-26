@@ -38,7 +38,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtempchucvu = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.savebutton = new System.Windows.Forms.Button();
             this.addpassword = new System.Windows.Forms.TextBox();
             this.addusername = new System.Windows.Forms.TextBox();
             this.addempemail = new System.Windows.Forms.TextBox();
@@ -46,6 +45,7 @@
             this.addempten = new System.Windows.Forms.TextBox();
             this.addempcode = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.savebutton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -178,24 +178,6 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Chức vụ";
             // 
-            // savebutton
-            // 
-            this.savebutton.BackColor = System.Drawing.Color.Green;
-            this.savebutton.FlatAppearance.BorderSize = 0;
-            this.savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.savebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.savebutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
-            this.savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.savebutton.Location = new System.Drawing.Point(705, 325);
-            this.savebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.savebutton.Name = "savebutton";
-            this.savebutton.Size = new System.Drawing.Size(100, 30);
-            this.savebutton.TabIndex = 13;
-            this.savebutton.Text = "Lưu";
-            this.savebutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.savebutton.UseVisualStyleBackColor = false;
-            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
-            // 
             // addpassword
             // 
             this.addpassword.Location = new System.Drawing.Point(21, 274);
@@ -260,6 +242,24 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            // 
+            // savebutton
+            // 
+            this.savebutton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.savebutton.FlatAppearance.BorderSize = 0;
+            this.savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.savebutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
+            this.savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.savebutton.Location = new System.Drawing.Point(705, 325);
+            this.savebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(100, 30);
+            this.savebutton.TabIndex = 13;
+            this.savebutton.Text = "Lưu";
+            this.savebutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.savebutton.UseVisualStyleBackColor = false;
+            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
             // frmAddEmployee
             // 

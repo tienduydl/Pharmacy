@@ -91,12 +91,12 @@ namespace Pharmacy
                 parameterNames.Add($"@MaThuoc{i}");
             }
             string inClause = string.Join(", ", parameterNames);
-
+           
             sql = "select tk.ID, tk.Ma_Thuoc, tk.So_Luong_Ton, dm.Ten_Thuoc, dm.DVT, dm.HSQD, dm.Hinh_Anh, ct.NSX, ct.HSD, ncc.Ten_NCC " +
                   "from TonKho tk left join DanhMucThuoc dm on tk.Ma_Thuoc = dm.Ma_Thuoc " +
                   "left join CTHoaDonNhap ct on tk.Ma_Lo = ct.Ma_Lo " +
                   "left join NhaCungCap ncc on ct.Ma_NCC = ncc.Ma_NCC " +
-                  $"where tk.Ma_Thuoc in ({inClause})";
+                  $"where tk.Ma_Thuoc in ({inClause}) and ct.HSD > DATEADD(DAY, 14, GETDATE())";
 
             conn = new SqlConnection(constr);
             conn.Open();
@@ -180,6 +180,37 @@ namespace Pharmacy
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row1 in dataGridView1.Rows) // Duyệt qua từng hàng trong bảng trên
+            {
+                if (!row1.IsNewRow)
+                {
+                    string maThuoc1 = row1.Cells["Ma_Thuoc"].Value?.ToString(); // Lấy mã thuốc từ bảng trên
+                    decimal soLuong1 = Convert.ToDecimal(row1.Cells["So_Luong"].Value); // Lấy số lượng từ bảng trên
+                    decimal totalSoLuong2 = 0; // Tổng số lượng của mã thuốc trong bảng dưới
+
+                    foreach (DataGridViewRow row2 in dataGridView2.Rows) // Duyệt qua bảng dưới
+                    {
+                        if (!row2.IsNewRow)
+                        {
+                            string maThuoc2 = row2.Cells["MaThuoc"].Value?.ToString(); // Lấy mã thuốc từ bảng dưới
+                            if (maThuoc1 == maThuoc2) // Nếu mã thuốc khớp
+                            {
+                                totalSoLuong2 += Convert.ToDecimal(row2.Cells["SoLuong"].Value); // Cộng số lượng từ bảng dưới
+                            }
+                        }
+                    }
+
+                    // Kiểm tra tổng số lượng của bảng dưới với bảng trên
+                    if (soLuong1 != totalSoLuong2)
+                    {
+                        MessageBox.Show($"Số lượng không khớp cho mã thuốc {maThuoc1}: Bảng trên = {soLuong1}, Bảng dưới = {totalSoLuong2}.",
+                                        "Lỗi",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
             sql = "Insert into PhieuXuat (Ma_CT,Ngay_CT,Ma_HDB,Ma_NV,Dien_Giai)" +
                 " Values ('" + txtmapx.Text + "',@Ngay_CT,'" + txtmahdb.Text + "','" + txtmanv.Text + "',N'" + txtmota.Text + "')";
             cmd = new SqlCommand(sql, conn);
@@ -219,14 +250,15 @@ namespace Pharmacy
             this.Close();
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow != null && !dataGridView2.CurrentRow.IsNewRow)
-            {
-
-                dataGridView2.Rows.Remove(dataGridView2.CurrentRow);
-
-            }
+            dataGridView2.Rows.Clear();
+            LoadAllMed();
         }
     }
 }

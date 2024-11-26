@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Ma_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.khachHangBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pharmacyDataSet = new Pharmacy.PharmacyDataSet();
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnLast = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.btnPrev = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,24 +52,24 @@
             this.txtsdt = new System.Windows.Forms.TextBox();
             this.txthoten = new System.Windows.Forms.TextBox();
             this.txtmakh = new System.Windows.Forms.TextBox();
+            this.khachHangTableAdapter = new Pharmacy.PharmacyDataSetTableAdapters.KhachHangTableAdapter();
+            this.reloadbutton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.khachHangTableAdapter = new Pharmacy.PharmacyDataSetTableAdapters.KhachHangTableAdapter();
-            this.khachHangBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Ma_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reloadbutton = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnPrev = new System.Windows.Forms.Button();
             this.savesplbutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).BeginInit();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -81,17 +81,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(232, 45);
             this.panel2.TabIndex = 20;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
-            this.pictureBox2.Location = new System.Drawing.Point(197, 18);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
             // 
             // textBox1
             // 
@@ -111,8 +100,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_KH,
@@ -120,7 +109,6 @@
             this.SDT,
             this.DiaChi,
             this.Email});
-            this.dataGridView1.DataSource = this.khachHangBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(29, 99);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
@@ -130,15 +118,64 @@
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // khachHangBindingSource
+            // Ma_KH
             // 
-            this.khachHangBindingSource.DataMember = "KhachHang";
-            this.khachHangBindingSource.DataSource = this.pharmacyDataSet;
+            this.Ma_KH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Ma_KH.DataPropertyName = "Ma_KH";
+            this.Ma_KH.HeaderText = "Mã khách hàng";
+            this.Ma_KH.MinimumWidth = 8;
+            this.Ma_KH.Name = "Ma_KH";
+            this.Ma_KH.Width = 117;
+            // 
+            // Ten_KH
+            // 
+            this.Ten_KH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ten_KH.DataPropertyName = "Ten_KH";
+            this.Ten_KH.HeaderText = "Tên khách hàng";
+            this.Ten_KH.MinimumWidth = 8;
+            this.Ten_KH.Name = "Ten_KH";
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 8;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 64;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.MinimumWidth = 8;
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 56;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 8;
+            this.Email.Name = "Email";
+            this.Email.Width = 70;
+            // 
+            // khachHangBindingSource1
+            // 
+            this.khachHangBindingSource1.DataMember = "KhachHang";
+            this.khachHangBindingSource1.DataSource = this.pharmacyDataSet;
             // 
             // pharmacyDataSet
             // 
             this.pharmacyDataSet.DataSetName = "PharmacyDataSet";
             this.pharmacyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // khachHangBindingSource
+            // 
+            this.khachHangBindingSource.DataMember = "KhachHang";
+            this.khachHangBindingSource.DataSource = this.pharmacyDataSet;
             // 
             // label2
             // 
@@ -150,80 +187,6 @@
             this.label2.Size = new System.Drawing.Size(217, 28);
             this.label2.TabIndex = 16;
             this.label2.Text = "Danh mục khách hàng";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = global::Pharmacy.Properties.Resources.notes_medical_solid__1_1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(547, 64);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Tạo mới";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnLast
-            // 
-            this.btnLast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLast.FlatAppearance.BorderSize = 0;
-            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLast.Image = global::Pharmacy.Properties.Resources.angles_right_solid1;
-            this.btnLast.Location = new System.Drawing.Point(660, 188);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(37, 30);
-            this.btnLast.TabIndex = 24;
-            this.btnLast.UseVisualStyleBackColor = false;
-            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Image = global::Pharmacy.Properties.Resources.chevron_left_solid1;
-            this.btnNext.Location = new System.Drawing.Point(660, 159);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(37, 23);
-            this.btnNext.TabIndex = 25;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFirst.FlatAppearance.BorderSize = 0;
-            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
-            this.btnFirst.Location = new System.Drawing.Point(660, 110);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(37, 32);
-            this.btnFirst.TabIndex = 26;
-            this.btnFirst.UseVisualStyleBackColor = false;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrev.FlatAppearance.BorderSize = 0;
-            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
-            this.btnPrev.Location = new System.Drawing.Point(660, 137);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(37, 32);
-            this.btnPrev.TabIndex = 27;
-            this.btnPrev.UseVisualStyleBackColor = false;
-            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // panel3
             // 
@@ -361,6 +324,20 @@
             this.txtmakh.Size = new System.Drawing.Size(284, 27);
             this.txtmakh.TabIndex = 0;
             // 
+            // khachHangTableAdapter
+            // 
+            this.khachHangTableAdapter.ClearBeforeFill = true;
+            // 
+            // reloadbutton
+            // 
+            this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
+            this.reloadbutton.Location = new System.Drawing.Point(486, 62);
+            this.reloadbutton.Name = "reloadbutton";
+            this.reloadbutton.Size = new System.Drawing.Size(40, 31);
+            this.reloadbutton.TabIndex = 43;
+            this.reloadbutton.UseVisualStyleBackColor = true;
+            this.reloadbutton.Click += new System.EventHandler(this.reloadbutton_Click);
+            // 
             // button3
             // 
             this.button3.Image = global::Pharmacy.Properties.Resources.trash_solid1;
@@ -381,73 +358,66 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // khachHangTableAdapter
+            // btnLast
             // 
-            this.khachHangTableAdapter.ClearBeforeFill = true;
+            this.btnLast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Image = global::Pharmacy.Properties.Resources.angles_right_solid1;
+            this.btnLast.Location = new System.Drawing.Point(660, 188);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(37, 30);
+            this.btnLast.TabIndex = 24;
+            this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
-            // khachHangBindingSource1
+            // btnNext
             // 
-            this.khachHangBindingSource1.DataMember = "KhachHang";
-            this.khachHangBindingSource1.DataSource = this.pharmacyDataSet;
+            this.btnNext.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Image = global::Pharmacy.Properties.Resources.chevron_left_solid1;
+            this.btnNext.Location = new System.Drawing.Point(660, 159);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(37, 23);
+            this.btnNext.TabIndex = 25;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // Ma_KH
+            // btnFirst
             // 
-            this.Ma_KH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Ma_KH.DataPropertyName = "Ma_KH";
-            this.Ma_KH.HeaderText = "Mã khách hàng";
-            this.Ma_KH.MinimumWidth = 8;
-            this.Ma_KH.Name = "Ma_KH";
-            this.Ma_KH.Width = 117;
+            this.btnFirst.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
+            this.btnFirst.Location = new System.Drawing.Point(660, 110);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(37, 32);
+            this.btnFirst.TabIndex = 26;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
-            // Ten_KH
+            // btnPrev
             // 
-            this.Ten_KH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ten_KH.DataPropertyName = "Ten_KH";
-            this.Ten_KH.HeaderText = "Tên khách hàng";
-            this.Ten_KH.MinimumWidth = 8;
-            this.Ten_KH.Name = "Ten_KH";
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SDT";
-            this.SDT.MinimumWidth = 8;
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 64;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.MinimumWidth = 8;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 56;
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 8;
-            this.Email.Name = "Email";
-            this.Email.Width = 70;
-            // 
-            // reloadbutton
-            // 
-            this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
-            this.reloadbutton.Location = new System.Drawing.Point(486, 62);
-            this.reloadbutton.Name = "reloadbutton";
-            this.reloadbutton.Size = new System.Drawing.Size(40, 31);
-            this.reloadbutton.TabIndex = 43;
-            this.reloadbutton.UseVisualStyleBackColor = true;
-            this.reloadbutton.Click += new System.EventHandler(this.reloadbutton_Click);
+            this.btnPrev.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrev.FlatAppearance.BorderSize = 0;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
+            this.btnPrev.Location = new System.Drawing.Point(660, 137);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(37, 32);
+            this.btnPrev.TabIndex = 27;
+            this.btnPrev.UseVisualStyleBackColor = false;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // savesplbutton
             // 
             this.savesplbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.savesplbutton.BackColor = System.Drawing.Color.Green;
+            this.savesplbutton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.savesplbutton.FlatAppearance.BorderSize = 0;
             this.savesplbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savesplbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -463,6 +433,35 @@
             this.savesplbutton.UseVisualStyleBackColor = false;
             this.savesplbutton.Visible = false;
             this.savesplbutton.Click += new System.EventHandler(this.savesplbutton_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::Pharmacy.Properties.Resources.notes_medical_solid__1_1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(547, 64);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Tạo mới";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
+            this.pictureBox2.Location = new System.Drawing.Point(197, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // frmCustomer
             // 
@@ -488,13 +487,13 @@
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

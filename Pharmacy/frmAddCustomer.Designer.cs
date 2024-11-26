@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.savebutton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,26 +40,9 @@
             this.txtsdt = new System.Windows.Forms.TextBox();
             this.txthoten = new System.Windows.Forms.TextBox();
             this.txtmakh = new System.Windows.Forms.TextBox();
+            this.savebutton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // savebutton
-            // 
-            this.savebutton.BackColor = System.Drawing.Color.SeaGreen;
-            this.savebutton.FlatAppearance.BorderSize = 0;
-            this.savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.savebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.savebutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
-            this.savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.savebutton.Location = new System.Drawing.Point(450, 233);
-            this.savebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.savebutton.Name = "savebutton";
-            this.savebutton.Size = new System.Drawing.Size(100, 30);
-            this.savebutton.TabIndex = 12;
-            this.savebutton.Text = "Lưu";
-            this.savebutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.savebutton.UseVisualStyleBackColor = false;
-            this.savebutton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label11
             // 
@@ -194,6 +176,24 @@
             this.txtmakh.Name = "txtmakh";
             this.txtmakh.Size = new System.Drawing.Size(155, 28);
             this.txtmakh.TabIndex = 0;
+            // 
+            // savebutton
+            // 
+            this.savebutton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.savebutton.FlatAppearance.BorderSize = 0;
+            this.savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.savebutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
+            this.savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.savebutton.Location = new System.Drawing.Point(450, 233);
+            this.savebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(100, 30);
+            this.savebutton.TabIndex = 12;
+            this.savebutton.Text = "Lưu";
+            this.savebutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.savebutton.UseVisualStyleBackColor = false;
+            this.savebutton.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmAddCustomer
             // 

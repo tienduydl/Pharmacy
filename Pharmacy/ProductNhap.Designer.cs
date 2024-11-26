@@ -34,7 +34,6 @@
             this.selectNCC = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txttenthuoc = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtmathuoc = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.txtgianhap = new System.Windows.Forms.TextBox();
+            this.txttenthuoc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoluong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -101,17 +101,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "NCC:";
             // 
-            // txttenthuoc
-            // 
-            this.txttenthuoc.AutoSize = true;
-            this.txttenthuoc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttenthuoc.Location = new System.Drawing.Point(163, 50);
-            this.txttenthuoc.Name = "txttenthuoc";
-            this.txttenthuoc.Size = new System.Drawing.Size(55, 20);
-            this.txttenthuoc.TabIndex = 1;
-            this.txttenthuoc.Text = "Tên SP";
-            this.txttenthuoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Pharmacy.Properties.Resources.image_2__1_;
@@ -126,7 +115,7 @@
             // 
             this.txtmathuoc.AutoSize = true;
             this.txtmathuoc.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmathuoc.Location = new System.Drawing.Point(111, 19);
+            this.txtmathuoc.Location = new System.Drawing.Point(110, 9);
             this.txtmathuoc.Name = "txtmathuoc";
             this.txtmathuoc.Size = new System.Drawing.Size(46, 17);
             this.txtmathuoc.TabIndex = 10;
@@ -173,11 +162,22 @@
             this.txtgianhap.Size = new System.Drawing.Size(151, 22);
             this.txtgianhap.TabIndex = 15;
             // 
+            // txttenthuoc
+            // 
+            this.txttenthuoc.BackColor = System.Drawing.Color.White;
+            this.txttenthuoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txttenthuoc.Location = new System.Drawing.Point(112, 29);
+            this.txttenthuoc.Multiline = true;
+            this.txttenthuoc.Name = "txttenthuoc";
+            this.txttenthuoc.Size = new System.Drawing.Size(174, 57);
+            this.txttenthuoc.TabIndex = 16;
+            // 
             // ProductNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.txttenthuoc);
             this.Controls.Add(this.txtgianhap);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -185,7 +185,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtmathuoc);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txttenthuoc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.selectNCC);
             this.Controls.Add(this.label4);
@@ -193,7 +192,7 @@
             this.Controls.Add(this.addbutton);
             this.Controls.Add(this.txtsoluong);
             this.Name = "ProductNhap";
-            this.Size = new System.Drawing.Size(299, 250);
+            this.Size = new System.Drawing.Size(297, 248);
             this.Load += new System.EventHandler(this.ProductNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtsoluong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -209,7 +208,6 @@
         private System.Windows.Forms.ComboBox selectNCC;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label txttenthuoc;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label txtmathuoc;
         private System.Windows.Forms.Label label2;
@@ -217,5 +215,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox txtgianhap;
+        private System.Windows.Forms.TextBox txttenthuoc;
     }
 }

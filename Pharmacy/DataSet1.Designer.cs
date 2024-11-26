@@ -291,6 +291,8 @@ namespace Pharmacy {
             
             private global::System.Data.DataColumn columnDonGiaNhap;
             
+            private global::System.Data.DataColumn columnThanhTien;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dtCostReportDataTable() {
@@ -374,6 +376,14 @@ namespace Pharmacy {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ThanhTienColumn {
+                get {
+                    return this.columnThanhTien;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace Pharmacy {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtCostReportRow AdddtCostReportRow(string Ma_CT, System.DateTime Ngay_CT, string Ma_Thuoc, string Ten_Thuoc, int So_Luong, int DonGiaNhap) {
+            public dtCostReportRow AdddtCostReportRow(string Ma_CT, System.DateTime Ngay_CT, string Ma_Thuoc, string Ten_Thuoc, int So_Luong, int DonGiaNhap, string ThanhTien) {
                 dtCostReportRow rowdtCostReportRow = ((dtCostReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Ma_CT,
@@ -417,7 +427,8 @@ namespace Pharmacy {
                         Ma_Thuoc,
                         Ten_Thuoc,
                         So_Luong,
-                        DonGiaNhap};
+                        DonGiaNhap,
+                        ThanhTien};
                 rowdtCostReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtCostReportRow);
                 return rowdtCostReportRow;
@@ -446,6 +457,7 @@ namespace Pharmacy {
                 this.columnTen_Thuoc = base.Columns["Ten_Thuoc"];
                 this.columnSo_Luong = base.Columns["So_Luong"];
                 this.columnDonGiaNhap = base.Columns["DonGiaNhap"];
+                this.columnThanhTien = base.Columns["ThanhTien"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,6 +475,8 @@ namespace Pharmacy {
                 base.Columns.Add(this.columnSo_Luong);
                 this.columnDonGiaNhap = new global::System.Data.DataColumn("DonGiaNhap", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDonGiaNhap);
+                this.columnThanhTien = new global::System.Data.DataColumn("ThanhTien", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnThanhTien);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -701,6 +715,22 @@ namespace Pharmacy {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ThanhTien {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtCostReport.ThanhTienColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThanhTien\' in table \'dtCostReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtCostReport.ThanhTienColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsMa_CTNull() {
                 return this.IsNull(this.tabledtCostReport.Ma_CTColumn);
             }
@@ -769,6 +799,18 @@ namespace Pharmacy {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDonGiaNhapNull() {
                 this[this.tabledtCostReport.DonGiaNhapColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsThanhTienNull() {
+                return this.IsNull(this.tabledtCostReport.ThanhTienColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetThanhTienNull() {
+                this[this.tabledtCostReport.ThanhTienColumn] = global::System.Convert.DBNull;
             }
         }
         

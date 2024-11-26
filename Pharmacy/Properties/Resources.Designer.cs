@@ -649,5 +649,25 @@ namespace Pharmacy.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z6053674322773_c57a1df2e856144b5ed76c835bde3f3c {
+            get {
+                object obj = ResourceManager.GetObject("z6053674322773_c57a1df2e856144b5ed76c835bde3f3c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z6053699805185_f374ee36bfbe38cff284d0dbe19468dd {
+            get {
+                object obj = ResourceManager.GetObject("z6053699805185_f374ee36bfbe38cff284d0dbe19468dd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

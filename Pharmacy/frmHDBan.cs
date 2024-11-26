@@ -200,14 +200,12 @@ namespace Pharmacy
 
                 // Thêm tiêu đề và thông tin chung của hóa đơn
                 document.Add(new Paragraph("HÓA ĐƠN BÁN HÀNG",timesNewRoman));
-                document.Add(new Paragraph("----------------------------------------------------------------------------------------------------------------")); // Dòng trống
                 document.Add(new Paragraph("Mã đơn hàng: " + txtmahdb.Text,times));
                 document.Add(new Paragraph("Ngày đơn hàng: " + txtngayhdb.Text,times));
                 document.Add(new Paragraph("Người tạo: " + txtmanv.Text,times));
                 document.Add(new Paragraph("Khách hàng: " + txtmakh.Text,times));
                 document.Add(new Paragraph("Tổng tiền: " + txttongtien.Text,times));
-                document.Add(new Paragraph("----------------------------------------------------------------------------------------------------------------")); // Dòng trống
-
+                document.Add(new Paragraph(" " , times));
                 // Tạo bảng cho chi tiết hóa đơn
                 PdfPTable table = new PdfPTable(6);
                 table.WidthPercentage = 100;
@@ -219,12 +217,7 @@ namespace Pharmacy
                 table.AddCell(new PdfPCell(new Phrase("Tên thuốc", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
                 table.AddCell(new PdfPCell(new Phrase("Tên thuốc", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
                 table.AddCell(new PdfPCell(new Phrase("Tên thuốc", times)) { HorizontalAlignment = Element.ALIGN_LEFT });
-                table.AddCell("STT");
-                table.AddCell("Tên Thuốc");
-                table.AddCell("Số Lượng");
-                table.AddCell("Đơn Vị Tính");
-                table.AddCell("Đơn giá");
-                table.AddCell("Thành Tiền");
+               
                 // Thêm bảng vào tài liệu
                 foreach (DataGridViewRow row in CThoadon.Rows)
                 {

@@ -37,11 +37,8 @@
             this.Tong_tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dien_Giai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.filterbutton = new System.Windows.Forms.Button();
-            this.reloadbutton = new System.Windows.Forms.Button();
             this.enddate = new System.Windows.Forms.DateTimePicker();
             this.startdate = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,18 +66,21 @@
             this.Don_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thanh_Tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.filterbutton = new System.Windows.Forms.Button();
+            this.reloadbutton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CTHoaDonNhap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -99,6 +99,7 @@
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_CT,
@@ -180,35 +181,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bộ lọc phiếu nhập";
             // 
-            // filterbutton
-            // 
-            this.filterbutton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.filterbutton.Image = global::Pharmacy.Properties.Resources.filter;
-            this.filterbutton.Location = new System.Drawing.Point(583, 33);
-            this.filterbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.filterbutton.Name = "filterbutton";
-            this.filterbutton.Size = new System.Drawing.Size(87, 36);
-            this.filterbutton.TabIndex = 45;
-            this.filterbutton.Text = "Lọc";
-            this.filterbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.filterbutton.UseVisualStyleBackColor = false;
-            this.filterbutton.Click += new System.EventHandler(this.filterbutton_Click);
-            // 
-            // reloadbutton
-            // 
-            this.reloadbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reloadbutton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.reloadbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
-            this.reloadbutton.Location = new System.Drawing.Point(583, 75);
-            this.reloadbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.reloadbutton.Name = "reloadbutton";
-            this.reloadbutton.Size = new System.Drawing.Size(87, 36);
-            this.reloadbutton.TabIndex = 44;
-            this.reloadbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.reloadbutton.UseVisualStyleBackColor = false;
-            this.reloadbutton.Click += new System.EventHandler(this.reloadbutton_Click);
-            // 
             // enddate
             // 
             this.enddate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -226,18 +198,6 @@
             this.startdate.Name = "startdate";
             this.startdate.Size = new System.Drawing.Size(143, 22);
             this.startdate.TabIndex = 10;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
-            this.pictureBox2.Location = new System.Drawing.Point(495, 42);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 18);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
             // 
             // label3
             // 
@@ -401,6 +361,7 @@
             // 
             // CTHoaDonNhap
             // 
+            this.CTHoaDonNhap.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.CTHoaDonNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CTHoaDonNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_Lo,
@@ -512,9 +473,65 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Hoá đơn nhập";
             // 
+            // btnLast
+            // 
+            this.btnLast.BackColor = System.Drawing.Color.White;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Image = global::Pharmacy.Properties.Resources.angles_right_solid1;
+            this.btnLast.Location = new System.Drawing.Point(731, 273);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(37, 32);
+            this.btnLast.TabIndex = 43;
+            this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Image = global::Pharmacy.Properties.Resources.chevron_left_solid1;
+            this.btnNext.Location = new System.Drawing.Point(731, 250);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(37, 25);
+            this.btnNext.TabIndex = 44;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.BackColor = System.Drawing.Color.White;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
+            this.btnFirst.Location = new System.Drawing.Point(731, 199);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(37, 34);
+            this.btnFirst.TabIndex = 45;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.BackColor = System.Drawing.Color.White;
+            this.btnPrev.FlatAppearance.BorderSize = 0;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
+            this.btnPrev.Location = new System.Drawing.Point(731, 231);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(37, 28);
+            this.btnPrev.TabIndex = 46;
+            this.btnPrev.UseVisualStyleBackColor = false;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -530,61 +547,46 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnLast
+            // filterbutton
             // 
-            this.btnLast.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLast.FlatAppearance.BorderSize = 0;
-            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLast.Image = global::Pharmacy.Properties.Resources.angles_right_solid1;
-            this.btnLast.Location = new System.Drawing.Point(731, 273);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(37, 32);
-            this.btnLast.TabIndex = 43;
-            this.btnLast.UseVisualStyleBackColor = false;
-            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            this.filterbutton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.filterbutton.Image = global::Pharmacy.Properties.Resources.filter;
+            this.filterbutton.Location = new System.Drawing.Point(583, 33);
+            this.filterbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.filterbutton.Name = "filterbutton";
+            this.filterbutton.Size = new System.Drawing.Size(87, 36);
+            this.filterbutton.TabIndex = 45;
+            this.filterbutton.Text = "Lọc";
+            this.filterbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.filterbutton.UseVisualStyleBackColor = false;
+            this.filterbutton.Click += new System.EventHandler(this.filterbutton_Click);
             // 
-            // btnNext
+            // reloadbutton
             // 
-            this.btnNext.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Image = global::Pharmacy.Properties.Resources.chevron_left_solid1;
-            this.btnNext.Location = new System.Drawing.Point(731, 250);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(37, 25);
-            this.btnNext.TabIndex = 44;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.reloadbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reloadbutton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.reloadbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
+            this.reloadbutton.Location = new System.Drawing.Point(583, 75);
+            this.reloadbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.reloadbutton.Name = "reloadbutton";
+            this.reloadbutton.Size = new System.Drawing.Size(87, 36);
+            this.reloadbutton.TabIndex = 44;
+            this.reloadbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.reloadbutton.UseVisualStyleBackColor = false;
+            this.reloadbutton.Click += new System.EventHandler(this.reloadbutton_Click);
             // 
-            // btnFirst
+            // pictureBox2
             // 
-            this.btnFirst.BackColor = System.Drawing.SystemColors.Control;
-            this.btnFirst.FlatAppearance.BorderSize = 0;
-            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
-            this.btnFirst.Location = new System.Drawing.Point(731, 199);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(37, 34);
-            this.btnFirst.TabIndex = 45;
-            this.btnFirst.UseVisualStyleBackColor = false;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.BackColor = System.Drawing.SystemColors.Control;
-            this.btnPrev.FlatAppearance.BorderSize = 0;
-            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrev.Image = global::Pharmacy.Properties.Resources.chevron_right_solid1;
-            this.btnPrev.Location = new System.Drawing.Point(731, 231);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(37, 28);
-            this.btnPrev.TabIndex = 46;
-            this.btnPrev.UseVisualStyleBackColor = false;
-            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
+            this.pictureBox2.Location = new System.Drawing.Point(495, 42);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 18);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // frmHDNhap
             // 
@@ -609,11 +611,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CTHoaDonNhap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

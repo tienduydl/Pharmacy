@@ -127,8 +127,8 @@
   <data name="vial-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vial-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hand-holding-heart-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hand-holding-heart-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pills-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pills-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-regular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,6 +138,9 @@
   </data>
   <data name="chart-simple-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart-simple-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hand-holding-heart-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hand-holding-heart-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="file-medical-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file-medical-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +178,8 @@
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="floppy-disk-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\floppy-disk-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notes-medical-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notes-medical-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bars-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bars-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,6 +238,9 @@
   <data name="chevron-right-solid1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chevron-right-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="z6053674322773_c57a1df2e856144b5ed76c835bde3f3c" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z6053674322773_c57a1df2e856144b5ed76c835bde3f3c.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="handshake-regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\handshake-regular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -244,8 +250,11 @@
   <data name="back-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="notes-medical-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notes-medical-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chevron-right-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chevron-right-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,8 +274,8 @@
   <data name="file-contract-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file-contract-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pills-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pills-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="floppy-disk-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\floppy-disk-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="angles-right-solid1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\angles-right-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,16 +292,13 @@
   <data name="prescription-bottle-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prescription-bottle-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="print-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="document.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="z6053699805185_f374ee36bfbe38cff284d0dbe19468dd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z6053699805185_f374ee36bfbe38cff284d0dbe19468dd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

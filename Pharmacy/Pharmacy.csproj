@@ -612,6 +612,12 @@
   <ItemGroup>
     <None Include="Resources\edit-text.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z6053674322773_c57a1df2e856144b5ed76c835bde3f3c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z6053699805185_f374ee36bfbe38cff284d0dbe19468dd.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

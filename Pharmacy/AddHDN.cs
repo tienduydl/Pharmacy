@@ -204,7 +204,7 @@ namespace Pharmacy
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            UpdateAllMed();
+            if (!(string.IsNullOrEmpty(textBox1.Text) || textBox1.Text == "Tìm kiếm...")) { UpdateAllMed(); }
         }
 
         

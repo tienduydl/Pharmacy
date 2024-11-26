@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtmathuoc = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txttenthuoc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.addbutton = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.txtmaton = new System.Windows.Forms.Label();
             this.selectsoluong2 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.txttenthuoc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectsoluong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectsoluong2)).BeginInit();
@@ -87,17 +87,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
-            // 
-            // txttenthuoc
-            // 
-            this.txttenthuoc.AutoSize = true;
-            this.txttenthuoc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttenthuoc.Location = new System.Drawing.Point(176, 55);
-            this.txttenthuoc.Name = "txttenthuoc";
-            this.txttenthuoc.Size = new System.Drawing.Size(55, 20);
-            this.txttenthuoc.TabIndex = 17;
-            this.txttenthuoc.Text = "Tên SP";
-            this.txttenthuoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -201,10 +190,22 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "Số lượng (Quy đổi)";
             // 
+            // txttenthuoc
+            // 
+            this.txttenthuoc.BackColor = System.Drawing.Color.White;
+            this.txttenthuoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txttenthuoc.Location = new System.Drawing.Point(125, 44);
+            this.txttenthuoc.Multiline = true;
+            this.txttenthuoc.Name = "txttenthuoc";
+            this.txttenthuoc.Size = new System.Drawing.Size(168, 47);
+            this.txttenthuoc.TabIndex = 37;
+            // 
             // ProductXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.txttenthuoc);
             this.Controls.Add(this.txtmaton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.selectsoluong2);
@@ -217,13 +218,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtmathuoc);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txttenthuoc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.addbutton);
             this.Controls.Add(this.selectsoluong1);
             this.Name = "ProductXuat";
-            this.Size = new System.Drawing.Size(323, 308);
+            this.Size = new System.Drawing.Size(319, 304);
             this.Load += new System.EventHandler(this.ProductXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectsoluong1)).EndInit();
@@ -239,7 +239,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtmathuoc;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label txttenthuoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button addbutton;
@@ -252,5 +251,6 @@
         private System.Windows.Forms.Label txtmaton;
         private System.Windows.Forms.NumericUpDown selectsoluong2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txttenthuoc;
     }
 }

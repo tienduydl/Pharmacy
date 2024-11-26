@@ -32,6 +32,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Ma_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSoThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhaCungCapBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pharmacyDataSet = new Pharmacy.PharmacyDataSet();
             this.nhaCungCapBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,11 +63,11 @@
             this.reloadbutton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.Ma_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSoThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maSoThueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhaCungCapBindingSource1)).BeginInit();
@@ -105,13 +110,19 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_NCC,
             this.Ten_NCC,
             this.SDT,
             this.DiaChi,
-            this.MaSoThue});
+            this.MaSoThue,
+            this.maNCCDataGridViewTextBoxColumn,
+            this.tenNCCDataGridViewTextBoxColumn,
+            this.sDTDataGridViewTextBoxColumn,
+            this.diaChiDataGridViewTextBoxColumn,
+            this.maSoThueDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.nhaCungCapBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(25, 93);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -121,6 +132,50 @@
             this.dataGridView1.Size = new System.Drawing.Size(589, 432);
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Ma_NCC
+            // 
+            this.Ma_NCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Ma_NCC.DataPropertyName = "Ma_NCC";
+            this.Ma_NCC.HeaderText = "Mã NCC";
+            this.Ma_NCC.MinimumWidth = 8;
+            this.Ma_NCC.Name = "Ma_NCC";
+            this.Ma_NCC.Width = 80;
+            // 
+            // Ten_NCC
+            // 
+            this.Ten_NCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Ten_NCC.DataPropertyName = "Ten_NCC";
+            this.Ten_NCC.HeaderText = "Tên NCC";
+            this.Ten_NCC.MinimumWidth = 8;
+            this.Ten_NCC.Name = "Ten_NCC";
+            this.Ten_NCC.Width = 84;
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 8;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 64;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.MinimumWidth = 8;
+            this.DiaChi.Name = "DiaChi";
+            // 
+            // MaSoThue
+            // 
+            this.MaSoThue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MaSoThue.DataPropertyName = "MaSoThue";
+            this.MaSoThue.HeaderText = "Mã số thuế";
+            this.MaSoThue.MinimumWidth = 8;
+            this.MaSoThue.Name = "MaSoThue";
+            this.MaSoThue.Width = 93;
             // 
             // nhaCungCapBindingSource1
             // 
@@ -254,7 +309,7 @@
             // savesplbutton
             // 
             this.savesplbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.savesplbutton.BackColor = System.Drawing.Color.Green;
+            this.savesplbutton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.savesplbutton.FlatAppearance.BorderSize = 0;
             this.savesplbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savesplbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -420,49 +475,45 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.delbutton_Click);
             // 
-            // Ma_NCC
+            // maNCCDataGridViewTextBoxColumn
             // 
-            this.Ma_NCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Ma_NCC.DataPropertyName = "Ma_NCC";
-            this.Ma_NCC.HeaderText = "Mã NCC";
-            this.Ma_NCC.MinimumWidth = 8;
-            this.Ma_NCC.Name = "Ma_NCC";
-            this.Ma_NCC.Width = 86;
+            this.maNCCDataGridViewTextBoxColumn.DataPropertyName = "Ma_NCC";
+            this.maNCCDataGridViewTextBoxColumn.HeaderText = "Ma_NCC";
+            this.maNCCDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNCCDataGridViewTextBoxColumn.Name = "maNCCDataGridViewTextBoxColumn";
+            this.maNCCDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Ten_NCC
+            // tenNCCDataGridViewTextBoxColumn
             // 
-            this.Ten_NCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Ten_NCC.DataPropertyName = "Ten_NCC";
-            this.Ten_NCC.HeaderText = "Tên NCC";
-            this.Ten_NCC.MinimumWidth = 8;
-            this.Ten_NCC.Name = "Ten_NCC";
-            this.Ten_NCC.Width = 91;
+            this.tenNCCDataGridViewTextBoxColumn.DataPropertyName = "Ten_NCC";
+            this.tenNCCDataGridViewTextBoxColumn.HeaderText = "Ten_NCC";
+            this.tenNCCDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenNCCDataGridViewTextBoxColumn.Name = "tenNCCDataGridViewTextBoxColumn";
+            this.tenNCCDataGridViewTextBoxColumn.Width = 125;
             // 
-            // SDT
+            // sDTDataGridViewTextBoxColumn
             // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SDT";
-            this.SDT.MinimumWidth = 8;
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 64;
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            this.sDTDataGridViewTextBoxColumn.Width = 125;
             // 
-            // DiaChi
+            // diaChiDataGridViewTextBoxColumn
             // 
-            this.DiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.MinimumWidth = 8;
-            this.DiaChi.Name = "DiaChi";
+            this.diaChiDataGridViewTextBoxColumn.DataPropertyName = "DiaChi";
+            this.diaChiDataGridViewTextBoxColumn.HeaderText = "DiaChi";
+            this.diaChiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
+            this.diaChiDataGridViewTextBoxColumn.Width = 125;
             // 
-            // MaSoThue
+            // maSoThueDataGridViewTextBoxColumn
             // 
-            this.MaSoThue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MaSoThue.DataPropertyName = "MaSoThue";
-            this.MaSoThue.HeaderText = "Mã số thuế";
-            this.MaSoThue.MinimumWidth = 8;
-            this.MaSoThue.Name = "MaSoThue";
-            this.MaSoThue.Width = 101;
+            this.maSoThueDataGridViewTextBoxColumn.DataPropertyName = "MaSoThue";
+            this.maSoThueDataGridViewTextBoxColumn.HeaderText = "MaSoThue";
+            this.maSoThueDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maSoThueDataGridViewTextBoxColumn.Name = "maSoThueDataGridViewTextBoxColumn";
+            this.maSoThueDataGridViewTextBoxColumn.Width = 125;
             // 
             // frmSupplier
             // 
@@ -536,5 +587,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSoThue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNCCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNCCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSoThueDataGridViewTextBoxColumn;
     }
 }

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,13 +43,9 @@
             this.nhanvienBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.pharmacyDataSet = new Pharmacy.PharmacyDataSet();
             this.nhanvienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.pharmacyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.nhanvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.savebutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtchucvu = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,26 +60,31 @@
             this.txtsdt = new System.Windows.Forms.TextBox();
             this.txthovaten = new System.Windows.Forms.TextBox();
             this.txtmanv = new System.Windows.Forms.TextBox();
-            this.btnLast = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrev = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.nhanvienTableAdapter = new Pharmacy.PharmacyDataSetTableAdapters.NhanvienTableAdapter();
             this.hoaDonBanTableAdapter = new Pharmacy.PharmacyDataSetTableAdapters.HoaDonBanTableAdapter();
             this.reloadbutton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.savebutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pharmacyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nhanvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -107,17 +107,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(232, 45);
             this.panel2.TabIndex = 13;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
-            this.pictureBox2.Location = new System.Drawing.Point(197, 18);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -274,39 +263,6 @@
             this.comboBox1.Size = new System.Drawing.Size(350, 24);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Location = new System.Drawing.Point(211, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 237);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            // 
-            // savebutton
-            // 
-            this.savebutton.BackColor = System.Drawing.Color.Green;
-            this.savebutton.FlatAppearance.BorderSize = 0;
-            this.savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.savebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.savebutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
-            this.savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.savebutton.Location = new System.Drawing.Point(271, 590);
-            this.savebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.savebutton.Name = "savebutton";
-            this.savebutton.Size = new System.Drawing.Size(100, 30);
-            this.savebutton.TabIndex = 14;
-            this.savebutton.Text = "Lưu";
-            this.savebutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.savebutton.UseVisualStyleBackColor = false;
-            this.savebutton.Visible = false;
-            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
             // label1
             // 
@@ -469,6 +425,48 @@
             this.txtmanv.Size = new System.Drawing.Size(166, 27);
             this.txtmanv.TabIndex = 0;
             // 
+            // nhanvienTableAdapter
+            // 
+            this.nhanvienTableAdapter.ClearBeforeFill = true;
+            // 
+            // hoaDonBanTableAdapter
+            // 
+            this.hoaDonBanTableAdapter.ClearBeforeFill = true;
+            // 
+            // reloadbutton
+            // 
+            this.reloadbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reloadbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
+            this.reloadbutton.Location = new System.Drawing.Point(854, 53);
+            this.reloadbutton.Name = "reloadbutton";
+            this.reloadbutton.Size = new System.Drawing.Size(40, 39);
+            this.reloadbutton.TabIndex = 42;
+            this.reloadbutton.UseVisualStyleBackColor = true;
+            this.reloadbutton.Click += new System.EventHandler(this.reloadbutton_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Image = global::Pharmacy.Properties.Resources.trash_solid1;
+            this.button3.Location = new System.Drawing.Point(965, 615);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(44, 37);
+            this.button3.TabIndex = 23;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Image = global::Pharmacy.Properties.Resources.pen_to_square_solid1;
+            this.button2.Location = new System.Drawing.Point(894, 615);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 38);
+            this.button2.TabIndex = 22;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // btnLast
             // 
             this.btnLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -499,6 +497,21 @@
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // btnFirst
+            // 
+            this.btnFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFirst.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
+            this.btnFirst.Location = new System.Drawing.Point(1015, 149);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(37, 28);
+            this.btnFirst.TabIndex = 21;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
             // btnPrev
             // 
             this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -513,6 +526,39 @@
             this.btnPrev.TabIndex = 21;
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Location = new System.Drawing.Point(211, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(159, 237);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            // 
+            // savebutton
+            // 
+            this.savebutton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.savebutton.FlatAppearance.BorderSize = 0;
+            this.savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.savebutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
+            this.savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.savebutton.Location = new System.Drawing.Point(271, 590);
+            this.savebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(100, 30);
+            this.savebutton.TabIndex = 14;
+            this.savebutton.Text = "Lưu";
+            this.savebutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.savebutton.UseVisualStyleBackColor = false;
+            this.savebutton.Visible = false;
+            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
             // button1
             // 
@@ -533,62 +579,16 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnFirst
+            // pictureBox2
             // 
-            this.btnFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFirst.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFirst.FlatAppearance.BorderSize = 0;
-            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirst.Image = global::Pharmacy.Properties.Resources.angles_left_solid1;
-            this.btnFirst.Location = new System.Drawing.Point(1015, 149);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(37, 28);
-            this.btnFirst.TabIndex = 21;
-            this.btnFirst.UseVisualStyleBackColor = false;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Image = global::Pharmacy.Properties.Resources.pen_to_square_solid1;
-            this.button2.Location = new System.Drawing.Point(894, 615);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 38);
-            this.button2.TabIndex = 22;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Image = global::Pharmacy.Properties.Resources.trash_solid1;
-            this.button3.Location = new System.Drawing.Point(965, 615);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(44, 37);
-            this.button3.TabIndex = 23;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // nhanvienTableAdapter
-            // 
-            this.nhanvienTableAdapter.ClearBeforeFill = true;
-            // 
-            // hoaDonBanTableAdapter
-            // 
-            this.hoaDonBanTableAdapter.ClearBeforeFill = true;
-            // 
-            // reloadbutton
-            // 
-            this.reloadbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reloadbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.reloadbutton.Image = global::Pharmacy.Properties.Resources.refresh;
-            this.reloadbutton.Location = new System.Drawing.Point(854, 53);
-            this.reloadbutton.Name = "reloadbutton";
-            this.reloadbutton.Size = new System.Drawing.Size(40, 39);
-            this.reloadbutton.TabIndex = 42;
-            this.reloadbutton.UseVisualStyleBackColor = true;
-            this.reloadbutton.Click += new System.EventHandler(this.reloadbutton_Click);
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
+            this.pictureBox2.Location = new System.Drawing.Point(197, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // frmEmployee
             // 
@@ -614,16 +614,16 @@
             this.Load += new System.EventHandler(this.frmEmployee_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanvienBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

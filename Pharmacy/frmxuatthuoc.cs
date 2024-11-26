@@ -198,10 +198,10 @@ namespace Pharmacy
                 document.Add(new Paragraph("Ngày tạo: " + txtngay.Text, times));
                 document.Add(new Paragraph("Người tạo: " + txtmanv.Text, times));
                 document.Add(new Paragraph("Hóa đơn bán tương ứng: " + txtmahdb.Text, times));
-                document.Add(new Paragraph("-----------------------------------------------------------------------------------------------------------------------"));
+                document.Add(new Paragraph(" ", times));
 
                 // Tạo bảng cho chi tiết hóa đơn
-                PdfPTable table = new PdfPTable(9);
+                PdfPTable table = new PdfPTable(6);
                 table.WidthPercentage = 100;
                 float[] columnWidths = { 1f, 2f, 2f, 2f, 2f, 2f };
                 table.SetWidths(columnWidths);

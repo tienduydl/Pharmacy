@@ -98,12 +98,11 @@ namespace Pharmacy
 
                 // Thêm tiêu đề và thông tin chung của hóa đơn
                 document.Add(new Paragraph("HÓA ĐƠN NHẬP HÀNG",timesNewRoman));
-                document.Add(new Paragraph("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"));
                 document.Add(new Paragraph("Mã đơn hàng: " + txtmahdn.Text,times));
                 document.Add(new Paragraph("Ngày đơn hàng: " + txtngayhdn.Text,times));
                 document.Add(new Paragraph("Người tạo: " + txtmanv.Text, times));
                 document.Add(new Paragraph("Tổng tiền: " + txttongtien.Text,times));
-                document.Add(new Paragraph("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"));
+                document.Add(new Paragraph(" " , times));
 
                 // Tạo bảng cho chi tiết hóa đơn
                 PdfPTable table = new PdfPTable(9);

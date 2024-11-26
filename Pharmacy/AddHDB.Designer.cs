@@ -40,7 +40,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ngayhoadon = new System.Windows.Forms.DateTimePicker();
-            this.savebutton = new System.Windows.Forms.Button();
             this.txtnv = new System.Windows.Forms.TextBox();
             this.txttotal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -61,8 +60,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.savebutton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -218,24 +218,6 @@
             this.ngayhoadon.Size = new System.Drawing.Size(166, 22);
             this.ngayhoadon.TabIndex = 7;
             // 
-            // savebutton
-            // 
-            this.savebutton.BackColor = System.Drawing.Color.SeaGreen;
-            this.savebutton.FlatAppearance.BorderSize = 0;
-            this.savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.savebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.savebutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
-            this.savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.savebutton.Location = new System.Drawing.Point(180, 242);
-            this.savebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.savebutton.Name = "savebutton";
-            this.savebutton.Size = new System.Drawing.Size(104, 30);
-            this.savebutton.TabIndex = 21;
-            this.savebutton.Text = "Lưu";
-            this.savebutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.savebutton.UseVisualStyleBackColor = false;
-            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
-            // 
             // txtnv
             // 
             this.txtnv.Location = new System.Drawing.Point(123, 66);
@@ -293,6 +275,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_Thuoc,
@@ -419,16 +402,6 @@
             this.panel3.Size = new System.Drawing.Size(232, 46);
             this.panel3.TabIndex = 28;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
-            this.pictureBox1.Location = new System.Drawing.Point(205, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 21);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -444,6 +417,34 @@
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Pharmacy.Properties.Resources.magnifying_glass_solid__1_1;
+            this.pictureBox1.Location = new System.Drawing.Point(205, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 21);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // savebutton
+            // 
+            this.savebutton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.savebutton.FlatAppearance.BorderSize = 0;
+            this.savebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.savebutton.Image = global::Pharmacy.Properties.Resources.floppy_disk_solid1;
+            this.savebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.savebutton.Location = new System.Drawing.Point(180, 242);
+            this.savebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(104, 30);
+            this.savebutton.TabIndex = 21;
+            this.savebutton.Text = "Lưu";
+            this.savebutton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.savebutton.UseVisualStyleBackColor = false;
+            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
             // AddHDB
             // 

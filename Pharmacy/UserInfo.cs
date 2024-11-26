@@ -33,6 +33,7 @@ namespace Pharmacy
             txttennv.Text = frmlogin.UserSession.CurrentNhanVien.Ten.ToString();
             txtsdt.Text = frmlogin.UserSession.CurrentNhanVien.SDT.ToString();
             txtemail.Text = frmlogin.UserSession.CurrentNhanVien.Email.ToString();
+            txtchucvu.Text = frmlogin.UserSession.CurrentNhanVien.Chucvu.ToString();
             txtusername.Text = frmlogin.UserSession.CurrentNhanVien.Username.ToString();
             txtpassword.Text = frmlogin.UserSession.CurrentNhanVien.Password.ToString();
             if(frmlogin.UserSession.CurrentNhanVien.HinhAnh != null)
@@ -84,15 +85,13 @@ namespace Pharmacy
                 sql = "UPDATE Nhanvien SET Ten_NV = @TenNV, SDT = @SDT, Email = @Email, Username = @Username, Password = @Password, Hinh_Anh = @Hinhanh WHERE Ma_NV = @MaNV";
                 cmd = new SqlCommand(sql, conn);
 
-                // Gán giá trị cho các tham số
                 cmd.Parameters.AddWithValue("@TenNV", txttennv.Text);
                 cmd.Parameters.AddWithValue("@SDT", txtsdt.Text);
                 cmd.Parameters.AddWithValue("@Email", txtemail.Text);
                 cmd.Parameters.AddWithValue("@Username", txtusername.Text);
                 cmd.Parameters.AddWithValue("@Password", txtpassword.Text);
-                cmd.Parameters.AddWithValue("@MaNV", txtmanv.Text); // Đảm bảo txtmanv.Text chứa đúng mã nhân viên
+                cmd.Parameters.AddWithValue("@MaNV", txtmanv.Text); 
 
-                // Xử lý hình ảnh
                 if (pictureBox1.Image == null)
                 {
                     cmd.Parameters.AddWithValue("@Hinhanh", DBNull.Value);
@@ -102,7 +101,6 @@ namespace Pharmacy
                     cmd.Parameters.AddWithValue("@Hinhanh", imagebyte);
                 }
 
-                // Thực thi câu lệnh
                 try
                 {
                     conn.Open();
@@ -172,18 +170,15 @@ namespace Pharmacy
         {
             if (pictureBox1.Image == null)
             {
-                // Tạo Font và Brush cho dòng chữ
                 using (Font font = new Font("Arial", 10, FontStyle.Italic))
                 using (Brush brush = new SolidBrush(Color.Gray))
                 {
                     string text = "Ấn để thêm ảnh";
                     SizeF textSize = e.Graphics.MeasureString(text, font);
 
-                    // Tính toán vị trí để đặt dòng chữ ở giữa PictureBox
                     float x = (pictureBox1.Width - textSize.Width) / 2;
                     float y = (pictureBox1.Height - textSize.Height) / 2;
 
-                    // Vẽ dòng chữ lên PictureBox
                     e.Graphics.DrawString(text, font, brush, x, y);
                 }
             }
