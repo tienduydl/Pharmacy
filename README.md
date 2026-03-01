@@ -58,7 +58,7 @@ Key database concepts applied:
 
 1️⃣ Clone the repository
 
-git clone https://github.com/yourusername/pharmacy-management-system.git
+git clone https://github.com/tienduydl/Pharmacy.git
 
 2️⃣ Setup Database
 
