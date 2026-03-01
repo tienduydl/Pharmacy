@@ -9,48 +9,57 @@ The system focuses on:
 - Ensuring structured and centralized data management
   
 🚀 Features
-🧾 Sales Management
-Create and manage invoices
-Calculate total payment automatically
-Store transaction history
+🧾 Sales Management:
 
-📦 Inventory Management
-Add, update, delete medicine records
-Track stock levels
-Monitor expiration dates
-Low-stock alerts (if implemented)
+- Create and manage invoices
+- Calculate total payment automatically
+- Store transaction history
 
-👤 Customer Management
-Store customer information
-Maintain purchase history
+📦 Inventory Management:
 
-📊 Reporting
-Sales summary reports
-Inventory overview
-Revenue tracking
+- Add, update, delete medicine records
+- Track stock levels
+- Monitor expiration dates
+- Low-stock alerts
 
-🛠 Tech Stack
-Language: C# (.NET Framework / .NET Core)
-Database: Microsoft SQL Server
-Architecture: Layered Architecture (UI – Business Logic – Data Access)
+👤 Customer Management:
 
-🗄 Database Design
-The system uses a relational database model with structured tables such as:
-Medicines
-Customers
-Invoices
-InvoiceDetails
-Users
+- Store customer information
+- Maintain purchase history
+
+📊 Reporting: 
+
+- Sales summary reports
+- Inventory overview
+- Revenue tracking
+
+🛠 Tech Stack:
+
+- Language: C# (.NET Framework / .NET Core)
+- Database: Microsoft SQL Server
+- Architecture: Layered Architecture (UI – Business Logic – Data Access)
+
+🗄 Database Design:
+The system uses a relational database model with structured tables:
+- Medicines
+- Customers
+- Invoices
+- InvoiceDetails
+- Users
 
 Key database concepts applied:
-Primary & Foreign Keys
-Relational integrity
-Normalization principles
-Transaction handling
+
+- Primary & Foreign Keys
+- Relational integrity
+- Normalization principles
+- Transaction handling
 
 ⚙️ Installation Guide
+
 1️⃣ Clone the repository
+
 git clone https://github.com/yourusername/pharmacy-management-system.git
+
 2️⃣ Setup Database
 
 Open SQL Server Management Studio (SSMS)
